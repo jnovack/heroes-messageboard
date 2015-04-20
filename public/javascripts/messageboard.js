@@ -63,6 +63,8 @@ function paginateMessages(){
     c++;    
 }
 
+// $("[data-group|='sidebar_body_containers").removeClass("bounceOutLeft bounceInLeft").addClass("animated bounceOutLeft");$("#map_container").removeClass().addClass("animated bounceInLeft");
+
 $('.marquee').marquee({
     //speed in milliseconds of the marquee
     duration: 15000,
