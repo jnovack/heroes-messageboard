@@ -1,0 +1,138 @@
+extends layout
+
+mixin hero-select(name)
+  option&attributes(attributes)= name
+
+block content
+  style.
+    .row { margin-top: 24px;}
+
+  h1= title
+  p All changes take effect upon clicking OUTSIDE of the field.
+
+  div.row
+    div.col-lg-12
+      div.control-group
+        label(for='title',class='control-label') Title
+        div.controls
+          input(type='text',id='title',name='title',placeholder="TickleMeOzmo",class='form-control input-lg')
+
+  div.row
+    div.col-lg-12
+      div.control-group
+        label(for='subtitle',class='control-label') SubTitle
+        div.controls
+          input(type='text',id='subtitle',name='subtitle',placeholder='Solo Queue<br>Quick Match',class='form-control input-lg')
+
+  div.row
+    div.col-lg-12
+      div.control-group
+        label(for='crawl',class='control-label') Crawl
+        div.controls
+          input(type='text',id='crawl',name='crawl',placeholder=':: <strong>Heroes of the Dorm</strong> :: Boston College defeated Western Ontario in a 2-0 victory.  ||  Arizona State beat Texas A&M in a 2-0 victory.',class='form-control input-lg')
+
+
+  div.row
+    div.col-lg-12
+      p Maps
+      div.col-md-2
+        div(id="blackhearts-bay")
+          div.control-group
+            label(for='blackhearts-bay-percent',class='control-label') blackhearts-bay
+            div.controls
+              input(data-group='percents',type='text',id='blackhearts-bay-percent',placeholder="52",class='form-control input-lg')
+      div.col-md-2
+        div(id="cursed-hollow")
+          div.control-group
+            label(for='cursed-hollow-percent',class='control-label') cursed-hollow
+            div.controls
+              input(data-group='percents',type='text',id='cursed-hollow-percent',placeholder="54",class='form-control input-lg')
+      div.col-md-2
+        div(id="dragon-shire")
+          div.control-group
+            label(for='dragon-shire-percent',class='control-label') dragon-shire
+            div.controls
+              input(data-group='percents',type='text',id='dragon-shire-percent',placeholder="53",class='form-control input-lg')
+      div.col-md-2
+        div(id="haunted-mines")
+          div.control-group
+            label(for='haunted-mines-percent',class='control-label') haunted-mines
+            div.controls
+              input(data-group='percents',type='text',id='haunted-mines-percent',placeholder="52",class='form-control input-lg')
+      div.col-md-2
+        div(id="garden-of-terror")
+          div.control-group
+            label(for='garden-of-terror-percent',class='control-label') garden-of-terror
+            div.controls
+              input(data-group='percents',type='text',id='garden-of-terror-percent',placeholder="46",class='form-control input-lg')
+      div.col-md-2
+        div(id="sky-temple")
+          div.control-group
+            label(for='sky-temple-percent',class='control-label') sky-temple
+            div.controls
+              input(data-group='percents',type='text',id='sky-temple-percent',placeholder="50",class='form-control input-lg')
+      div.col-md-2
+        div(id="tomb-of-the-spider-queen")
+          div.control-group
+            label(for='tomb-of-the-spider-queen-percent',class='control-label') tomb-of-the-spider-queen
+            div.controls
+              input(data-group='percents',type='text',id='tomb-of-the-spider-queen-percent',placeholder="46",class='form-control input-lg')
+
+
+  div.row
+    div.col-lg-12
+      label(for='hero', class='control-label') SideBar Hero
+      select(id="hero").form-control
+        +hero-select("Please Select")(selected,disabled)
+        +hero-select("abathur")
+        +hero-select("abathur_pajamathur")
+        +hero-select("anubarak")
+        +hero-select("arthas")
+        +hero-select("azmodan")
+        +hero-select("brightwing")
+        +hero-select("chen")
+        +hero-select("diablo")
+        +hero-select("etc")
+        +hero-select("falstad")
+        +hero-select("gazlowe")
+        +hero-select("illidan")
+        +hero-select("jaina")
+        +hero-select("kerrigan")
+        +hero-select("lili")
+        +hero-select("malfurion")
+        +hero-select("muradin")
+        +hero-select("murky")
+        +hero-select("nazeebo")
+        +hero-select("nova")
+        +hero-select("raynor")
+        +hero-select("rehgar")
+        +hero-select("sgt-hammer")
+        +hero-select("sonya")
+        +hero-select("stitches")
+        +hero-select("sylvanas")
+        +hero-select("tassadar")
+        +hero-select("the-lost-vikings")
+        +hero-select("thrall")
+        +hero-select("tychus")
+        +hero-select("tyrael")
+        +hero-select("tyrande")
+        +hero-select("uther")
+        +hero-select("valla")
+        +hero-select("zagara")
+        +hero-select("zeratul")
+
+  div.row
+    div.col-lg-12
+      div.control-group
+        label(for='rank',class='control-label') Rank
+        div.controls
+          input(type='text',id='rank',name='rank',placeholder="17",class='form-control input-lg')
+
+
+  div.row
+    div.col-lg-12
+      a(href="#",class="btn btn-primary",id="reloadButton") Reload
+      a(href="#",class="btn btn-warning",id="hideMsgButton") Hide Messages
+      a(href="#",class="btn btn-success",id="showMsgButton", style="display: none") Show Messages
+
+  script(src="/javascripts/admin.js")
