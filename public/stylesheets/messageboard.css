@@ -142,7 +142,7 @@ strong {
 	}
 }
 
-@media screen and (min-width: 1281px) and (max-width: 1366px){
+@media screen and (min-width: 1281px) and (max-width: 1366px), screen and (max-height: 765px){
 	#wrapper {
 		transform: scale(0.7114583333333);
 		-webkit-transform: scale(0.7114583333333);
