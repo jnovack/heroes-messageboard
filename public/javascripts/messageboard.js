@@ -77,6 +77,7 @@ function rotateTabs() {
     setTimeout(rotateTabs, 12500);
 }
 
+/*
 $('.marquee').marquee({
     //speed in milliseconds of the marquee
     duration: 15000,
@@ -89,5 +90,6 @@ $('.marquee').marquee({
     //true or false - should the marquee be duplicated to show an effect of continues flow
     duplicated: true
 });
+*/
 
 });
