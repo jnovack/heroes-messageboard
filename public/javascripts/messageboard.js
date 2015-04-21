@@ -4,6 +4,7 @@ $(document).ready(function(){
 initContent();
 function initContent(){
     $('html, body').css('cursor','none');
+    setTimeout(rotateTabs, 12500);
 };
 
 // Evaluate Messages //
@@ -63,7 +64,18 @@ function paginateMessages(){
     c++;    
 }
 
-// $("[data-group|='sidebar_body_containers").removeClass("bounceOutLeft bounceInLeft").addClass("animated bounceOutLeft");$("#map_container").removeClass().addClass("animated bounceInLeft");
+function rotateTabs() {
+    allTabs = $("[data-group|='sidebar_body_containers']");
+    current = $("[data-group|='sidebar_body_containers'].bounceInLeft");
+    if (allTabs.last()[0] == current[0]) {
+        next = allTabs.first();
+    } else {
+        next = current.next();
+    }
+    $("[data-group|='sidebar_body_containers']").removeClass("bounceOutLeft bounceInLeft").addClass("animated bounceOutLeft");
+    next.removeClass().addClass("animated bounceInLeft");
+    setTimeout(rotateTabs, 12500);
+}
 
 $('.marquee').marquee({
     //speed in milliseconds of the marquee
@@ -77,6 +89,5 @@ $('.marquee').marquee({
     //true or false - should the marquee be duplicated to show an effect of continues flow
     duplicated: true
 });
-
 
 });

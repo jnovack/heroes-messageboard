@@ -14,23 +14,19 @@ body {background: #000; cursor: none; font-family: 'Open Sans', sans-serif; colo
         width: 1300px;
 }
 
-
-
-
 .link {
     color: rgb(36,144,255);
     text-decoration: underline;
 }
 
-
 .hidden { display: none; !important }
 
-.green { color: rgb(0, 128, 0);}
-.greener { color: rgb(0, 192, 0);}
-.greenest { color: rgb(0, 255, 0);}
-.red { color: rgb(128, 0, 0);}
-.redder { color: rgb(192, 0, 0);}
-.reddest { color: rgb(255, 0, 0);}
+.color-green { color: rgb(0, 128, 0);}
+.color-greener { color: rgb(0, 192, 0);}
+.color-greenest { color: rgb(0, 255, 0);}
+.color-red { color: rgb(128, 0, 0);}
+.color-redder { color: rgb(192, 0, 0);}
+.color-reddest { color: rgb(255, 0, 0);}
 
 strong { color: #FFFFFF; font-weight: 600; }
 
@@ -45,17 +41,16 @@ strong { color: #FFFFFF; font-weight: 600; }
 #map_container ul li dl img { width: 90px; height: 50px; padding-right: 4px; float: left; }
 #map_container ul li dl dt { margin-left: 4px; margin-right: 4px; color: white; font-size: 1.5em; width: 260px; float: left; line-height: 25px; }
 #map_container ul li dl dd { font-size: 1.9em; float: right; }
+#sidebar_body div ul li div.callout {width: 240px; margin: 0px 0px 0px 10px; padding: 0px; color: #FFF; font-weight: bold; font-size: 30px; line-height: 30px; text-transform: uppercase; float: right;}
+#sidebar_body div ul li h3 {width: 240px; margin: 5px 0px 0px 10px; padding: 0px; color: #FFF; font-size: 16px; line-height: 16px; text-transform: uppercase; float: left;}
 */
 #sidebar_body > div  {position: absolute; width: 340px; margin: 0px 0px 0px 30px; float: left;}
 #sidebar_body div h1 {color: #FFF; font-family: one_extra_bold; font-size: 50px; line-height: 50px; text-transform: uppercase; float: left;}
 #sidebar_body div ul {width: 340px; margin: 5px 0px 0px 0px; border-top: solid 1px rgba(0,0,0,0.50); border-bottom: solid 1px rgba(255,255,255,0.10); float: left;}
-#sidebar_body div ul li {width: 100%; padding: 10px 0px 10px 0px; border-top: solid 1px rgba(255,255,255,0.10); border-bottom: solid 1px rgba(0,0,0,0.50); float: left; height:50px;}
-#sidebar_body div ul li div.callout {width: 240px; margin: 0px 0px 0px 10px; padding: 0px; color: #FFF; font-weight: bold; font-size: 30px; line-height: 30px; text-transform: uppercase; float: right;}
-#sidebar_body div ul li h3 {width: 240px; margin: 5px 0px 0px 10px; padding: 0px; color: #FFF; font-size: 16px; line-height: 16px; text-transform: uppercase; float: left;}
-#sidebar_body div ul li img { height: 50px; padding-right: 4px; float: left;}
-#sidebar_body div ul li dl { width: 286px; height: 50px; display: table; }
-#sidebar_body div ul li dl dt { margin-left: 4px; margin-right: 4px; color: white; font-size: 1em; width: 224px; display: table-cell; }
-#sidebar_body div ul li dl dd { font-size: 1.9em; width: 52px; display: table-cell; text-align: right;}
+#sidebar_body div ul li {width: 100%; padding: 10px 0px 10px 0px; border-top: solid 1px rgba(255,255,255,0.10); border-bottom: solid 1px rgba(0,0,0,0.50); height:50px; display: flex; align-items: center; align-content: center;}
+#sidebar_body div ul li img { height: 50px; padding-right: 4px; }
+#sidebar_body div ul li div.li-text { margin-left: 4px; margin-right: 8px; color: white; font-size: 1.4em; width: 224px; }
+#sidebar_body div ul li div.li-number { font-size: 1.9em; width: 52px; text-align: right;}
 
 /*
 #specials_container {width: 340px; margin: 30px 0px 0px 30px; float: left;}
