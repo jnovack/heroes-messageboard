@@ -24,9 +24,10 @@ body {background: #000; cursor: none; font-family: 'Open Sans', sans-serif; colo
 .color-green { color: rgb(0, 128, 0);}
 .color-greener { color: rgb(0, 192, 0);}
 .color-greenest { color: rgb(0, 255, 0);}
-.color-red { color: rgb(128, 0, 0);}
-.color-redder { color: rgb(192, 0, 0);}
+.color-red { color: rgb(192, 0, 0);}
+.color-redder { color: rgb(224, 0, 0);}
 .color-reddest { color: rgb(255, 0, 0);}
+.color-yellow {  color: rgb(255,255,128); text-shadow: 1px 1px #000000; }
 
 strong { color: #FFFFFF; font-weight: 600; }
 
