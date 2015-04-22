@@ -1,175 +1,173 @@
 <html style="cursor: none;">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Heroes of the Storm - Message Board</title>
-	<link rel="stylesheet" type="text/css" href="stylesheets/messageboard.css">
-	<link rel="stylesheet" type="text/css" href="stylesheets/heroes.css">
-	<link rel="stylesheet" type="text/css" href="stylesheets/animate.css">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600,300,400' rel='stylesheet' type='text/css'>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Heroes of the Storm - Message Board</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/messageboard.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/heroes.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/animate.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600,300,400' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 </head>
 <body style="cursor: none;">
 <div id="wrapper">
-	
-	<div id="sidebar">
-		
-		<div id="sidebar_header">
-			<div id="sidebar_header_container">
-				<video id="sidebar_header_video" autoplay loop muted src="assets/hero-videos/valla.webm" class="valla" type="video/webm"></video>
-			</div>
-		</div>
-		
-		<div id="sidebar_body">
-			<div data-group="sidebar_body_containers" class="hidden" id="map_container">
-				<h2>Maps</h2>
-				<ul>
-					<li>
-						<img src="assets/maps/blackhearts-bay-mini.jpg">
-						<div class="li-text" id="blackhearts-bay-text">Blackheart's Bay</div>
-						<div class="li-number color-green" id="blackhearts-bay-number">53%</div>
-					</li>
-					<li>
-						<img src="assets/maps/cursed-hollow-mini.jpg">
-						<div class="li-text" id="cursed-hollow-text">Cursed Hollow</div>
-						<div class="li-number color-green" id="cursed-hollow-number">54%</div>
-					</li>
-					<li>
-						<img src="assets/maps/dragon-shire-mini.jpg">
-						<div class="li-text" id="dragon-shire-text">Dragon Shire</div>
-						<div class="li-number color-green" id="dragon-shire-number">53%</div>
-					</li>
-					<li>
-						<img src="assets/maps/haunted-mines-mini.jpg">
-						<div class="li-text" id="haunted-mines-text">Haunted Mines</div>
-						<div class="li-number color-green" id="haunted-mines-number">52%</div>
-					</li>
-					<li>
-						<img src="assets/maps/garden-of-terror-mini.jpg">
-						<div class="li-text" id="garden-of-terror-text">Garden of Terror</div>
-						<div class="li-number color-red" id="garden-of-terror-number">46%</div>
-					</li>
-					<li>
-						<img src="assets/maps/sky-temple-mini.jpg">
-						<div class="li-text" id="sky-temple-text">Sky Temple</div>
-						<div class="li-number color-green" id="sky-temple-number">50%</div>
-					</li>
-					<li>
-						<img src="assets/maps/tomb-of-the-spider-queen-mini.jpg">
-						<div class="li-text" id="tomb-of-the-spider-queen-text">Tomb of the Spider Queen</div>
-						<div class="li-number color-red" id="tomb-of-the-spider-queen-number">49%</div>
-					</li>
-				</ul>
-			</div>
-			<div data-group="sidebar_body_containers" class="bounceInLeft" id="hero_container">
-				<h2>Games Played</h2>
-				<ul>
-					<li>
-						<img src="assets/roles/warrior-mini.png">
-						<div class="li-text" id="warrior-text">Warrior</div>
-						<div class="li-number color-green" id="warrior-number">408</div>
-					</li>
-					<li>
-						<img src="assets/roles/assassin-mini.png">
-						<div class="li-text" id="assassin-text">Assassin</div>
-						<div class="li-number color-green" id="assassin-number">427</div>
-					</li>
-					<li>
-						<img src="assets/roles/support-mini.png">
-						<div class="li-text" id="support-text">Support</div>
-						<div class="li-number color-green" id="support-number">363</div>
-					</li>
-					<li>
-						<img src="assets/roles/specialist-mini.png">
-						<div class="li-text" id="specialist-text">Specialist</div>
-						<div class="li-number color-green" id="specialist-number">238</div>
-					</li>
-				</ul>
-				<h2>Most Played Heroes</h2>
-				<ul>
-					<li>
-						<img src="assets/hero-portraits-80px/illidan.jpg">
-						<div class="li-text">
-							<div class="li-text-name" id="hero1-text">Illidan</div>
-							<div class="li-text-desc" id="hero1-description">Melee Assassin</div>
-						</div>
-						<div class="li-number color-red" id="hero1-number">84</div>
-					</li>
-					<li>
-						<img src="assets/hero-portraits-80px/etc.jpg">
-						<div class="li-text" id="hero2-text">ETC</div>
-						<div class="li-number color-red" id="hero2-number">76</div>
-					</li>
-					<li>
-						<img src="assets/hero-portraits-80px/sonya.jpg">
-						<div class="li-text" id="hero3-text">Sonya</div>
-						<div class="li-number color-red" id="hero3-number">77</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-		
-		<div id="sidebar_footer">
-			<div id="sidebar_footer_container">
-				<div id="sidebar_footer_description">Hero League</div>
-				<div id="sidebar_footer_text">16</div>
-			</div>
-		</div>
-	
-	</div>
+    
+    <div id="sidebar">
+        
+        <div id="sidebar_header">
+            <div id="sidebar_header_container">
+                <video id="sidebar_header_video" autoplay loop muted src="assets/hero-videos/valla.webm" class="valla" type="video/webm"></video>
+            </div>
+        </div>
+        
+        <div id="sidebar_body">
+            <div data-group="sidebar_body_containers" class="hidden" id="map_container">
+                <h2>Maps</h2>
+                <ul>
+                    <li>
+                        <img src="assets/maps/blackhearts-bay-mini.jpg">
+                        <div class="li-text" id="blackhearts-bay-text">Blackheart's Bay</div>
+                        <div class="li-number color-green" id="blackhearts-bay-number">53%</div>
+                    </li>
+                    <li>
+                        <img src="assets/maps/cursed-hollow-mini.jpg">
+                        <div class="li-text" id="cursed-hollow-text">Cursed Hollow</div>
+                        <div class="li-number color-green" id="cursed-hollow-number">54%</div>
+                    </li>
+                    <li>
+                        <img src="assets/maps/dragon-shire-mini.jpg">
+                        <div class="li-text" id="dragon-shire-text">Dragon Shire</div>
+                        <div class="li-number color-green" id="dragon-shire-number">53%</div>
+                    </li>
+                    <li>
+                        <img src="assets/maps/haunted-mines-mini.jpg">
+                        <div class="li-text" id="haunted-mines-text">Haunted Mines</div>
+                        <div class="li-number color-green" id="haunted-mines-number">52%</div>
+                    </li>
+                    <li>
+                        <img src="assets/maps/garden-of-terror-mini.jpg">
+                        <div class="li-text" id="garden-of-terror-text">Garden of Terror</div>
+                        <div class="li-number color-red" id="garden-of-terror-number">46%</div>
+                    </li>
+                    <li>
+                        <img src="assets/maps/sky-temple-mini.jpg">
+                        <div class="li-text" id="sky-temple-text">Sky Temple</div>
+                        <div class="li-number color-green" id="sky-temple-number">50%</div>
+                    </li>
+                    <li>
+                        <img src="assets/maps/tomb-of-the-spider-queen-mini.jpg">
+                        <div class="li-text" id="tomb-of-the-spider-queen-text">Tomb of the Spider Queen</div>
+                        <div class="li-number color-red" id="tomb-of-the-spider-queen-number">49%</div>
+                    </li>
+                </ul>
+            </div>
+            <div data-group="sidebar_body_containers" class="bounceInLeft" id="hero_container">
+                <h2>Games Played</h2>
+                <ul>
+                    <li>
+                        <img src="assets/roles/warrior-mini.png">
+                        <div class="li-text" id="warrior-text">Warrior</div>
+                        <div class="li-number color-green" id="warrior-number">408</div>
+                    </li>
+                    <li>
+                        <img src="assets/roles/assassin-mini.png">
+                        <div class="li-text" id="assassin-text">Assassin</div>
+                        <div class="li-number color-green" id="assassin-number">427</div>
+                    </li>
+                    <li>
+                        <img src="assets/roles/support-mini.png">
+                        <div class="li-text" id="support-text">Support</div>
+                        <div class="li-number color-green" id="support-number">363</div>
+                    </li>
+                    <li>
+                        <img src="assets/roles/specialist-mini.png">
+                        <div class="li-text" id="specialist-text">Specialist</div>
+                        <div class="li-number color-green" id="specialist-number">238</div>
+                    </li>
+                </ul>
+                <h2>Highest Level Heroes</h2>
+                <ul>
+                    <li>
+                        <img src="assets/hero-portraits-80px/illidan.jpg">
+                        <div class="li-text">
+                            <div class="li-text-name" id="hero1-text">Illidan</div>
+                            <div class="li-text-desc" id="hero1-description">Melee Assassin</div>
+                        </div>
+                        <div class="li-number color-red" id="hero1-number"></div>
+                    </li>
+                    <li>
+                        <img src="assets/hero-portraits-80px/etc.jpg">
+                        <div class="li-text">
+                            <div class="li-text-name" id="hero2-text">ETC</div>
+                            <div class="li-text-desc" id="hero2-description">Melee Warrior</div>
+                        </div>
+                        <div class="li-number color-red" id="hero2-number"></div>
+                    </li>
+                    <li>
+                        <img src="assets/hero-portraits-80px/sonya.jpg">
+                        <div class="li-text">
+                            <div class="li-text-name" id="hero3-text">Sonya</div>
+                            <div class="li-text-desc" id="hero3-description">Melee Warrior</div>
+                        </div>
+                        <div class="li-number color-red" id="hero3-number"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="sidebar_footer">
+            <div id="sidebar_footer_container">
+                <div id="sidebar_footer_description">Hero League</div>
+                <div id="sidebar_footer_text">16</div>
+            </div>
+        </div>
+    
+    </div>
 
-	<div id="mainview">
-		<div id="mainview_header">
-			<h1 id="mainview_header_title">TickleMeOzmo</h1>
-			<h3 id="mainview_header_subtitle">Solo Queue<br>QuickMatch</h3>
-			<h2 id="mainview_header_icon">&nbsp;</h2>
-		</div>
-	
-		<div id="mainview_body">
-			<ul id="messages">
-				<li>
-					<h2>&nbsp;</h2>
-					<h1><img src="images/reddit-snoo.png">Join the Reddit at <span class="link">reddit.com/r/heroesofthestorm</span></h1>
-				</li>
-				<li>
-					<h2>April 19</h2>
-					<h1><strong>Titan Arena 3</strong>, sponsored by MLG is being broadcast on <span class="link">mlg.tv/titanarena</span> on Saturday, April 19 at 2pm ET (GMT-4)</h1>
-				</li>
-				<li>
-					<h2>April 19</h2>
-					<h1><strong>Titan Arena 3</strong> Semi-Finalialists: C9 Maelstrom vs 2ARC Gaming (2pm ET), Tempo Storm vs Beyond Reason (4pm ET). Finals will be today at 6pm Eastern on <span class="link">mlg.tv/titanarena</span></h1>
-				</li>
-				<li>
-					<h2>April 15</h2>
-					<h1><strong>Town Hall Heroes</strong> Episode 59 with SK_Bakery (EU) is available for playback on <span class="link">twitch.tv/solidjakegg</span> or <span class="link">youtube.com/user/solidjakegg</span>.  The gauntlet has been thrown at Tempo Storm. <em>#shotsfired</em></h1>
-				</li>
-				<li>
-					<h2>April 19</h2>
-					<h1>[NA] <strong>ESL Go4Heroes Cup #20</strong> is live on Sunday, April 19th at 5pm ET (GMT-4). Watch live at <span class="link">play.eslgaming.com/heroesofthestorm</span></h1>
-				</li>
-				<li>
-					<h2>April 19</h2>
-					<h1><strong>Heroes of the Dorm</strong> is down to the Heroic Four.  3 teams are still undefeated, will anyone upset the favorite, Cal Berkeley?  Watch on <span class="link">heroesofthedorm.com</span> to see the new mini-map!</h1>
-				</li>
-				<li>
-					<h2>April 20</h2>
-					<h1><img src="assets/hero-portraits-80px/kaelthas.jpg"><strong>Kael'thas</strong> has been confirmed as an upcoming Hero.  Current speculation is that he will be a hit-and-run mage-style assassin like Jaina.</h1>
-				</li>
-				<li>
-					<h2>&nbsp;</h2>
-					<h1>The best way to get to get amped about playing a hero is to watch their cinematic video. Watch them on <span class="link">battle.net/heroes</span></h1>
-				</li>
-			</ul>
-		</div>
-	
-		<div id="mainview_footer" class="">
-			<marquee scrollanimation="15" id="mainview_footer_marquee" class="marquee marquee-red">
-				<div><img src="images/heroes-of-the-dorm.png"><strong>Heroes of the Dorm</strong> -- Boston College defeated Western Ontario in a 2-0 victory. Arizona State beat Texas A&M in a 2-0 victory.</div>
-			</marquee>
-		</div>
+    <div id="mainview">
+        <div id="mainview_header">
+            <h1 id="mainview_header_title">TickleMeOzmo</h1>
+            <h3 id="mainview_header_subtitle">Solo Queue<br>QuickMatch</h3>
+            <h2 id="mainview_header_icon">&nbsp;</h2>
+        </div>
+    
+        <div id="mainview_body">
+            <ul id="messages">
+                <li>
+                    <h2>&nbsp;</h2>
+                    <h1><img src="images/reddit-snoo.png">Join the Reddit at <span class="link">reddit.com/r/heroesofthestorm</span></h1>
+                </li>
+                <li>
+                    <h2>April 22</h2>
+                    <h1><strong>Town Hall Heroes</strong> Episode 60 is streaming on <span class="link">twitch.tv/solidjakegg</span> tonight at 9pm ET.</h1>
+                </li>
+                <li>
+                    <h2>April 19</h2>
+                    <h1><strong>Heroes of the Dorm</strong> is down to the Heroic Four.  3 teams are still undefeated, will anyone upset the favorite, Cal Berkeley?  Watch on <span class="link">heroesofthedorm.com</span> to see the new mini-map!</h1>
+                </li>
+                <li>
+                    <h2>April 20</h2>
+                    <h1><img src="assets/hero-portraits-80px/kaelthas.jpg"><strong>Kael'thas</strong> has been confirmed as an upcoming Hero.  Current speculation is that he will be a hit-and-run mage-style assassin like Jaina.</h1>
+                </li>
+                <li>
+                    <h2>&nbsp;</h2>
+                    <h1>The best way to get to get amped about playing a hero is to watch their cinematic video. Watch them on <span class="link">battle.net/heroes</span></h1>
+                </li>
+                <li>
+                    <h2>April 22</h2>
+                    <h1><strong>Heroes of the Storm</strong> is going public on June 2nd! </h1>
+                </li>
+            </ul>
+        </div>
+    
+        <div id="mainview_footer" class="">
+            <marquee scrollanimation="15" id="mainview_footer_marquee" class="marquee marquee-black">
+                <div><img src="images/heroes-of-the-dorm.png"><strong>Heroes of the Dorm</strong> returns on April 26th at 2:30p PT.</div>
+            </marquee>
+        </div>
 
-	</div>
+    </div>
 </div>
 <script src="/javascripts/messageboard.js"></script>
 <script src="/socket.io/socket.io.js"></script>
