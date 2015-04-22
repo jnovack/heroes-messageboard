@@ -1,7 +1,48 @@
 extends layout
 
-mixin hero-select(name)
+mixin hero-option(name)
   option&attributes(attributes)= name
+
+mixin hero-select(id,name)
+  label(for=id,class='control-label')= name
+  select(id=id).form-control
+    +hero-option("Please Select")(selected,disabled)
+    +hero-option("abathur")
+    +hero-option("abathur_pajamathur")
+    +hero-option("anubarak")
+    +hero-option("arthas")
+    +hero-option("azmodan")
+    +hero-option("brightwing")
+    +hero-option("chen")
+    +hero-option("diablo")
+    +hero-option("etc")
+    +hero-option("falstad")
+    +hero-option("gazlowe")
+    +hero-option("illidan")
+    +hero-option("jaina")
+    +hero-option("kerrigan")
+    +hero-option("lili")
+    +hero-option("malfurion")
+    +hero-option("muradin")
+    +hero-option("murky")
+    +hero-option("nazeebo")
+    +hero-option("nova")
+    +hero-option("raynor")
+    +hero-option("rehgar")
+    +hero-option("sgt-hammer")
+    +hero-option("sonya")
+    +hero-option("stitches")
+    +hero-option("sylvanas")
+    +hero-option("tassadar")
+    +hero-option("the-lost-vikings")
+    +hero-option("thrall")
+    +hero-option("tychus")
+    +hero-option("tyrael")
+    +hero-option("tyrande")
+    +hero-option("uther")
+    +hero-option("valla")
+    +hero-option("zagara")
+    +hero-option("zeratul")
 
 block content
   style.
@@ -81,45 +122,7 @@ block content
 
   div.row
     div.col-lg-12
-      label(for='hero', class='control-label') SideBar Hero
-      select(id="hero").form-control
-        +hero-select("Please Select")(selected,disabled)
-        +hero-select("abathur")
-        +hero-select("abathur_pajamathur")
-        +hero-select("anubarak")
-        +hero-select("arthas")
-        +hero-select("azmodan")
-        +hero-select("brightwing")
-        +hero-select("chen")
-        +hero-select("diablo")
-        +hero-select("etc")
-        +hero-select("falstad")
-        +hero-select("gazlowe")
-        +hero-select("illidan")
-        +hero-select("jaina")
-        +hero-select("kerrigan")
-        +hero-select("lili")
-        +hero-select("malfurion")
-        +hero-select("muradin")
-        +hero-select("murky")
-        +hero-select("nazeebo")
-        +hero-select("nova")
-        +hero-select("raynor")
-        +hero-select("rehgar")
-        +hero-select("sgt-hammer")
-        +hero-select("sonya")
-        +hero-select("stitches")
-        +hero-select("sylvanas")
-        +hero-select("tassadar")
-        +hero-select("the-lost-vikings")
-        +hero-select("thrall")
-        +hero-select("tychus")
-        +hero-select("tyrael")
-        +hero-select("tyrande")
-        +hero-select("uther")
-        +hero-select("valla")
-        +hero-select("zagara")
-        +hero-select("zeratul")
+      +hero-select('hero','Theme Hero')
 
   div.row
     div.col-lg-12
