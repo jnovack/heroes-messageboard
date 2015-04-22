@@ -17,6 +17,9 @@ if(typeof(Storage) !== "undefined") {
     };
     read = function(key) {
         var json = JSON.parse(localStorage.getItem("json"));
+        if (json === null || json.key === undefined) {
+            return undefined;
+        }
         console.log(json[key]);
         return json[key];
     };
@@ -77,8 +80,11 @@ $("input[data-group='percents']").change(function() {
 });
 
 var reload = function(id) {
-    $("#" + id).val(read(id));
-    save(id, read(id));
+    var value = read(id);
+    if (value !== undefined) {
+        $("#" + id).val(value);
+        save(id, value);
+    }
 }
 
 $(document).ready( function() {
