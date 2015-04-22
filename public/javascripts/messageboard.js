@@ -4,6 +4,7 @@ $(document).ready(function(){
 initContent();
 function initContent(){
     $('html, body').css('cursor','none');
+    $("#messages li:odd").addClass("dim");
     setTimeout(rotateTabs, 12500);
 };
 
