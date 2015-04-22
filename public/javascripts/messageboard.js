@@ -16,8 +16,17 @@ paginateMessages();
 
 function fadeMessage(){
     $('#messages li').each(function(){
+        //document.getElementById("mainview_footer").getBoundingClientRect().top;
+        var mvbody = document.getElementById("mainview_body").getBoundingClientRect();
+        var mvhead = document.getElementById("mainview_header").getBoundingClientRect();
+        var mvbody_height = mvbody.bottom - mvbody.top;
+        var mvhead_height = mvhead.bottom - mvhead.top;
+
         var element = $(this).position().top + $(this).height() + parseInt($(this).css('padding-top')) + parseInt($(this).css('padding-bottom'));
-        var footer = $("#mainview_body").height() + $("#mainview_header").height();
+        //var footer = $("#mainview_body").height() + $("#mainview_header").height();
+        var footer = mvbody_height + mvhead_height;
+
+        console.log(element + " > " + footer);
         if (Math.floor(element > footer)){
             $(this).fadeTo(0,0);
         } else {
