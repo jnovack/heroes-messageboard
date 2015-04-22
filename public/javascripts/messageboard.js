@@ -14,10 +14,12 @@ var c = 0;
 paginateMessages();
 
 function fadeMessage(){
-    $('#mainview_body ul li').each(function(){
-        if(Math.floor($(this).position().top > $(window).height()-$(this).height()-$("#mainview_footer").height()-8)){
+    $('#messages li').each(function(){
+        var element = $(this).position().top + $(this).height() + parseInt($(this).css('padding-top')) + parseInt($(this).css('padding-bottom'));
+        var footer = $("#mainview_body").height() + $("#mainview_header").height();
+        if (Math.floor(element > footer)){
             $(this).fadeTo(0,0);
-        }else if(Math.floor($(this).position().top < $(window).height()-$(this).height()-$("#mainview_footer").height()-8)){
+        } else {
             $(this).fadeTo(500,1);
         }
     });
@@ -28,13 +30,10 @@ function paginateMessages(){
     
     clearTimeout(timer);
 
-    //var listAmount = $('#mainview_body ul li').size() * 3;
     var listAmount = $('#mainview_body ul li').size();
     var listHeight = Math.ceil($('#mainview_body ul').height());    
     var itemHeight = $('#mainview_body ul li:nth-child(1)').height();
     var height = itemHeight + 43;
-
-    console.log(c);
 
     if(c == 0){
         timer = setTimeout(paginateMessages, 10000);
