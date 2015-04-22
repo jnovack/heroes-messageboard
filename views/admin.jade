@@ -59,66 +59,20 @@ block content
           input(type='text',id='title',name='title',placeholder="TickleMeOzmo",class='form-control input-lg')
 
   div.row
-    div.col-lg-12
+    div.col-md-6
       div.control-group
-        label(for='subtitle',class='control-label') SubTitle
+        label(for='subtitle1',class='control-label') SubTitle Top Line
         div.controls
-          input(type='text',id='subtitle',name='subtitle',placeholder='Solo Queue<br>Quick Match',class='form-control input-lg')
-
-  div.row
-    div.col-lg-12
+          input(type='text',id='subtitle1',name='subtitle1',placeholder='Solo Queue',class='form-control input-lg')
+    div.col-md-6
       div.control-group
-        label(for='crawl',class='control-label') Crawl
+        label(for='subtitle2',class='control-label') SubTitle Bottom Lane
         div.controls
-          input(type='text',id='crawl',name='crawl',placeholder=':: <strong>Heroes of the Dorm</strong> :: Boston College defeated Western Ontario in a 2-0 victory.  ||  Arizona State beat Texas A&M in a 2-0 victory.',class='form-control input-lg')
-
-
-  div.row
+          input(type='text',id='subtitle2',name='subtitle2',placeholder='Quick Match',class='form-control input-lg')
     div.col-lg-12
-      p Maps
-      div.col-md-2
-        div(id="blackhearts-bay")
-          div.control-group
-            label(for='blackhearts-bay-percent',class='control-label') blackhearts-bay
-            div.controls
-              input(data-group='percents',type='text',id='blackhearts-bay-percent',placeholder="52",class='form-control input-lg')
-      div.col-md-2
-        div(id="cursed-hollow")
-          div.control-group
-            label(for='cursed-hollow-percent',class='control-label') cursed-hollow
-            div.controls
-              input(data-group='percents',type='text',id='cursed-hollow-percent',placeholder="54",class='form-control input-lg')
-      div.col-md-2
-        div(id="dragon-shire")
-          div.control-group
-            label(for='dragon-shire-percent',class='control-label') dragon-shire
-            div.controls
-              input(data-group='percents',type='text',id='dragon-shire-percent',placeholder="53",class='form-control input-lg')
-      div.col-md-2
-        div(id="haunted-mines")
-          div.control-group
-            label(for='haunted-mines-percent',class='control-label') haunted-mines
-            div.controls
-              input(data-group='percents',type='text',id='haunted-mines-percent',placeholder="52",class='form-control input-lg')
-      div.col-md-2
-        div(id="garden-of-terror")
-          div.control-group
-            label(for='garden-of-terror-percent',class='control-label') garden-of-terror
-            div.controls
-              input(data-group='percents',type='text',id='garden-of-terror-percent',placeholder="46",class='form-control input-lg')
-      div.col-md-2
-        div(id="sky-temple")
-          div.control-group
-            label(for='sky-temple-percent',class='control-label') sky-temple
-            div.controls
-              input(data-group='percents',type='text',id='sky-temple-percent',placeholder="50",class='form-control input-lg')
-      div.col-md-2
-        div(id="tomb-of-the-spider-queen")
-          div.control-group
-            label(for='tomb-of-the-spider-queen-percent',class='control-label') tomb-of-the-spider-queen
-            div.controls
-              input(data-group='percents',type='text',id='tomb-of-the-spider-queen-percent',placeholder="46",class='form-control input-lg')
-
+      a(href="#",class="btn btn-success",id="subtitleText") Use Text
+      a(href="#",class="btn btn-danger",id="subtitleOnBreak") AFK On Break
+      a(href="#",class="btn btn-warning",id="subtitleAFK") AFK Be Back Shortly
 
   div.row
     div.col-lg-12
@@ -130,6 +84,178 @@ block content
         label(for='rank',class='control-label') Rank
         div.controls
           input(type='text',id='rank',name='rank',placeholder="17",class='form-control input-lg')
+
+  div.row
+
+  div.row
+    div.col-lg-12
+      div(role='tabpanel')
+        ul(role='tablist').nav.nav-tabs
+          li(role='presentation').active
+            a(href='#tab-map',aria-expanded='true',role='tab',data-toggle='tab')
+              span Map Info
+          li(role='presentation')
+            a(href='#tab-hero',aria-expanded='false',role='tab',data-toggle='tab')
+              span Hero Info
+          li(role='presentation')
+            a(href='#tab-crawl',aria-expanded='false',role='tab',data-toggle='tab')
+              span.label.label-info Crawl
+          li(role='presentation')
+            a(href='#tab-messages',aria-expanded='false',role='tab',data-toggle='tab')
+              span Messages
+        div.tab-content
+          div(role='tabpanel',id='tab-map').tab-pane.active.has-primary
+            div.col-md-3
+              div(id="blackhearts-bay")
+                div.control-group
+                  label(for='blackhearts-bay-percent',class='control-label') blackhearts-bay
+                  div.controls
+                    input(data-group='percents',type='text',id='blackhearts-bay-percent',placeholder="52",class='form-control input-lg')
+            div.col-md-3
+              div(id="cursed-hollow")
+                div.control-group
+                  label(for='cursed-hollow-percent',class='control-label') cursed-hollow
+                  div.controls
+                    input(data-group='percents',type='text',id='cursed-hollow-percent',placeholder="54",class='form-control input-lg')
+            div.col-md-3
+              div(id="dragon-shire")
+                div.control-group
+                  label(for='dragon-shire-percent',class='control-label') dragon-shire
+                  div.controls
+                    input(data-group='percents',type='text',id='dragon-shire-percent',placeholder="53",class='form-control input-lg')
+            div.col-md-3
+              div(id="haunted-mines")
+                div.control-group
+                  label(for='haunted-mines-percent',class='control-label') haunted-mines
+                  div.controls
+                    input(data-group='percents',type='text',id='haunted-mines-percent',placeholder="52",class='form-control input-lg')
+            div.col-md-3
+              div(id="garden-of-terror")
+                div.control-group
+                  label(for='garden-of-terror-percent',class='control-label') garden-of-terror
+                  div.controls
+                    input(data-group='percents',type='text',id='garden-of-terror-percent',placeholder="46",class='form-control input-lg')
+            div.col-md-3
+              div(id="sky-temple")
+                div.control-group
+                  label(for='sky-temple-percent',class='control-label') sky-temple
+                  div.controls
+                    input(data-group='percents',type='text',id='sky-temple-percent',placeholder="50",class='form-control input-lg')
+            div.col-md-3
+              div(id="tomb-of-the-spider-queen")
+                div.control-group
+                  label(for='tomb-of-the-spider-queen-percent',class='control-label') tomb-of-the-spider-queen
+                  div.controls
+                    input(data-group='percents',type='text',id='tomb-of-the-spider-queen-percent',placeholder="46",class='form-control input-lg')
+          div(role='tabpanel',id='tab-hero').tab-pane
+            div.col-lg-12
+              div.col-md-2
+                div(id="warrior")
+                  div.control-group
+                    label(for='warrior-value',class='control-label') warrior
+                    div.controls
+                      input(data-group='values',type='text',id='warrior-value',placeholder="52",class='form-control input-lg')
+              div.col-md-2
+                div(id="assassin")
+                  div.control-group
+                    label(for='assassin-value',class='control-label') assassin
+                    div.controls
+                      input(data-group='values',type='text',id='assassin-value',placeholder="52",class='form-control input-lg')
+              div.col-md-2
+                div(id="support")
+                  div.control-group
+                    label(for='support-value',class='control-label') support
+                    div.controls
+                      input(data-group='values',type='text',id='support-value',placeholder="52",class='form-control input-lg')
+              div.col-md-2
+                div(id="specialist")
+                  div.control-group
+                    label(for='specialist-value',class='control-label') specialist
+                    div.controls
+                      input(data-group='values',type='text',id='blackhearts-bay-value',placeholder="52",class='form-control input-lg')
+            div.col-lg-12
+              div.col-md-4
+                div(id="hero1")
+                  +hero-select('hero1-select','Favorite Hero 1')
+                  div.control-group
+                    label(for='hero1-value',class='control-label') hero1-value
+                    div.controls
+                      input(data-group='values',type='text',id='hero1-value',placeholder="52",class='form-control input-lg')
+              div.col-md-4
+                div(id="hero2")
+                  +hero-select('hero2-select','Favorite Hero 2')
+                  div.control-group
+                    label(for='hero2-value',class='control-label') hero2-value
+                    div.controls
+                      input(data-group='values',type='text',id='hero2-value',placeholder="52",class='form-control input-lg')
+              div.col-md-4
+                div(id="hero3")
+                  +hero-select('hero3-select','Favorite Hero 3')
+                  div.control-group
+                    label(for='hero3-value',class='control-label') hero3-value
+                    div.controls
+                      input(data-group='values',type='text',id='hero3-value',placeholder="52",class='form-control input-lg')
+          div(role='tabpanel',id='tab-crawl').tab-pane
+              div.col-lg-12
+                div.control-group
+                  label(for='crawl',class='control-label') Crawl
+                  div.controls
+                    textarea(type='text',id='crawl',name='crawl',placeholder=':: <strong>Heroes of the Dorm</strong> :: Boston College defeated Western Ontario in a 2-0 victory.  ||  Arizona State beat Texas A&M in a 2-0 victory.',class='form-control input-lg')
+
+              div.col-lg-12
+                a(href="#",class="btn btn-default",id="crawlDisable") Disable Crawl
+                a(href="#",class="btn btn-success",id="crawlBlack") Default Crawl
+                a(href="#",class="btn btn-info",id="crawlBlue") Priority Crawl
+                a(href="#",class="btn btn-danger",id="crawlRed") Urgent Crawl
+          div(role='tabpanel',id='tab-messages').tab-pane
+            div.row
+              div.col-lg-12
+                fieldset.active
+                  legend Message 01 of 10
+                  div.control-group
+                    label(for='message1-text',class='control-label') message
+                    div.controls
+                      textarea(data-group='values',type='text',id='message1-text',placeholder="A is for Apple",class='form-control input-lg')
+                  div.control-group
+                    label(for='message1-date',class='control-label') date
+                    div.controls
+                      input(data-group='values',type='text',id='message1-date',placeholder="Apple",class='form-control input-lg')
+            div.row
+              div.col-lg-12
+                fieldset
+                  legend Message 02 of 10
+                  div.control-group
+                    label(for='message2-text',class='control-label') message
+                    div.controls
+                      textarea(data-group='values',type='text',id='message2-text',placeholder="B is for Banana",class='form-control input-lg')
+                  div.control-group
+                    label(for='message2-date',class='control-label') date
+                    div.controls
+                      input(data-group='values',type='text',id='message2-date',placeholder="Banana",class='form-control input-lg')
+            div.row
+              div.col-lg-12
+                fieldset
+                  legend Message 03 of 10
+                  div.control-group
+                    label(for='message3-text',class='control-label') message
+                    div.controls
+                      textarea(data-group='values',type='text',id='message3-text',placeholder="C is for Cucumber",class='form-control input-lg')
+                  div.control-group
+                    label(for='message3-date',class='control-label') date
+                    div.controls
+                      input(data-group='values',type='text',id='message3-date',placeholder="Cucumber",class='form-control input-lg')
+
+          div(role='tabpanel',id='tab-template').tab-pane
+            div.col-lg-12
+              div.col-md-2
+                div(id="template")
+                  div.control-group
+                    label(for='template-value',class='control-label') template
+                    div.controls
+                      input(data-group='values',type='text',id='template-value',placeholder="52",class='form-control input-lg')
+
+  hr
+
 
 
   div.row
