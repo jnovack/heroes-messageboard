@@ -24,11 +24,14 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-            files: ['*.js', '**/*.js', '!**/node_modules/**'],
+            files: ['*.js', '**/*.js', '!node_modules/**', '!.git/**'],
             tasks: ['jshint']
         },
         jshint: {
-            all: ['**/*.js', '**/*.json', '!**/node_modules/**', '!public/**']
+            all: ['**/*.js', '**/*.json', '!node_modules/**', '!public/**'],
+            options: {
+                ignore: ['node_modules/**', 'public/**']
+            }
         },
         concurrent: {
             options: {
