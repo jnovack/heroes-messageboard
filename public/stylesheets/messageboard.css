@@ -15,6 +15,10 @@ strong { color: #FFFFFF; font-weight: 600; }
 .color-reddest { color: rgb(255, 0, 0);}
 .color-yellow {  color: rgb(255,255,128); text-shadow: 1px 1px #000000; }
 
+.percent::after {
+    content: "%";
+}
+
 #wrapper {width: 1920px; height: 1080px; overflow: hidden; float: left;}
 
 
