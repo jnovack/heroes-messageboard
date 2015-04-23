@@ -17,12 +17,21 @@ if(typeof(Storage) !== "undefined") {
     };
     read = function(key) {
         var json = JSON.parse(localStorage.getItem("json"));
-        if (json === null || json.key === undefined) {
+        if (json === null || json[key] === undefined) {
             return undefined;
         }
         console.log(json[key]);
         return json[key];
     };
+    reload = function() {
+        var json = JSON.parse(localStorage.getItem("json"));
+        if (json === null) {
+            return undefined;
+        }
+        $.each( json, function (id, value) {
+            $("#" + id).val(value);
+        });
+    }
 } else {
     console.log("does not has storage");
 }
@@ -79,28 +88,9 @@ $("input[data-group='percents']").change(function() {
     save(message.data.id, message.data.text);
 });
 
-var reload = function(id) {
-    var value = read(id);
-    if (value !== undefined) {
-        $("#" + id).val(value);
-        save(id, value);
     }
-}
 
 $(document).ready( function() {
-    reload("title");
-    reload("subtitle");
-    reload("hero");
-    reload("rank");
-    reload("crawl");
-
-    reload("blackhearts-bay-percent");
-    reload("cursed-hollow-percent");
-    reload("dragon-shire-percent");
-    reload("haunted-mines-percent");
-    reload("garden-of-terror-percent");
-    reload("sky-temple-percent");
-    reload("tomb-of-the-spider-queen-percent");
-
-
+    reload();
 });
+
