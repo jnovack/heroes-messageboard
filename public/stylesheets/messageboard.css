@@ -21,6 +21,15 @@ strong { color: #FFFFFF; font-weight: 600; }
 
 #wrapper {width: 1920px; height: 1080px; overflow: hidden; float: left;}
 
+/*
+ ***** Animation *****
+ */
+
+@keyframes countdown { from { width:340; } to { width: 0; } }
+@-webkit-keyframes countdown { from { width:340; } to { width: 0; } }
+@keyframes countup { from { width:0; } to { width: 340; } }
+@-webkit-keyframes countup { from { width:0; } to { width: 340; } }
+
 
 /*
  ***** Side Bar ******
@@ -35,6 +44,7 @@ strong { color: #FFFFFF; font-weight: 600; }
 
 
 #sidebar_body {width: 400px; height: 566px; border-top: solid 1px rgba(255,255,255,0.10); border-bottom: solid 1px rgba(0,0,0,0.50); float: left;}
+#timer_percent { background-color: rgb(96,96,96); height: 1px; margin-top: 566px !important;}
 /*#map_container {width: 340px; margin: 0px 0px 0px 30px; float: left;}
 #map_container h1 {color: #FFF; font-family: one_extra_bold; font-size: 50px; line-height: 50px; text-transform: uppercase; float: left;}
 #map_container ul {width: 340px; margin: 5px 0px 0px 0px; border-top: solid 1px rgba(0,0,0,0.50); border-bottom: solid 1px rgba(255,255,255,0.10); float: left;}

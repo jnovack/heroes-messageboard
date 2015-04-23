@@ -5,7 +5,7 @@ initContent();
 function initContent(){
     $('html, body').css('cursor','none');
     $("#messages li:odd").addClass("dim");
-    setTimeout(rotateTabs, 12500);
+    rotateTimer();
 };
 
 // Evaluate Messages //
@@ -73,6 +73,14 @@ function paginateMessages(){
     c++;    
 }
 
+function rotateTimer() {
+    //not working
+    $("#timer_percent").one('webkitAnimationEnd animationend' , function(event){  
+        $("#timer_percent").css("-webkit-animation", "countup 500ms ease");
+        rotateTabs();
+    });
+    $("#timer_percent").css("-webkit-animation", "countdown 3000ms linear");
+}
 function rotateTabs() {
     allTabs = $("[data-group|='sidebar_body_containers']");
     current = $("[data-group|='sidebar_body_containers'].bounceInLeft");
@@ -83,7 +91,7 @@ function rotateTabs() {
     }
     $("[data-group|='sidebar_body_containers']").removeClass("bounceOutLeft bounceInLeft").addClass("animated bounceOutLeft");
     next.removeClass().addClass("animated bounceInLeft");
-    setTimeout(rotateTabs, 12500);
+    rotateTimer();
 }
 
 /*
