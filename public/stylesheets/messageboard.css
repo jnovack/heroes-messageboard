@@ -6,6 +6,7 @@ body {background: #000; cursor: none; font-family: 'Open Sans', sans-serif; colo
 strong { color: #FFFFFF; font-weight: 600; }
 .link { color: rgb(36,144,255); text-decoration: underline; }
 .hidden { display: none; !important }
+.percent::after { content: "%"; }
 
 .color-green { color: rgb(0, 128, 0);}
 .color-greener { color: rgb(0, 192, 0);}
@@ -14,10 +15,6 @@ strong { color: #FFFFFF; font-weight: 600; }
 .color-redder { color: rgb(224, 0, 0);}
 .color-reddest { color: rgb(255, 0, 0);}
 .color-yellow {  color: rgb(255,255,128); text-shadow: 1px 1px #000000; }
-
-.percent::after {
-    content: "%";
-}
 
 #wrapper {width: 1920px; height: 1080px; overflow: hidden; float: left;}
 
