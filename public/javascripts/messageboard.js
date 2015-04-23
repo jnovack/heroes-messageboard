@@ -26,7 +26,7 @@ function fadeMessage(){
         //var footer = $("#mainview_body").height() + $("#mainview_header").height();
         var footer = mvbody_height + mvhead_height;
 
-        console.log(element + " > " + footer);
+        //console.log(element + " > " + footer);
         if (Math.floor(element > footer)){
             $(this).fadeTo(0,0);
         } else {
