@@ -58,8 +58,14 @@ $("#title").blur(function() {
     save('title', message.data.text);
 });
 
-$("#subtitle").blur(function() {
-    message = { event: 'subtitle', data: { text: $("#subtitle").val() } };
+$("#subtitle1").blur(function() {
+    message = { event: 'subtitle', data: { text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
+    send(message);
+    save('subtitle', message.data.text);
+});
+
+$("#subtitle2").blur(function() {
+    message = { event: 'subtitle', data: { text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
     send(message);
     save('subtitle', message.data.text);
 });
