@@ -94,7 +94,43 @@ $("input[data-group='percents']").change(function() {
     save(message.data.id, message.data.text);
 });
 
+$("select").change(function() {
+    message = { event: 'value', data: { id: $(this).attr("id"), text: $("#" + $(this).attr("id") + " option:selected").text() } };
+    send(message);
+    save(message.data.id, message.data.text);
+});
+
+$("input[data-group='value']").keydown( function( event ) {
+    if ( event.which == 13 ) {
+        event.preventDefault();
     }
+    switch( event.keyCode ) {
+        case 38: //up
+            $(this).val(parseInt($(this).val())+1);
+            break;
+        case 40: //down
+            $(this).val(parseInt($(this).val())-1);
+            break;
+        }
+});
+
+$("input[data-group='value']").blur(function() {
+    result = $(this).val();
+    if (result.indexOf("/") > 0) {
+        console.log(result);
+        pattern = new RegExp(/[0-9]\//);
+        if (pattern.test(result)) {
+            result = parseInt(eval(result)*100);
+            console.log(result);
+        } else {
+            return 0;
+        }
+    }
+    $(this).val(result);
+    message = { event: 'value', data: { id: $(this).attr("id"), text: parseInt(result) } };
+    send(message);
+    save(message.data.id, message.data.text);
+});
 
 $(document).ready( function() {
     reload();
