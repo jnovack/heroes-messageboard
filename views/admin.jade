@@ -72,18 +72,16 @@ block content
     div.col-lg-12
       a(href="#",class="btn btn-success",id="subtitleText") Use Text
       a(href="#",class="btn btn-danger",id="subtitleOnBreak") AFK On Break
-      a(href="#",class="btn btn-warning",id="subtitleAFK") AFK Be Back Shortly
+      a(href="#",class="btn btn-warning",id="subtitleAFK") AFK Custom
 
   div.row
-    div.col-lg-12
+    div.col-md-8
       +hero-select('hero','Theme Hero')
-
-  div.row
-    div.col-lg-12
+    div.col-md-4
       div.control-group
         label(for='rank',class='control-label') Rank
         div.controls
-          input(type='text',id='rank',name='rank',placeholder="17",class='form-control input-lg')
+          input(data-group='value',type='text',id='rank',name='rank',placeholder="25",class='form-control')
 
   div.row
 
@@ -110,91 +108,111 @@ block content
                 div.control-group
                   label(for='blackhearts-bay-percent',class='control-label') blackhearts-bay
                   div.controls
-                    input(data-group='percents',type='text',id='blackhearts-bay-percent',placeholder="52",class='form-control input-lg')
+                    input(data-group='percents',type='text',id='blackhearts-bay-percent',placeholder="52",class='form-control')
             div.col-md-3
               div(id="cursed-hollow")
                 div.control-group
                   label(for='cursed-hollow-percent',class='control-label') cursed-hollow
                   div.controls
-                    input(data-group='percents',type='text',id='cursed-hollow-percent',placeholder="54",class='form-control input-lg')
+                    input(data-group='percents',type='text',id='cursed-hollow-percent',placeholder="54",class='form-control')
             div.col-md-3
               div(id="dragon-shire")
                 div.control-group
                   label(for='dragon-shire-percent',class='control-label') dragon-shire
                   div.controls
-                    input(data-group='percents',type='text',id='dragon-shire-percent',placeholder="53",class='form-control input-lg')
+                    input(data-group='percents',type='text',id='dragon-shire-percent',placeholder="53",class='form-control')
             div.col-md-3
               div(id="haunted-mines")
                 div.control-group
                   label(for='haunted-mines-percent',class='control-label') haunted-mines
                   div.controls
-                    input(data-group='percents',type='text',id='haunted-mines-percent',placeholder="52",class='form-control input-lg')
+                    input(data-group='percents',type='text',id='haunted-mines-percent',placeholder="52",class='form-control')
             div.col-md-3
               div(id="garden-of-terror")
                 div.control-group
                   label(for='garden-of-terror-percent',class='control-label') garden-of-terror
                   div.controls
-                    input(data-group='percents',type='text',id='garden-of-terror-percent',placeholder="46",class='form-control input-lg')
+                    input(data-group='percents',type='text',id='garden-of-terror-percent',placeholder="46",class='form-control')
             div.col-md-3
               div(id="sky-temple")
                 div.control-group
                   label(for='sky-temple-percent',class='control-label') sky-temple
                   div.controls
-                    input(data-group='percents',type='text',id='sky-temple-percent',placeholder="50",class='form-control input-lg')
+                    input(data-group='percents',type='text',id='sky-temple-percent',placeholder="50",class='form-control')
             div.col-md-3
               div(id="tomb-of-the-spider-queen")
                 div.control-group
                   label(for='tomb-of-the-spider-queen-percent',class='control-label') tomb-of-the-spider-queen
                   div.controls
-                    input(data-group='percents',type='text',id='tomb-of-the-spider-queen-percent',placeholder="46",class='form-control input-lg')
+                    input(data-group='percents',type='text',id='tomb-of-the-spider-queen-percent',placeholder="46",class='form-control')
           div(role='tabpanel',id='tab-hero').tab-pane
-            div.col-lg-12
-              div.col-md-2
-                div(id="warrior")
-                  div.control-group
-                    label(for='warrior-value',class='control-label') warrior
-                    div.controls
-                      input(data-group='values',type='text',id='warrior-value',placeholder="52",class='form-control input-lg')
-              div.col-md-2
-                div(id="assassin")
-                  div.control-group
-                    label(for='assassin-value',class='control-label') assassin
-                    div.controls
-                      input(data-group='values',type='text',id='assassin-value',placeholder="52",class='form-control input-lg')
-              div.col-md-2
-                div(id="support")
-                  div.control-group
-                    label(for='support-value',class='control-label') support
-                    div.controls
-                      input(data-group='values',type='text',id='support-value',placeholder="52",class='form-control input-lg')
-              div.col-md-2
-                div(id="specialist")
-                  div.control-group
-                    label(for='specialist-value',class='control-label') specialist
-                    div.controls
-                      input(data-group='values',type='text',id='blackhearts-bay-value',placeholder="52",class='form-control input-lg')
-            div.col-lg-12
-              div.col-md-4
-                div(id="hero1")
-                  +hero-select('hero1-select','Favorite Hero 1')
-                  div.control-group
-                    label(for='hero1-value',class='control-label') hero1-value
-                    div.controls
-                      input(data-group='values',type='text',id='hero1-value',placeholder="52",class='form-control input-lg')
-              div.col-md-4
-                div(id="hero2")
-                  +hero-select('hero2-select','Favorite Hero 2')
-                  div.control-group
-                    label(for='hero2-value',class='control-label') hero2-value
-                    div.controls
-                      input(data-group='values',type='text',id='hero2-value',placeholder="52",class='form-control input-lg')
-              div.col-md-4
-                div(id="hero3")
-                  +hero-select('hero3-select','Favorite Hero 3')
-                  div.control-group
-                    label(for='hero3-value',class='control-label') hero3-value
-                    div.controls
-                      input(data-group='values',type='text',id='hero3-value',placeholder="52",class='form-control input-lg')
+            div.row
+              div.col-lg-12
+                div.col-md-3
+                  div(id="warrior")
+                    div.control-group
+                      label(for='warrior-value',class='control-label') warrior
+                      div.controls
+                        input(data-group='value',type='text',id='warrior-value',placeholder="123",class='form-control')
+                div.col-md-3
+                  div(id="assassin")
+                    div.control-group
+                      label(for='assassin-value',class='control-label') assassin
+                      div.controls
+                        input(data-group='value',type='text',id='assassin-value',placeholder="234",class='form-control')
+                div.col-md-3
+                  div(id="support")
+                    div.control-group
+                      label(for='support-value',class='control-label') support
+                      div.controls
+                        input(data-group='value',type='text',id='support-value',placeholder="345",class='form-control')
+                div.col-md-3
+                  div(id="specialist")
+                    div.control-group
+                      label(for='specialist-value',class='control-label') specialist
+                      div.controls
+                        input(data-group='value',type='text',id='blackhearts-bay-value',placeholder="456",class='form-control')
+            div.row
+              div.col-lg-12
+                div.col-md-4
+                  div(id="hero1")
+                    +hero-select('hero1-select','Hero 1')
+                    div.col-lg-8
+                      div.control-group
+                        label(for='hero1-percent',class='control-label') hero1-percent
+                        div.controls
+                          input(data-group='value',type='text',id='hero1-percent',placeholder="2345/4750",class='form-control')
+                    div.col-lg-4
+                      div.control-group
+                        label(for='hero1-level',class='control-label') hero1-level
+                        div.controls
+                          input(data-group='value',type='text',id='hero1-level',placeholder="10",class='form-control')
+                div.col-md-4
+                  div(id="hero2")
+                    +hero-select('hero2-select','Hero 2')
+                    div.col-lg-8
+                      div.control-group
+                        label(for='hero2-percent',class='control-label') hero2-percent
+                        div.controls
+                          input(data-group='value',type='text',id='hero2-percent',placeholder="2345/4750",class='form-control')
+                    div.col-lg-4
+                      div.control-group
+                        label(for='hero2-level',class='control-label') hero2-level
+                        div.controls
+                          input(data-group='value',type='text',id='hero2-level',placeholder="10",class='form-control')
+                div.col-md-4
+                  div(id="hero3")
+                    +hero-select('hero3-select','Hero 3')
+                    div.col-lg-8
+                      div.control-group
+                        label(for='hero3-percent',class='control-label') hero3-percent
+                        div.controls
+                          input(data-group='value',type='text',id='hero3-percent',placeholder="2345/4750",class='form-control')
+                    div.col-lg-4
+                      div.control-group
+                        label(for='hero3-value',class='control-label') hero3-value
+                        div.controls
+                          input(data-group='value',type='text',id='hero3-value',placeholder="10",class='form-control')
           div(role='tabpanel',id='tab-crawl').tab-pane
               div.col-lg-12
                 div.control-group
@@ -215,11 +233,11 @@ block content
                   div.control-group
                     label(for='message1-text',class='control-label') message
                     div.controls
-                      textarea(data-group='values',type='text',id='message1-text',placeholder="A is for Apple",class='form-control input-lg')
+                      textarea(data-group='value',type='text',id='message1-text',placeholder="A is for Apple",class='form-control input-lg')
                   div.control-group
                     label(for='message1-date',class='control-label') date
                     div.controls
-                      input(data-group='values',type='text',id='message1-date',placeholder="Apple",class='form-control input-lg')
+                      input(data-group='value',type='text',id='message1-date',placeholder="Apple",class='form-control input-lg')
             div.row
               div.col-lg-12
                 fieldset
@@ -227,11 +245,11 @@ block content
                   div.control-group
                     label(for='message2-text',class='control-label') message
                     div.controls
-                      textarea(data-group='values',type='text',id='message2-text',placeholder="B is for Banana",class='form-control input-lg')
+                      textarea(data-group='value',type='text',id='message2-text',placeholder="B is for Banana",class='form-control input-lg')
                   div.control-group
                     label(for='message2-date',class='control-label') date
                     div.controls
-                      input(data-group='values',type='text',id='message2-date',placeholder="Banana",class='form-control input-lg')
+                      input(data-group='value',type='text',id='message2-date',placeholder="Banana",class='form-control input-lg')
             div.row
               div.col-lg-12
                 fieldset
@@ -239,11 +257,11 @@ block content
                   div.control-group
                     label(for='message3-text',class='control-label') message
                     div.controls
-                      textarea(data-group='values',type='text',id='message3-text',placeholder="C is for Cucumber",class='form-control input-lg')
+                      textarea(data-group='value',type='text',id='message3-text',placeholder="C is for Cucumber",class='form-control input-lg')
                   div.control-group
                     label(for='message3-date',class='control-label') date
                     div.controls
-                      input(data-group='values',type='text',id='message3-date',placeholder="Cucumber",class='form-control input-lg')
+                      input(data-group='value',type='text',id='message3-date',placeholder="Cucumber",class='form-control input-lg')
 
           div(role='tabpanel',id='tab-template').tab-pane
             div.col-lg-12
@@ -252,11 +270,9 @@ block content
                   div.control-group
                     label(for='template-value',class='control-label') template
                     div.controls
-                      input(data-group='values',type='text',id='template-value',placeholder="52",class='form-control input-lg')
+                      input(data-group='value',type='text',id='template-value',placeholder="52",class='form-control input-lg')
 
   hr
-
-
 
   div.row
     div.col-lg-12
