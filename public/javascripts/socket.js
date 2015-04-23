@@ -56,16 +56,23 @@ socket.on('show-messages', function(data) {
     $("#mainview_body").fadeIn();
 });
 
+var redgreen = "color-green color-greener color-greenest color-red color-redder color-reddest";
+
 socket.on('value', function(data) {
     console.log(data);
 
-    if ($("#"+data.id).text != data.text + "%") {
-        $("#"+data.id).text(data.text + "%");
-        if (data.text < 40) { $("#"+data.id).removeClass().addClass("reddest animated bounceIn"); return; }
-        if (data.text < 45) { $("#"+data.id).removeClass().addClass("redder animated bounceIn"); return; }
-        if (data.text < 50) { $("#"+data.id).removeClass().addClass("red animated bounceIn"); return; }
-        if (data.text < 55) { $("#"+data.id).removeClass().addClass("green animated bounceIn"); return; }
-        if (data.text < 60) { $("#"+data.id).removeClass().addClass("greener animated bounceIn"); return; }
-        $("#"+data.id).removeClass().addClass("greenest animated bounceIn");
+    $("#"+data.id).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      $(this).removeClass("animated bounceIn");
+    });
+
+    if ($("#"+data.id).hasClass("percent")) {
+        $("#"+data.id).text(data.text);
+        if (data.text < 40) { $("#"+data.id).removeClass(redgreen).addClass("color-reddest animated bounceIn"); return; }
+        if (data.text < 45) { $("#"+data.id).removeClass(redgreen).addClass("color-redder animated bounceIn"); return; }
+        if (data.text < 50) { $("#"+data.id).removeClass(redgreen).addClass("color-red animated bounceIn"); return; }
+        if (data.text < 55) { $("#"+data.id).removeClass(redgreen).addClass("color-green animated bounceIn"); return; }
+        if (data.text < 60) { $("#"+data.id).removeClass(redgreen).addClass("color-greener animated bounceIn"); return; }
+        $("#"+data.id).removeClass(redgreen).addClass("color-greenest animated bounceIn");
     }
+
 });
