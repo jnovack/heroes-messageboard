@@ -62,4 +62,21 @@ socket.on('value', function(data) {
         $("#"+data.id).removeClass(redgreen).addClass("color-greenest animated bounceIn");
     }
 
+        if ($("#"+data.id).hasClass("ratio")) {
+            var group = $("#"+data.id).attr('data-group');
+            var total = 0;
+            $.each( $("[data-group='"+group+"']"), function(id, value) {
+                total += parseInt($(value).text());
+            });
+            var percent = data.text*100/total;
+            console.log(data.text + " / " + total + " = " + data.text/total);
+            if  (percent  < 10) { $("#"+data.id).removeClass(redgreen).addClass("color-reddest"); }
+            if ((percent >= 10) && (percent < 17)) { $("#"+data.id).removeClass(redgreen).addClass("color-redder"); }
+            if ((percent >= 17) && (percent < 25)) { $("#"+data.id).removeClass(redgreen).addClass("color-red"); }
+            if ((percent >= 25) && (percent < 33)) { $("#"+data.id).removeClass(redgreen).addClass("color-green"); }
+            if ((percent >= 33) && (percent < 40)) { $("#"+data.id).removeClass(redgreen).addClass("color-greener"); }
+            if  (percent >= 40) { $("#"+data.id).removeClass(redgreen).addClass("color-greenest"); }
+
+            $("#"+data.id).text(data.text).addClass("animated bounceIn");
+        }
 });
