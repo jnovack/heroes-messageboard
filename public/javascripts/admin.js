@@ -2,6 +2,8 @@
 var save = function(key, value) { return; };
 var read = function(key) { return; };
 
+//TODO - Process config push from server
+
 function send(message) {
     socket.emit('broadcast', message);
     console.log(message);    

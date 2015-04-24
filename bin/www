@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('heroes-messageboard:server');
 var http = require('http');
+var fs = require('fs');
 
 /**
  * Get port from environment and store in Express.
@@ -33,8 +34,9 @@ server.on('listening', onListening);
 /**
  * Socket.IO
  */
+
 var io = require('socket.io')(server);
-var json = { };
+var json = loadConfig();
 io.on('connection', function(socket){
   console.log('a user connected');
   for (var event in json) {
@@ -47,10 +49,41 @@ io.on('connection', function(socket){
     console.log(message);
     if (message.event != "reload") {
         json[message.event] = message.data;
+        saveConfig();
     }
     io.sockets.emit(message.event, message.data);
   });
 });
+
+/**
+ * Config Save/Load
+ */
+
+function saveConfig() {
+   fs.writeFile('./config.json', JSON.stringify(json), function (err) {
+    if (err) {
+      console.log('There has been an error saving your configuration data.');
+      console.log(err.message);
+      return;
+    }
+    console.log('Configuration saved successfully.')
+  });
+}
+
+function loadConfig() {
+  var data = fs.readFileSync('./config.json')
+  var json;
+
+  try {
+    json = JSON.parse(data);
+    console.dir(json);
+  }
+  catch (err) {
+    console.log('There has been an error parsing your JSON.')
+    console.log(err);
+  }
+  return json;
+}
 
 /**
  * Normalize a port into a number, string, or false.
