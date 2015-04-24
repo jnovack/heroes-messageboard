@@ -48,19 +48,25 @@ var redgreen = "color-green color-greener color-greenest color-red color-redder 
 socket.on('value', function(data) {
     console.log(data);
 
-    $("#"+data.id).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-      $(this).removeClass("animated bounceIn");
-    });
+    if ($("#"+data.id).text() != data.text) {
+        $("#"+data.id).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+          $(this).removeClass("animated bounceIn");
+        });
 
-    if ($("#"+data.id).hasClass("percent")) {
-        $("#"+data.id).text(data.text);
-        if (data.text < 40) { $("#"+data.id).removeClass(redgreen).addClass("color-reddest animated bounceIn"); return; }
-        if (data.text < 45) { $("#"+data.id).removeClass(redgreen).addClass("color-redder animated bounceIn"); return; }
-        if (data.text < 50) { $("#"+data.id).removeClass(redgreen).addClass("color-red animated bounceIn"); return; }
-        if (data.text < 55) { $("#"+data.id).removeClass(redgreen).addClass("color-green animated bounceIn"); return; }
-        if (data.text < 60) { $("#"+data.id).removeClass(redgreen).addClass("color-greener animated bounceIn"); return; }
-        $("#"+data.id).removeClass(redgreen).addClass("color-greenest animated bounceIn");
-    }
+        if ($("#"+data.id).hasClass("progress-bar")) {
+            $("#"+data.id).css("width", data.text + "%");
+        }
+
+        if ($("#"+data.id).hasClass("percent")) {
+            if  (data.text  < 40) { $("#"+data.id).removeClass(redgreen).addClass("color-reddest"); }
+            if ((data.text >= 40) && (data.text < 45)) { $("#"+data.id).removeClass(redgreen).addClass("color-redder"); }
+            if ((data.text >= 45) && (data.text < 50)) { $("#"+data.id).removeClass(redgreen).addClass("color-red"); }
+            if ((data.text >= 50) && (data.text < 55)) { $("#"+data.id).removeClass(redgreen).addClass("color-green"); }
+            if ((data.text >= 55) && (data.text < 60)) { $("#"+data.id).removeClass(redgreen).addClass("color-greener"); }
+            if  (data.text >= 60) { $("#"+data.id).removeClass(redgreen).addClass("color-greenest"); }
+
+            $("#"+data.id).text(data.text).addClass("animated bounceIn");
+        }
 
         if ($("#"+data.id).hasClass("ratio")) {
             var group = $("#"+data.id).attr('data-group');
@@ -79,4 +85,6 @@ socket.on('value', function(data) {
 
             $("#"+data.id).text(data.text).addClass("animated bounceIn");
         }
+
+    }
 });
