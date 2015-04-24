@@ -167,6 +167,7 @@ $("select").change(function() {
     save(message.data.id, message.data.text);
 });
 
+// Increment or decrement value fields with up/down arrows
 $("input[data-group='value']").keydown( function( event ) {
     if ( event.which == 13 ) {
         event.preventDefault();
@@ -178,9 +179,12 @@ $("input[data-group='value']").keydown( function( event ) {
         case 40: //down
             $(this).val(parseInt($(this).val())-1);
             break;
-        }
+    }
 });
 
+// Process input of value field
+//   perform maths if needed
+//   send if good input
 $("input[data-group='value']").blur(function() {
     result = $(this).val();
     if (result.indexOf("/") > 0) {
@@ -199,11 +203,13 @@ $("input[data-group='value']").blur(function() {
     save(message.data.id, message.data.text);
 });
 
+// Catch ESC anywhere to blur the element, which should process the input
+$(document).keyup(function(e) {
+    if (e.keyCode == 27) { $(document.activeElement).blur(); }   // escape key maps to keycode `27`
+});
+
+// When we are ready, set page up for the user
 $(document).ready( function() {
     // TODO Fix Subtitle loading
     reload();
-});
-
-$(document).keyup(function(e) {
-    if (e.keyCode == 27) { console.log("esc"); $("#reloadButton").focus().blur(); }   // escape key maps to keycode `27`
 });
