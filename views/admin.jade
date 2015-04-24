@@ -63,17 +63,17 @@ block content
       div.control-group
         label(for='subtitle1',class='control-label') SubTitle Top Line
         div.controls
-          input(type='text',id='subtitle1',name='subtitle1',placeholder='Solo Queue',class='form-control input-lg')
+          input(data-group="subtitle",type='text',id='subtitle1',name='subtitle1',placeholder='Solo Queue',class='form-control input-lg')
     div.col-md-6
       div.control-group
         label(for='subtitle2',class='control-label') SubTitle Bottom Lane
         div.controls
-          input(type='text',id='subtitle2',name='subtitle2',placeholder='Quick Match',class='form-control input-lg')
+          input(data-group="subtitle",type='text',id='subtitle2',name='subtitle2',placeholder='Quick Match',class='form-control input-lg')
     div.col-lg-12
-      a(href="#",class="btn btn-success",id="subtitleText") Use Text
-      a(href="#",class="btn btn-danger",id="subtitleOnBreak") AFK On Break
-      a(href="#",class="btn btn-warning",id="subtitleAFK") AFK Custom
       div.btn-group.btn-group-justified
+        a(href="#",class="btn btn-success",id="subtitleText") Use Text
+        a(href="#",class="btn btn-success",id="subtitleAFKBreak") AFK On Break
+        a(href="#",class="btn btn-success",id="subtitleAFKCustom") AFK Custom
 
   div.row
     div.col-md-8
