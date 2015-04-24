@@ -61,13 +61,32 @@ $("#title").blur(function() {
 $("#subtitle1").blur(function() {
     message = { event: 'subtitle', data: { text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
     send(message);
-    save('subtitle', message.data.text);
+    save('subtitle1', message.data.text);
 });
 
 $("#subtitle2").blur(function() {
     message = { event: 'subtitle', data: { text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
     send(message);
-    save('subtitle', message.data.text);
+    save('subtitle2', message.data.text);
+});
+
+$("#subtitleText").click(function() {
+    message = { event: 'subtitle', data: { text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
+    $("#subtitle1").parent().parent().addClass("has-success");
+    $("#subtitle2").parent().parent().addClass("has-success");
+    send(message);
+});
+$("#subtitleAFKBreak").click(function() {
+    message = { event: 'subtitle', data: { text: "AFK" + "<br>" + "On Break" } };
+    $("#subtitle1").parent().parent().removeClass("has-success");
+    $("#subtitle2").parent().parent().removeClass("has-success");
+    send(message);
+});
+$("#subtitleAFKCustom").click(function() {
+    message = { event: 'subtitle', data: { text: "AFK"+ "<br>" + $("#subtitle2").val() } };
+    $("#subtitle1").parent().parent().removeClass("has-success");
+    $("#subtitle2").parent().parent().addClass("has-success");
+    send(message);
 });
 
 $("#hero").change(function() {
@@ -133,6 +152,6 @@ $("input[data-group='value']").blur(function() {
 });
 
 $(document).ready( function() {
+    // TODO Fix Subtitle loading
     reload();
 });
-
