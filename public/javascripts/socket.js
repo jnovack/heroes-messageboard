@@ -48,6 +48,20 @@ var redgreen = "color-green color-greener color-greenest color-red color-redder 
 socket.on('value', function(data) {
     console.log(data);
 
+    if (data.id = "crawl") {
+        if (data.text != undefined ) {
+            $("#"+data.id).html(data.text); 
+        }
+        if (data.action) {
+            if (data.action == "hidden") {
+                $("#mainview_footer").hide();
+            } else {
+                $("#mainview_footer").show();
+                $("#mainview_footer_marquee").removeClass().addClass("marquee " + data.action);
+            }
+        }
+    }
+
     if ($("#"+data.id).text() != data.text) {
         $("#"+data.id).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
           $(this).removeClass("animated bounceIn");

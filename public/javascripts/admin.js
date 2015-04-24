@@ -118,7 +118,6 @@ $("#rank").blur(function() {
  */
 
 $("#crawl").blur(function() {
-    // message = { event: 'crawl', data: { text: $("#crawl").val() } };
     message = { event: 'value', data: { id: "crawl", text: $("#crawl").val() } };
     send(message);
     save('crawl', message.data.text);
@@ -127,7 +126,7 @@ $("#crawl").blur(function() {
 var classes_label = "label-primary label-default label-info label-success label-danger label-warning"
 
 $("#crawlDisable").click(function() {
-    message = { event: 'crawl', data: { action: "disable" } };
+    message = { event: 'value', data: { id: "crawl", action: "hidden" } };
     $("[data-group='crawl-pills']").removeClass("active");
     $(this).addClass("active");
     $("#label-crawl").removeClass(classes_label).addClass("label-default");
@@ -135,7 +134,7 @@ $("#crawlDisable").click(function() {
 });
 
 $("#crawlBlack").click(function() {
-    message = { event: 'crawl', data: { action: "black" } };
+    message = { event: 'value', data: { id: "crawl", action: "marquee-black" } };
     $("[data-group='crawl-pills']").removeClass("active");
     $(this).addClass("active");
     $("#label-crawl").removeClass(classes_label).addClass("label-primary");
@@ -143,7 +142,7 @@ $("#crawlBlack").click(function() {
 });
 
 $("#crawlBlue").click(function() {
-    message = { event: 'crawl', data: { action: "blue" } };
+    message = { event: 'value', data: { id: "crawl", action: "marquee-blue" } };
     $("[data-group='crawl-pills']").removeClass("active");
     $(this).addClass("active");
     $("#label-crawl").removeClass(classes_label).addClass("label-info");
@@ -151,7 +150,7 @@ $("#crawlBlue").click(function() {
 });
 
 $("#crawlRed").click(function() {
-    message = { event: 'crawl', data: { action: "red" } };
+    message = { event: 'value', data: { id: "crawl", action: "marquee-red" } };
     $("[data-group='crawl-pills']").removeClass("active");
     $(this).addClass("active");
     $("#label-crawl").removeClass(classes_label).addClass("label-danger");
