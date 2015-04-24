@@ -125,6 +125,10 @@ $("input[data-group='percents']").change(function() {
     save(message.data.id, message.data.text);
 });
 
+/*
+ ****** Selects and Inputs *****
+ */
+
 $("select").change(function() {
     message = { event: 'value', data: { id: $(this).attr("id"), text: $("#" + $(this).attr("id") + " option:selected").text() } };
     send(message);
