@@ -101,7 +101,7 @@ block content
               span Hero Info
           li(role='presentation')
             a(href='#tab-crawl',aria-expanded='false',role='tab',data-toggle='tab')
-              span.label.label-info Crawl
+              span(id='label-crawl').label.label-primary Crawl
           li(role='presentation')
             a(href='#tab-messages',aria-expanded='false',role='tab',data-toggle='tab')
               span Messages
@@ -225,10 +225,15 @@ block content
                     textarea(type='text',id='crawl',name='crawl',placeholder=':: <strong>Heroes of the Dorm</strong> :: Boston College defeated Western Ontario in a 2-0 victory.  ||  Arizona State beat Texas A&M in a 2-0 victory.',class='form-control input-lg')
 
               div.col-lg-12
-                a(href="#",class="btn btn-default",id="crawlDisable") Disable Crawl
-                a(href="#",class="btn btn-success",id="crawlBlack") Default Crawl
-                a(href="#",class="btn btn-info",id="crawlBlue") Priority Crawl
-                a(href="#",class="btn btn-danger",id="crawlRed") Urgent Crawl
+                ul.nav.nav-pills.nav-justified
+                  li(data-group="crawl-pills",id="crawlDisable")
+                    a(href="#") Disable Crawl
+                  li(data-group="crawl-pills",id="crawlBlack")
+                    a(href="#") Default Crawl
+                  li(data-group="crawl-pills",id="crawlBlue")
+                    a(href="#") Priority Crawl
+                  li(data-group="crawl-pills",id="crawlRed")
+                    a(href="#") Urgent Crawl
           div(role='tabpanel',id='tab-messages').tab-pane
             div.row
               div.col-lg-12

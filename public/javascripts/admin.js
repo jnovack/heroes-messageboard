@@ -113,16 +113,49 @@ $("#rank").blur(function() {
     save('rank', message.data.text);
 });
 
+/*
+ ***** Crawl *****
+ */
+
 $("#crawl").blur(function() {
-    message = { event: 'crawl', data: { text: $("#crawl").val() } };
+    // message = { event: 'crawl', data: { text: $("#crawl").val() } };
+    message = { event: 'value', data: { id: "crawl", text: $("#crawl").val() } };
     send(message);
     save('crawl', message.data.text);
 });
 
-$("input[data-group='percents']").change(function() {
-    message = { event: 'value', data: { id: $(this).attr("id"), text: parseInt($(this).val()) } };
+var classes_label = "label-primary label-default label-info label-success label-danger label-warning"
+
+$("#crawlDisable").click(function() {
+    message = { event: 'crawl', data: { action: "disable" } };
+    $("[data-group='crawl-pills']").removeClass("active");
+    $(this).addClass("active");
+    $("#label-crawl").removeClass(classes_label).addClass("label-default");
     send(message);
-    save(message.data.id, message.data.text);
+});
+
+$("#crawlBlack").click(function() {
+    message = { event: 'crawl', data: { action: "black" } };
+    $("[data-group='crawl-pills']").removeClass("active");
+    $(this).addClass("active");
+    $("#label-crawl").removeClass(classes_label).addClass("label-primary");
+    send(message);
+});
+
+$("#crawlBlue").click(function() {
+    message = { event: 'crawl', data: { action: "blue" } };
+    $("[data-group='crawl-pills']").removeClass("active");
+    $(this).addClass("active");
+    $("#label-crawl").removeClass(classes_label).addClass("label-info");
+    send(message);
+});
+
+$("#crawlRed").click(function() {
+    message = { event: 'crawl', data: { action: "red" } };
+    $("[data-group='crawl-pills']").removeClass("active");
+    $(this).addClass("active");
+    $("#label-crawl").removeClass(classes_label).addClass("label-danger");
+    send(message);
 });
 
 /*
