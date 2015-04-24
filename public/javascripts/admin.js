@@ -4,6 +4,9 @@ var read = function(key) { return; };
 
 //TODO - Process config push from server
 
+var classes_label = "label-primary label-default label-info label-success label-danger label-warning";
+
+
 function send(message) {
     socket.emit('broadcast', message);
     console.log(message);    
@@ -123,8 +126,6 @@ $("#crawl").blur(function() {
     save('crawl', message.data.text);
 });
 
-var classes_label = "label-primary label-default label-info label-success label-danger label-warning"
-
 $("#crawlDisable").click(function() {
     message = { event: 'value', data: { id: "crawl", action: "hidden" } };
     $("[data-group='crawl-pills']").removeClass("active");
@@ -197,10 +198,12 @@ $("input[data-group='value']").blur(function() {
             return 0;
         }
     }
-    $(this).val(result);
-    message = { event: 'value', data: { id: $(this).attr("id"), text: parseInt(result) } };
-    send(message);
-    save(message.data.id, message.data.text);
+    if ($.isNumeric(parseInt(result))) {
+        $(this).val(parseInt(result));
+        message = { event: 'value', data: { id: $(this).attr("id"), text: $(this).val() } };
+        send(message);
+        save(message.data.id, message.data.text);
+    }
 });
 
 // Catch ESC anywhere to blur the element, which should process the input
