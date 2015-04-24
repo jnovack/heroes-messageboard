@@ -24,7 +24,7 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-            files: ['*.js', '**/*.js', '!node_modules/**', '!.git/**', '!public/javascripts/**'],
+            files: ['bin/www', '*.js', '**/*.js', '!node_modules/**', '!.git/**', '!public/javascripts/**'],
             tasks: ['jshint']
         },
         jshint: {
