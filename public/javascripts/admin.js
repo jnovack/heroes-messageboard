@@ -60,6 +60,10 @@ $("#title").blur(function() {
     save('title', message.data.text);
 });
 
+/*
+ ***** SubTitle *****
+ */
+
 $("#subtitle1").blur(function() {
     message = { event: 'subtitle', data: { text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
     send(message);
@@ -74,18 +78,24 @@ $("#subtitle2").blur(function() {
 
 $("#subtitleText").click(function() {
     message = { event: 'subtitle', data: { text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
+    $("[data-group='subtitle-pills']").removeClass("active");
+    $(this).addClass("active");
     $("#subtitle1").parent().parent().addClass("has-success");
     $("#subtitle2").parent().parent().addClass("has-success");
     send(message);
 });
 $("#subtitleAFKBreak").click(function() {
     message = { event: 'subtitle', data: { text: "AFK" + "<br>" + "On Break" } };
+    $("[data-group='subtitle-pills']").removeClass("active");
+    $(this).addClass("active");
     $("#subtitle1").parent().parent().removeClass("has-success");
     $("#subtitle2").parent().parent().removeClass("has-success");
     send(message);
 });
 $("#subtitleAFKCustom").click(function() {
     message = { event: 'subtitle', data: { text: "AFK"+ "<br>" + $("#subtitle2").val() } };
+    $("[data-group='subtitle-pills']").removeClass("active");
+    $(this).addClass("active");
     $("#subtitle1").parent().parent().removeClass("has-success");
     $("#subtitle2").parent().parent().addClass("has-success");
     send(message);
