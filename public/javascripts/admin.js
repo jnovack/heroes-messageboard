@@ -155,3 +155,7 @@ $(document).ready( function() {
     // TODO Fix Subtitle loading
     reload();
 });
+
+$(document).keyup(function(e) {
+    if (e.keyCode == 27) { console.log("esc"); $("#reloadButton").focus().blur(); }   // escape key maps to keycode `27`
+});
