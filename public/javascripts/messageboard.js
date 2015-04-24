@@ -16,17 +16,14 @@ paginateMessages();
 
 function fadeMessage(){
     $('#messages li').each(function(){
-        //document.getElementById("mainview_footer").getBoundingClientRect().top;
         var mvbody = document.getElementById("mainview_body").getBoundingClientRect();
         var mvhead = document.getElementById("mainview_header").getBoundingClientRect();
         var mvbody_height = mvbody.bottom - mvbody.top;
         var mvhead_height = mvhead.bottom - mvhead.top;
 
         var element = $(this).position().top + $(this).height() + parseInt($(this).css('padding-top')) + parseInt($(this).css('padding-bottom'));
-        //var footer = $("#mainview_body").height() + $("#mainview_header").height();
         var footer = mvbody_height + mvhead_height;
 
-        //console.log(element + " > " + footer);
         if (Math.floor(element > footer)){
             $(this).fadeTo(0,0);
         } else {
@@ -93,20 +90,5 @@ function rotateTabs() {
     next.removeClass().addClass("animated bounceInLeft");
     rotateTimer();
 }
-
-/*
-$('.marquee').marquee({
-    //speed in milliseconds of the marquee
-    duration: 15000,
-    //gap in pixels between the tickers
-    gap: 200,
-    //time in milliseconds before the marquee will start animating
-    delayBeforeStart: 0,
-    //'left' or 'right'
-    direction: 'left',
-    //true or false - should the marquee be duplicated to show an effect of continues flow
-    duplicated: true
-});
-*/
 
 });
