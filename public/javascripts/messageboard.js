@@ -5,7 +5,7 @@ initContent();
 function initContent(){
     $('html, body').css('cursor','none');
     $("#messages li:odd").addClass("dim");
-    rotateTimer();
+    resetTimer();
 };
 
 // Evaluate Messages //
@@ -70,15 +70,18 @@ function paginateMessages(){
     c++;    
 }
 
-function rotateTimer() {
-    //not working
-    $("#timer_percent").one('webkitAnimationEnd animationend' , function(event){  
-        $("#timer_percent").css("-webkit-animation", "countup 500ms ease");
+function resetTimer() {
+    $("#timer_percent").one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend' , function(event){  
         rotateTabs();
     });
-    $("#timer_percent").css("-webkit-animation", "countdown 3000ms linear");
+    $("#timer_percent").removeClass("countup").addClass("countdown");
 }
+
 function rotateTabs() {
+    $("#timer_percent").one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend' , function(event){  
+        resetTimer();
+    });
+    $("#timer_percent").removeClass("countdown").addClass("countup");
     allTabs = $("[data-group|='sidebar_body_containers']");
     current = $("[data-group|='sidebar_body_containers'].bounceInLeft");
     if (allTabs.last()[0] == current[0]) {
@@ -88,7 +91,6 @@ function rotateTabs() {
     }
     $("[data-group|='sidebar_body_containers']").removeClass("bounceOutLeft bounceInLeft").addClass("animated bounceOutLeft");
     next.removeClass().addClass("animated bounceInLeft");
-    rotateTimer();
 }
 
 });
