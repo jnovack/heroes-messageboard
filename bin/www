@@ -13,6 +13,8 @@ var fs = require('fs');
  * Get port from environment and store in Express.
  */
 
+var json = loadConfig();
+
 var port = normalizePort(process.env.PORT || '8000');
 app.set('port', port);
 
@@ -36,7 +38,6 @@ server.on('listening', onListening);
  */
 
 var io = require('socket.io')(server);
-var json = loadConfig();
 io.on('connection', function(socket){
   console.log('a user connected');
   for (var event in json) {
@@ -72,18 +73,25 @@ function saveConfig() {
 }
 
 function loadConfig() {
-  var data = fs.readFileSync('./config.json')
-  var json;
+  fs.readFile('./config.json', function (err, data) {
+    if (err) {
+      console.log("config.json does not exist");
+      data = {};
+    }
+    var json;
 
-  try {
-    json = JSON.parse(data);
-    console.dir(json);
-  }
-  catch (err) {
-    console.log('There has been an error parsing your JSON.')
-    console.log(err);
-  }
-  return json;
+    try {
+      json = JSON.parse(data);
+      console.dir(json);
+    }
+    catch (err) {
+      console.log('There has been an error parsing your JSON. The following data will NOT be used.');
+      console.log(json);
+      console.log(err);
+      json = {};
+    }
+    return json;
+  });
 }
 
 /**
