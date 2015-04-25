@@ -57,7 +57,7 @@ strong { color: #FFFFFF; font-weight: 600; }
 #sidebar_body div ul li div.li-text-name { color: #FFFFFF; }
 #sidebar_body div ul li div.li-text-progress { height: 10px; }
 #sidebar_body div ul li div.li-text-desc { color: #999999; font-size: 0.6em; }
-#sidebar_body div ul li div.li-number { font-size: 1.9em; width: 64px; text-align: right;}
+#sidebar_body div ul li div.li-number { font-size: 1.9em; width: 64px; text-align: right; text-shadow: 1px 1px #000000; }
 
 
 /*
@@ -159,7 +159,7 @@ strong { color: #FFFFFF; font-weight: 600; }
 }
 .progress-bar-info { background-color: #3498db; }
 .progress .progress-bar { font-size: 10px; line-height: 10px; }
-
+.color-info { color: #3498db; }
 
 /*
  ***** Media Queries *****

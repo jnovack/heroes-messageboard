@@ -206,6 +206,17 @@ $("input[data-group='value']").blur(function() {
     }
 });
 
+
+$("input[data-group='text']").blur(function() {
+    result = $(this).val();
+    pattern = new RegExp(/[a-zA-Z0-9 ]/);
+    if (pattern.test(result) || result == "") {
+        message = { event: 'value', data: { id: $(this).attr("id"), text: $(this).val() } };
+        send(message);
+        save(message.data.id, message.data.text);
+    }
+});
+
 // Catch ESC anywhere to blur the element, which should process the input
 $(document).keyup(function(e) {
     if (e.keyCode == 27) { $(document.activeElement).blur(); }   // escape key maps to keycode `27`

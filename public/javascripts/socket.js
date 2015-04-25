@@ -56,6 +56,23 @@ socket.on('value', function(data) {
             $(this).removeClass("animated bounceIn");
         });
 
+        if ($("#"+data.id).hasClass("value")) {
+            $("#"+data.id).text(data.text).addClass("animated bounceIn");
+        }
+
+        if ($("#"+data.id).hasClass("text")) {
+            $("#"+data.id).text(data.text).addClass("animated bounceIn");
+        }
+
+        if ($("#"+data.id).hasClass("linked-picture")) {
+            $("#"+data.id).text(properName(data.text)).addClass("animated bounceIn");
+            // $("#"+data.id.substring(0, data.id.indexOf('-'))+"-picture").attr("src", "assets/hero-portraits-80px/"+data.text+".jpg").addClass("animated bounceIn");
+            $("#"+data.id.substring(0, data.id.indexOf('-'))+"-picture").removeClass().addClass("animated bounceIn divimage divimage-"+data.text);
+            $("#"+data.id.substring(0, data.id.indexOf('-'))+"-picture").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                $(this).removeClass("animated bounceIn");
+            });
+        }
+
         if ($("#"+data.id).hasClass("progress-bar")) {
             $("#"+data.id).css("width", data.text + "%");
         }
@@ -94,3 +111,28 @@ socket.on('value', function(data) {
 
     }
 });
+
+function properName(hero) {
+    if (hero.indexOf('_') > 0) {
+        hero = hero.substring(0, hero.indexOf('_'));
+    }
+    switch (hero) {
+        case 'anubarak':
+            return "Anub'arak";
+            break;
+        case 'etc':
+            return "ETC";
+            break;
+        case 'lili':
+            return "Li Li";
+            break;
+        case 'sgt-hammer':
+            return "Sgt. Hammer";
+            break;
+        case 'the-lost-vikings':
+            return "The Lost Vikings";
+            break;
+        default:
+            return hero.charAt(0).toUpperCase()+hero.substr(1).toLowerCase();
+    }
+}
