@@ -69,6 +69,10 @@ socket.on('value', function(data) {
             $("#"+data.id).text(data.text).addClass("animated bounceIn");
         }
 
+        if ($("#"+data.id).hasClass("html")) {
+            $("#"+data.id).html(data.text).addClass("animated bounceIn");
+        }
+
         if ($("#"+data.id).hasClass("divimage")) {
             $("#"+data.id).removeClass().addClass("animated bounceIn divimage divimage-"+data.text);
         }
