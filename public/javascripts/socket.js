@@ -24,11 +24,6 @@ socket.on('rank', function(data) {
 
 });
 
-socket.on('crawl', function(data) {
-    console.log("crawl: " + data.text);
-    $("#mainview_footer_marquee").html(data.text);
-});
-
 socket.on('hide-messages', function(data) {
     $("#mainview_body").fadeOut();
 });
@@ -42,7 +37,7 @@ var redgreen = "color-green color-greener color-greenest color-red color-redder 
 socket.on('value', function(data) {
     console.log(data);
 
-    if (data.id = "crawl") {
+    if (data.id == "crawl-text") {
         if (data.text != undefined ) {
             $("#"+data.id).html(data.text); 
         }

@@ -120,14 +120,14 @@ $("#rank").blur(function() {
  ***** Crawl *****
  */
 
-$("#crawl").blur(function() {
-    message = { event: 'value', data: { id: "crawl", text: $("#crawl").val() } };
+$("#crawl-text").blur(function() {
+    message = { event: 'value', data: { id: "crawl-text", text: $("#crawl-text").val() } };
     send(message);
-    save('crawl', message.data.text);
+    save('crawl-text', message.data.text);
 });
 
 $("#crawlDisable").click(function() {
-    message = { event: 'value', data: { id: "crawl", action: "hidden" } };
+    message = { event: 'value', data: { id: "crawl-text", action: "hidden" } };
     $("[data-group='crawl-pills']").removeClass("active");
     $(this).addClass("active");
     $("#label-crawl").removeClass(classes_label).addClass("label-default");
@@ -135,7 +135,7 @@ $("#crawlDisable").click(function() {
 });
 
 $("#crawlBlack").click(function() {
-    message = { event: 'value', data: { id: "crawl", action: "marquee-black" } };
+    message = { event: 'value', data: { id: "crawl-text", action: "marquee-black" } };
     $("[data-group='crawl-pills']").removeClass("active");
     $(this).addClass("active");
     $("#label-crawl").removeClass(classes_label).addClass("label-primary");
@@ -143,7 +143,7 @@ $("#crawlBlack").click(function() {
 });
 
 $("#crawlBlue").click(function() {
-    message = { event: 'value', data: { id: "crawl", action: "marquee-blue" } };
+    message = { event: 'value', data: { id: "crawl-text", action: "marquee-blue" } };
     $("[data-group='crawl-pills']").removeClass("active");
     $(this).addClass("active");
     $("#label-crawl").removeClass(classes_label).addClass("label-info");
@@ -151,7 +151,7 @@ $("#crawlBlue").click(function() {
 });
 
 $("#crawlRed").click(function() {
-    message = { event: 'value', data: { id: "crawl", action: "marquee-red" } };
+    message = { event: 'value', data: { id: "crawl-text", action: "marquee-red" } };
     $("[data-group='crawl-pills']").removeClass("active");
     $(this).addClass("active");
     $("#label-crawl").removeClass(classes_label).addClass("label-danger");
