@@ -11,7 +11,24 @@
     border-right-color: #333333;
 }
 
-.divimage-transparent { background-image: url('../images/transparent.png'); }
+.divimagewide { 
+    height: 50px;
+    width: 90px;
+    background-size: 90px 50px;
+}
+
+.divimage-transparent { background-image: url('../images/transparent.png'); border: none;}
+
+/* Maps */
+
+.divimage-blackhearts-bay { background-image: url('../assets/maps/blackhearts-bay-mini.jpg'); }
+.divimage-cursed-hollow { background-image: url('../assets/maps/cursed-hollow-mini.jpg'); }
+.divimage-dragon-shire { background-image: url('../assets/maps/dragon-shire-mini.jpg'); }
+.divimage-haunted-mines { background-image: url('../assets/maps/haunted-mines-mini.jpg'); }
+.divimage-garden-of-terror { background-image: url('../assets/maps/garden-of-terror-mini.jpg'); }
+.divimage-sky-temple { background-image: url('../assets/maps/sky-temple-mini.jpg'); }
+.divimage-tomb-of-the-spider-queen { background-image: url('../assets/maps/tomb-of-the-spider-queen-mini.jpg'); }
+
 
 /* Heroes */
 
