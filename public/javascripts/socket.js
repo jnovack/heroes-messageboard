@@ -5,11 +5,6 @@ socket.on('reload', function(data){
     location.reload();
 });
 
-socket.on('title', function(data) {
-    console.log("title: " + data.text);
-    $("#mainview_header_title").html(data.text);
-    $("#mainview_header_title").addClass("animated bounceIn");
-});
 
 socket.on('rank', function(data) {
     console.log("rank: " + data.text);

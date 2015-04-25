@@ -58,7 +58,7 @@ $("#showMsgButton").click(function() {
 });
 
 $("#title").blur(function() {
-    message = { event: 'title', data: { text: $("#title").val() } };
+    message = { event: 'value', data: { id: "mainview_header_title", text: $("#title").val() } };
     send(message);
     save('title', message.data.text);
 });
