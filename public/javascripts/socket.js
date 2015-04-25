@@ -8,7 +8,6 @@ socket.on('reload', function(data){
 socket.on('hero', function(data) {
     console.log("hero: " + data.text);
     $("#sidebar_header_video").attr('src', "assets/hero-videos/"+data.text+".webm").removeClass().addClass(data.text);
-    //$("#sidebar_header_video").load();
 });
 
 socket.on('title', function(data) {
@@ -64,7 +63,7 @@ socket.on('value', function(data) {
 
     if ($("#"+data.id).text() != data.text) {
         $("#"+data.id).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-          $(this).removeClass("animated bounceIn");
+            $(this).removeClass("animated bounceIn");
         });
 
         if ($("#"+data.id).hasClass("progress-bar")) {
@@ -89,7 +88,6 @@ socket.on('value', function(data) {
                 total += parseInt($(value).text());
             });
             var percent = data.text*100/total;
-            console.log(data.text + " / " + total + " = " + data.text/total);
             if  (percent  < 10) { $("#"+data.id).removeClass(redgreen).addClass("color-reddest"); }
             if ((percent >= 10) && (percent < 17)) { $("#"+data.id).removeClass(redgreen).addClass("color-redder"); }
             if ((percent >= 17) && (percent < 25)) { $("#"+data.id).removeClass(redgreen).addClass("color-red"); }

@@ -64,7 +64,7 @@ function paginateMessages(){
     }else if(c > listAmount){
         clearTimeout(timer);
         timer = setTimeout(paginateMessages, 10000);
-        console.log('refreshed');
+        //console.log('refreshed');
         c = 0;
     }
     c++;    
