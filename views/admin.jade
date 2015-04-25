@@ -1,48 +1,5 @@
 extends layout
 
-mixin hero-option(name)
-  option&attributes(attributes)= name
-
-mixin hero-select(id,name)
-  label(for=id,class='control-label')= name
-  select(id=id).form-control
-    +hero-option("Please Select")(selected,disabled)
-    +hero-option("abathur")
-    +hero-option("abathur_pajamathur")
-    +hero-option("anubarak")
-    +hero-option("arthas")
-    +hero-option("azmodan")
-    +hero-option("brightwing")
-    +hero-option("chen")
-    +hero-option("diablo")
-    +hero-option("etc")
-    +hero-option("falstad")
-    +hero-option("gazlowe")
-    +hero-option("illidan")
-    +hero-option("jaina")
-    +hero-option("kerrigan")
-    +hero-option("lili")
-    +hero-option("malfurion")
-    +hero-option("muradin")
-    +hero-option("murky")
-    +hero-option("nazeebo")
-    +hero-option("nova")
-    +hero-option("raynor")
-    +hero-option("rehgar")
-    +hero-option("sgt-hammer")
-    +hero-option("sonya")
-    +hero-option("stitches")
-    +hero-option("sylvanas")
-    +hero-option("tassadar")
-    +hero-option("the-lost-vikings")
-    +hero-option("thrall")
-    +hero-option("tychus")
-    +hero-option("tyrael")
-    +hero-option("tyrande")
-    +hero-option("uther")
-    +hero-option("valla")
-    +hero-option("zagara")
-    +hero-option("zeratul")
 
 block content
   style.
