@@ -82,6 +82,12 @@ function resetTimer() {
         rotateTabs();
     });
     $("#timer_percent").removeClass("countup").addClass("countdown");
+
+    // By default all elements are hidden, show the first container
+    current = $("[data-group|='sidebar_body_containers'].bounceInLeft");
+    if (current.length == 0) {
+        $("[data-group|='sidebar_body_containers']").not("[data-ignore|='true']").first().removeClass().addClass("animated bounceInLeft");
+    }
 }
 
 function rotateTabs() {
@@ -91,7 +97,7 @@ function rotateTabs() {
     $("#timer_percent").removeClass("countdown").addClass("countup");
     allTabs = $("[data-group|='sidebar_body_containers']").not("[data-ignore|='true']");
     current = $("[data-group|='sidebar_body_containers'].bounceInLeft");
-    if (allTabs.last()[0] == current[0]) {
+    if (allTabs.last()[0] == current[0] || current.length == 0) {
         next = allTabs.first();
     } else {
         next = current.next();
