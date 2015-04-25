@@ -5,11 +5,6 @@ socket.on('reload', function(data){
     location.reload();
 });
 
-socket.on('hero', function(data) {
-    console.log("hero: " + data.text);
-    $("#sidebar_header_video").attr('src', "assets/hero-videos/"+data.text+".webm").removeClass().addClass(data.text);
-});
-
 socket.on('title', function(data) {
     console.log("title: " + data.text);
     $("#mainview_header_title").html(data.text);
@@ -68,6 +63,10 @@ socket.on('value', function(data) {
 
         if ($("#"+data.id).hasClass("progress-bar")) {
             $("#"+data.id).css("width", data.text + "%");
+        }
+
+        if ($("#"+data.id).hasClass("video")) {
+            $("#sidebar_header_video").attr('src', "assets/hero-videos/"+data.text+".webm").removeClass().addClass("video " + data.text);
         }
 
         if ($("#"+data.id).hasClass("percent")) {
