@@ -11,12 +11,6 @@ socket.on('title', function(data) {
     $("#mainview_header_title").addClass("animated bounceIn");
 });
 
-socket.on('subtitle', function(data) {
-    console.log("subtitle: " + data.text);
-    $("#mainview_header_subtitle").html(data.text);
-    $("#mainview_header_subtitle").addClass("animated bounceIn");
-});
-
 socket.on('rank', function(data) {
     console.log("rank: " + data.text);
     $("#sidebar_footer_text").html(data.text);

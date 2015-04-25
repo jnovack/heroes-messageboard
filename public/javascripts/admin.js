@@ -68,19 +68,19 @@ $("#title").blur(function() {
  */
 
 $("#subtitle1").blur(function() {
-    message = { event: 'subtitle', data: { text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
+    message = { event: 'value', data: { id: "mainview_header_subtitle", text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
     send(message);
     save('subtitle1', $("#subtitle1").val());
 });
 
 $("#subtitle2").blur(function() {
-    message = { event: 'subtitle', data: { text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
+    message = { event: 'value', data: { id: "mainview_header_subtitle", text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
     send(message);
     save('subtitle2', $("#subtitle2").val());
 });
 
 $("#subtitleText").click(function() {
-    message = { event: 'subtitle', data: { text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
+    message = { event: 'value', data: { id: "mainview_header_subtitle", text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
     $("[data-group='subtitle-pills']").removeClass("active");
     $(this).addClass("active");
     $("#subtitle1").parent().parent().addClass("has-success");
@@ -88,7 +88,7 @@ $("#subtitleText").click(function() {
     send(message);
 });
 $("#subtitleAFKBreak").click(function() {
-    message = { event: 'subtitle', data: { text: "AFK" + "<br>" + "On Break" } };
+    message = { event: 'value', data: { id: "mainview_header_subtitle", text: "AFK" + "<br>" + "On Break" } };
     $("[data-group='subtitle-pills']").removeClass("active");
     $(this).addClass("active");
     $("#subtitle1").parent().parent().removeClass("has-success");
@@ -96,7 +96,7 @@ $("#subtitleAFKBreak").click(function() {
     send(message);
 });
 $("#subtitleAFKCustom").click(function() {
-    message = { event: 'subtitle', data: { text: "AFK"+ "<br>" + $("#subtitle2").val() } };
+    message = { event: 'value', data: { id: "mainview_header_subtitle", text: "AFK"+ "<br>" + $("#subtitle2").val() } };
     $("[data-group='subtitle-pills']").removeClass("active");
     $(this).addClass("active");
     $("#subtitle1").parent().parent().removeClass("has-success");
