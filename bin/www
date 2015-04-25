@@ -43,13 +43,13 @@ io.on('connection', function(socket){
   for (var event in json) {
     console.log("sending " + event);
     console.log(json[event]);
-    socket.emit(event, json[event]);
+    socket.emit("value", json[event]);
   }
 
   socket.on('broadcast', function(message) {
     console.log(message);
     if (message.event != "reload") {
-        json[message.event] = message.data;
+        json[message.data.id] = message.data;
         saveConfig();
     }
     io.sockets.emit(message.event, message.data);
@@ -68,30 +68,37 @@ function saveConfig() {
       console.log(err.message);
       return;
     }
-    console.log('Configuration saved successfully.')
+    console.log('configuration saved successfully...');
   });
 }
 
 function loadConfig() {
-  fs.readFile('./config.json', function (err, data) {
-    if (err) {
-      console.log("config.json does not exist");
-      data = {};
-    }
-    var json;
+  var json = {};
 
+  try {
+    var data = fs.readFileSync('./config.json');
+    console.log("config.json loaded successfully...");
+  }
+  catch (e) {
+    console.log("config.json does not exist...");
+    data = null;
+  }
+
+  if (data != null) {
     try {
       json = JSON.parse(data);
+      console.log("config.json parsed successfully...");
       console.dir(json);
     }
-    catch (err) {
+    catch (e) {
+      json = {}; // Clear the variable
       console.log('There has been an error parsing your JSON. The following data will NOT be used.');
       console.log(json);
-      console.log(err);
-      json = {};
+      console.log(e);
     }
-    return json;
-  });
+  }
+
+  return json;
 }
 
 /**
