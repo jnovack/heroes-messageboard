@@ -70,13 +70,13 @@ $("#title").blur(function() {
 $("#subtitle1").blur(function() {
     message = { event: 'subtitle', data: { text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
     send(message);
-    save('subtitle1', message.data.text);
+    save('subtitle1', $("#subtitle1").val());
 });
 
 $("#subtitle2").blur(function() {
     message = { event: 'subtitle', data: { text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
     send(message);
-    save('subtitle2', message.data.text);
+    save('subtitle2', $("#subtitle2").val());
 });
 
 $("#subtitleText").click(function() {
