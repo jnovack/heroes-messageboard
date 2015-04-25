@@ -5,6 +5,7 @@ socket.on('reload', function(data){
     location.reload();
 });
 
+// TODO - Save actions and load them upon pageload
 
 socket.on('rank', function(data) {
     console.log("rank: " + data.text);
