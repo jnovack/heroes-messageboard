@@ -34,22 +34,38 @@ socket.on('show-messages', function(data) {
 
 var redgreen = "color-green color-greener color-greenest color-red color-redder color-reddest";
 
-socket.on('value', function(data) {
+socket.on('action', function(data) {
     console.log(data);
-
-    if (data.id == "crawl-text") {
-        if (data.text != undefined ) {
-            $("#"+data.id).html(data.text); 
+    if (data.action == 'ignore') {
+        $("#"+data.id).attr('data-ignore', data.value);
+    }
+    if (data.action == 'visible') {
+        $("#"+data.id).attr('data-visible', data.value);
+        if (data.value == 'hide') {
+            $("#"+data.id).hide();
         }
-        if (data.action) {
-            if (data.action == "hidden") {
-                $("#mainview_footer").hide();
-            } else {
-                $("#mainview_footer").show();
-                $("#mainview_footer_marquee").removeClass().addClass("marquee " + data.action);
-            }
+        if (data.value == 'show') {
+            $("#"+data.id).show();
         }
     }
+    if (data.action == 'class') {
+        var classNames = $("#"+data.id).attr("class").toString().split(' ');
+        $.each(classNames, function (i, className) {
+            if (className.indexOf('-') > 0 && data.value.indexOf('-') > 0) {
+                if (className.substring(0, className.indexOf('-')) == data.value.substring(0, data.value.indexOf('-'))) {
+                    $("#"+data.id).removeClass(className);
+                }
+            }
+        });
+        $("#"+data.id).addClass(data.value);
+    }
+    // Fire off any additional specialized components
+    $("#"+data.id).trigger('changeData');
+});
+
+
+socket.on('value', function(data) {
+    console.log(data);
 
     if ($("#"+data.id).text() != data.text) {
         $("#"+data.id).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){

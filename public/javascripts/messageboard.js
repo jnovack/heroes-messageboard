@@ -70,6 +70,13 @@ function paginateMessages(){
     c++;    
 }
 
+// Hack to restart marquee if it breaks...
+$('#mainview_footer').bind('changeData', function(e){
+    if ($('#mainview_footer').attr('data-visible') == "show") {
+        document.getElementById('mainview_footer_marquee').start();
+    }
+});
+
 function resetTimer() {
     $("#timer_percent").one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend' , function(event){  
         rotateTabs();
