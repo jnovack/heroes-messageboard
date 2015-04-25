@@ -64,6 +64,10 @@ socket.on('value', function(data) {
             $("#"+data.id).text(data.text).addClass("animated bounceIn");
         }
 
+        if ($("#"+data.id).hasClass("divimage")) {
+            $("#"+data.id).removeClass().addClass("animated bounceIn divimage divimage-"+data.text);
+        }
+
         if ($("#"+data.id).hasClass("linked-picture")) {
             $("#"+data.id).text(properName(data.text)).addClass("animated bounceIn");
             // $("#"+data.id.substring(0, data.id.indexOf('-'))+"-picture").attr("src", "assets/hero-portraits-80px/"+data.text+".jpg").addClass("animated bounceIn");
