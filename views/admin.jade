@@ -231,6 +231,12 @@ block content
           div(role='tabpanel',id='tab-voice').tab-pane
             div.row
               div.col-lg-12
+                div.btn-toolbar
+                  div.btn-group
+                    a(data-group="voice-pills",id="voiceHide",href='#').btn.btn-sm.btn-success Voice Tab is VISIBLE
+                    a(data-group="voice-pills",id="voiceShow",href='#',style="display: none").btn.btn-sm.btn-danger Voice Tab is HIDDEN
+            div.row
+              div.col-lg-12
                 div.col-md-4
                   div(id="voice1")
                     +talent-select('voice1-picture','voice1-picture')

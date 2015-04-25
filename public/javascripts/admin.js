@@ -116,6 +116,25 @@ $("#rank").blur(function() {
     save('rank', message.data.text);
 });
 
+
+/*
+ ***** Voice *****
+ */
+
+$("#voiceHide").click(function() {
+    message = { event: 'action', data: { id: 'voice_container', action: 'ignore', value: 'true' } };
+    send(message);
+    $("#voiceShow").show();
+    $("#voiceHide").hide();
+});
+$("#voiceShow").click(function() {
+    message = { event: 'action', data: { id: 'voice_container', action: 'ignore', value: 'false' } };
+    send(message);
+    $("#voiceHide").show();
+    $("#voiceShow").hide();
+});
+
+
 /*
  ***** Crawl *****
  */

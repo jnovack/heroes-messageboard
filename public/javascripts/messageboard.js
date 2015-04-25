@@ -89,7 +89,7 @@ function rotateTabs() {
         resetTimer();
     });
     $("#timer_percent").removeClass("countdown").addClass("countup");
-    allTabs = $("[data-group|='sidebar_body_containers']");
+    allTabs = $("[data-group|='sidebar_body_containers']").not("[data-ignore|='true']");
     current = $("[data-group|='sidebar_body_containers'].bounceInLeft");
     if (allTabs.last()[0] == current[0]) {
         next = allTabs.first();
