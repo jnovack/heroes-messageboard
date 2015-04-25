@@ -54,6 +54,9 @@ block content
             a(href='#tab-hero',aria-expanded='false',role='tab',data-toggle='tab')
               span Hero Info
           li(role='presentation')
+            a(href='#tab-voice',aria-expanded='false',role='tab',data-toggle='tab')
+              span Voice Info
+          li(role='presentation')
             a(href='#tab-crawl',aria-expanded='false',role='tab',data-toggle='tab')
               span(id='label-crawl').label.label-primary Crawl
           li(role='presentation')
@@ -225,6 +228,53 @@ block content
                     label(for='message3-date',class='control-label') date
                     div.controls
                       input(data-group='value',type='text',id='message3-date',placeholder="Cucumber",class='form-control')
+          div(role='tabpanel',id='tab-voice').tab-pane
+            div.row
+              div.col-lg-12
+                div.col-md-4
+                  div(id="voice1")
+                    +talent-select('voice1-picture','voice1-picture')
+                    div.control-group
+                      label(for='voice1-text',class='control-label') voice1-text
+                      div.controls
+                        input(data-group='text',type='text',id='voice1-text',placeholder="TickleMeOzmo",class='form-control')
+                div.col-md-4
+                  div(id="voice2")
+                    +talent-select('voice2-picture','voice2-picture')
+                    div.control-group
+                      label(for='voice2-text',class='control-label') voice2-text
+                      div.controls
+                        input(data-group='text',type='text',id='voice2-text',placeholder="TickleMeOzmo",class='form-control')
+                div.col-md-4
+                  div(id="voice3")
+                    +talent-select('voice3-picture','voice3-picture')
+                    div.control-group
+                      label(for='voice3-text',class='control-label') voice3-text
+                      div.controls
+                        input(data-group='text',type='text',id='voice3-text',placeholder="TickleMeOzmo",class='form-control')
+            div.row
+              div.col-lg-12
+                div.col-md-4
+                  div(id="voice4")
+                    +talent-select('voice4-picture','voice4-picture')
+                    div.control-group
+                      label(for='voice4-text',class='control-label') voice4-text
+                      div.controls
+                        input(data-group='text',type='text',id='voice4-text',placeholder="TickleMeOzmo",class='form-control')
+                div.col-md-4
+                  div(id="voice5")
+                    +talent-select('voice5-picture','voice5-picture')
+                    div.control-group
+                      label(for='voice5-text',class='control-label') voice5-text
+                      div.controls
+                        input(data-group='text',type='text',id='voice5-text',placeholder="TickleMeOzmo",class='form-control')
+                div.col-md-4
+                  div(id="voice6")
+                    +talent-select('voice6-picture','voice6-picture')
+                    div.control-group
+                      label(for='voice6-text',class='control-label') voice6-text
+                      div.controls
+                        input(data-group='text',type='text',id='voice6-text',placeholder="TickleMeOzmo",class='form-control')
 
           div(role='tabpanel',id='tab-template').tab-pane
             div.col-lg-12
