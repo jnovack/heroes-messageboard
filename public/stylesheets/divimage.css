@@ -1,0 +1,87 @@
+.divimage {
+    height: 50px;
+    width: 50px;
+    padding-right: 4px;
+    background-size: 50px 50px;
+    border-radius: 8px;
+}
+
+.divimage-transparent { background-image: url('../images/transparent.png'); }
+
+/* Heroes */
+
+.divimage-abathur { background-image: url('../assets/hero-portraits-80px/abathur.jpg'); }
+.divimage-anubarak { background-image: url('../assets/hero-portraits-80px/anubarak.jpg'); }
+.divimage-arthas { background-image: url('../assets/hero-portraits-80px/arthas.jpg'); }
+.divimage-azmodan { background-image: url('../assets/hero-portraits-80px/azmodan.jpg'); }
+.divimage-brightwing { background-image: url('../assets/hero-portraits-80px/brightwing.jpg'); }
+.divimage-chen { background-image: url('../assets/hero-portraits-80px/chen.jpg'); }
+.divimage-diablo { background-image: url('../assets/hero-portraits-80px/diablo.jpg'); }
+.divimage-etc { background-image: url('../assets/hero-portraits-80px/etc.jpg'); }
+.divimage-falstad { background-image: url('../assets/hero-portraits-80px/falstad.jpg'); }
+.divimage-gazlowe { background-image: url('../assets/hero-portraits-80px/gazlowe.jpg'); }
+.divimage-illidan { background-image: url('../assets/hero-portraits-80px/illidan.jpg'); }
+.divimage-jaina { background-image: url('../assets/hero-portraits-80px/jaina.jpg'); }
+.divimage-kerrigan { background-image: url('../assets/hero-portraits-80px/kerrigan.jpg'); }
+.divimage-lili { background-image: url('../assets/hero-portraits-80px/lili.jpg'); }
+.divimage-malfurion { background-image: url('../assets/hero-portraits-80px/malfurion.jpg'); }
+.divimage-muradin { background-image: url('../assets/hero-portraits-80px/muradin.jpg'); }
+.divimage-murky { background-image: url('../assets/hero-portraits-80px/murky.jpg'); }
+.divimage-nazeebo { background-image: url('../assets/hero-portraits-80px/nazeebo.jpg'); }
+.divimage-nova { background-image: url('../assets/hero-portraits-80px/nova.jpg'); }
+.divimage-raynor { background-image: url('../assets/hero-portraits-80px/raynor.jpg'); }
+.divimage-rehgar { background-image: url('../assets/hero-portraits-80px/rehgar.jpg'); }
+.divimage-sgt-hammer { background-image: url('../assets/hero-portraits-80px/sgt-hammer.jpg'); }
+.divimage-sonya { background-image: url('../assets/hero-portraits-80px/sonya.jpg'); }
+.divimage-stitches { background-image: url('../assets/hero-portraits-80px/stitches.jpg'); }
+.divimage-sylvanas { background-image: url('../assets/hero-portraits-80px/sylvanas.jpg'); }
+.divimage-tassadar { background-image: url('../assets/hero-portraits-80px/tassadar.jpg'); }
+.divimage-the-lost-vikings { background-image: url('../assets/hero-portraits-80px/the-lost-vikings.jpg'); }
+.divimage-thrall { background-image: url('../assets/hero-portraits-80px/thrall.jpg'); }
+.divimage-tychus { background-image: url('../assets/hero-portraits-80px/tychus.jpg'); }
+.divimage-tyrael { background-image: url('../assets/hero-portraits-80px/tyrael.jpg'); }
+.divimage-tyrande { background-image: url('../assets/hero-portraits-80px/tyrande.jpg'); }
+.divimage-uther { background-image: url('../assets/hero-portraits-80px/uther.jpg'); }
+.divimage-valla { background-image: url('../assets/hero-portraits-80px/valla.jpg'); }
+.divimage-zagara { background-image: url('../assets/hero-portraits-80px/zagara.jpg'); }
+.divimage-zeratul { background-image: url('../assets/hero-portraits-80px/zeratul.jpg'); }
+
+/* Skins */
+
+.divimage-abathur_pajamathur { background-image: url('../assets/talents/fury.jpg'); }
+
+/* Talents */
+
+.divimage-apocalypse { background-image: url('../assets/talents/apocalypse.png'); }
+.divimage-avatar { background-image: url('../assets/talents/avatar.png'); }
+.divimage-battle-momentum { background-image: url('../assets/talents/battle-momentum.png'); }
+.divimage-berserk { background-image: url('../assets/talents/berserk.png'); }
+.divimage-betrayers-thirst { background-image: url('../assets/talents/betrayers-thirst.png'); }
+.divimage-breath-of-fire { background-image: url('../assets/talents/breath-of-fire.png'); }
+.divimage-burning-rage { background-image: url('../assets/talents/burning-rage.png'); }
+.divimage-conjurers-pursuit { background-image: url('../assets/talents/conjurers-pursuit.png'); }
+.divimage-dwarf-toss { background-image: url('../assets/talents/dwarf-toss.png'); }
+.divimage-face-melt { background-image: url('../assets/talents/face-melt.png'); }
+.divimage-fury { background-image: url('../assets/talents/fury.png'); }
+.divimage-gathering-power { background-image: url('../assets/talents/gathering-power.png'); }
+.divimage-ghost-wolf { background-image: url('../assets/talents/ghost-wolf.png'); }
+.divimage-giant-killer { background-image: url('../assets/talents/giant-killer.png'); }
+.divimage-haunting-wave { background-image: url('../assets/talents/haunting-wave.png'); }
+.divimage-holo-decoy { background-image: url('../assets/talents/holo-decoy.png'); }
+.divimage-ice-block { background-image: url('../assets/talents/ice-block.png'); }
+.divimage-imposing-presence { background-image: url('../assets/talents/imposing-presence.png'); }
+.divimage-maelstrom { background-image: url('../assets/talents/maelstrom.png'); }
+.divimage-mosh-pit { background-image: url('../assets/talents/mosh-pit.png'); }
+.divimage-overdrive { background-image: url('../assets/talents/overdrive.png'); }
+.divimage-polymorph { background-image: url('../assets/talents/polymorph.png'); }
+.divimage-possession { background-image: url('../assets/talents/possession.png'); }
+.divimage-regeneration-master { background-image: url('../assets/talents/regeneration-master.png'); }
+.divimage-rockstar { background-image: url('../assets/talents/rockstar.png'); }
+.divimage-second-wind { background-image: url('../assets/talents/second-wind.png'); }
+.divimage-shrink-ray { background-image: url('../assets/talents/shrink-ray.png'); }
+.divimage-storm-earth-fire { background-image: url('../assets/talents/storm-earth-fire.png'); }
+.divimage-summon-demon-warrior { background-image: url('../assets/talents/summon-demon-warrior.png'); }
+.divimage-vampiric-assault { background-image: url('../assets/talents/vampiric-assault.png'); }
+.divimage-war-paint { background-image: url('../assets/talents/war-paint.png'); }
+.divimage-whirlwind { background-image: url('../assets/talents/whirlwind.png'); }
+.divimage-wrath-of-the-berserker { background-image: url('../assets/talents/wrath-of-the-berserker.png'); }
