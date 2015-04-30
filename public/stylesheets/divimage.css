@@ -11,6 +11,11 @@
     border-right-color: #333333;
 }
 
+.divimagelg {
+    height: 80px;
+    width: 80px;
+    background-size: 80px 80px;
+}
 .divimagewide { 
     height: 50px;
     width: 90px;
