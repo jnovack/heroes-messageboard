@@ -9,7 +9,7 @@ module.exports = function(grunt) {
                 options: {
                     ignore: ['node_modules/**', 'public/**','views/**'],
                     ext: 'js',
-                    watch: ['.'],
+                    watch: ['bin/www', 'routes/**', 'app.js'],
                     env: {
                         NODE_ENV: 'dev'
                     },
