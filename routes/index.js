@@ -14,6 +14,10 @@ router.get('/end-of-match', function(req, res, next) {
     res.render('end-of-match.jade', { esl: true } );
 });
 
+router.get('/end-of-match-admin', function(req, res, next) {
+    res.render('end-of-match-admin.jade', { esl: true } );
+});
+
 router.get('/admin', function(req, res, next) {
     res.render('admin', { title: 'Admin Interface'});
 });

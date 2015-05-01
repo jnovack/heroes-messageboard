@@ -12,16 +12,26 @@ block content
           input(type='text',id='title',name='title',placeholder="Match Summary",class='form-control')
 
   div.row
-    div.col-md-6
+    div.col-md-4
       div.control-group
-        label(for='subtitle1',class='control-label') SubTitle Top Line
+        label(for='team1-name',class='control-label') Team 1 Name
         div.controls
-          input(data-group="subtitle-text",type='text',id='subtitle1',name='subtitle1',placeholder='Solo Queue',class='form-control')
-    div.col-md-6
+          input(data-group="subtitle-text",type='text',id='team1-name',name='team1-name',placeholder='Solo Queue',class='form-control')
+    div.col-md-2
       div.control-group
-        label(for='subtitle2',class='control-label') SubTitle Bottom Lane
+        label(for='team1-score',class='control-label') Team 1 Score
         div.controls
-          input(data-group="subtitle-text",type='text',id='subtitle2',name='subtitle2',placeholder='Quick Match',class='form-control')
+          input(data-group="subtitle-text",type='text',id='team1-score',name='team1-score',placeholder='Solo Queue',class='form-control')
+    div.col-md-4
+      div.control-group
+        label(for='team2-name',class='control-label') Team 2 Name
+        div.controls
+          input(data-group="subtitle-text",type='text',id='team2-name',name='team2-name',placeholder='Quick Match',class='form-control')
+    div.col-md-2
+      div.control-group
+        label(for='team1-score',class='control-label') Team 2 Score
+        div.controls
+          input(data-group="subtitle-text",type='text',id='team1-score',name='team1-score',placeholder='Solo Queue',class='form-control')
     div.col-lg-12
       ul.nav.nav-pills.nav-justified
         li(data-group="subtitle-pills",id="subtitleText")
@@ -32,13 +42,8 @@ block content
           a(href="#") AFK Custom
 
   div.row
-    div.col-md-8
-      +hero-select('sidebar_header_video','Theme Hero')
-    div.col-md-4
-      div.control-group
-        label(for='rank',class='control-label') Rank
-        div.controls
-          input(data-group='value',type='text',id='rank',name='rank',placeholder="25",class='form-control')
+    div.col-md-6
+      +hero-select('game1-team1-hero1','game1-team1-hero1')
 
   div.row
 
