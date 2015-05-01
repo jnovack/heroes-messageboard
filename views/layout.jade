@@ -8,8 +8,9 @@ html
     script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js' )
     script(src="/socket.io/socket.io.js")
     block head
-    script.
-        var socket = io();
+
   body
     div(id='wrapper').container
         block content
+
+  block footer

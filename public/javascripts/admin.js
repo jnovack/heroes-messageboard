@@ -1,4 +1,4 @@
-
+var socket = io();
 var save = function(key, value) { return; };
 var read = function(key) { return; };
 
