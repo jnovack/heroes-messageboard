@@ -7,7 +7,7 @@ body {background: #000; cursor: none; font-family: 'Open Sans', sans-serif; colo
 #tvsafe { width: 1600px; height: 900px; overflow: hidden; margin-top: 90px; margin-left: auto; margin-right: auto; padding-left: 20px; padding-right: 20px;}
 
 div.row {
-    margin-top: 12px;
+    margin-top: 6px;
 }
 
 div.pad-none { padding: 0px; }
@@ -21,7 +21,7 @@ div.heroes {
 div.heroes > div { margin-left: 16px; margin-right: 16px; }
 
 div.games { height: 440px;}
-div.game { margin-top: auto; margin-bottom: auto;}
+div.game { margin-top: 16px; margin-bottom: 16px;}
 
 div.heroes-left{ justify-content: flex-end; }
 div.heroes-right{ justify-content: flex-start; }
@@ -41,7 +41,8 @@ div.inline-flex {   display: inline-flex;
 
 div.teams { height: 278px; text-shadow: 2px 2px #3F3F3F; }
 
-div.loser  { -webkit-filter: grayscale(100%); filter: grayscale(100%); opacity: 0.8}
+div.loser  { -webkit-filter: grayscale(100%); filter: grayscale(100%); opacity: 0.8; }
+div.loser > div.divimage { -webkit-transform: scale(0.9);}
 
 span.announcement { font-size: 2.4em; }
 
