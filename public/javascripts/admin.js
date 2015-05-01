@@ -1,4 +1,19 @@
 var socket = io();
+
+
+socket.on('connect', function() {
+    console.log("connected.");
+    socket.emit('join', 'messageboard');
+});
+
+socket.on('joined', function(data){
+    console.log("joined " + data);
+});
+
+socket.on('log', function(data) {
+    console.log(data);
+});
+
 var save = function(key, value) { return; };
 var read = function(key) { return; };
 
