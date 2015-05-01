@@ -49,24 +49,26 @@ io.on('connection', function(socket){
     }
     socket.join(room);
     socket.room = room;
+    if (json[room] == null) {
+      console.log("room instatiated for "+room);
+      json[room] = { value: {}, action: {} };
+    }
     console.log("a user joined " + room);
     socket.emit('joined', room);
+
+    // Broadcast json on join
+    for (var value in json[room].value) {
+      console.log("sending " + value);
+      console.log(json[room].value[value]);
+      socket.emit("value", json[room].value[value]);
+    }
   });
 
-  // TODO - Broadcast on join
-  // for (var event in json) {
-  //   console.log("sending " + event);
-  //   console.log(json[event]);
-  //   socket.emit("value", json[event]);
-  // }
-
   socket.on('broadcast', function(message) {
-    console.dir(socket.room + " -- " + util.inspect(message, { depth: 2 }) );
-    // TODO - Save states
-    // if (message.event != "reload") {
-    //     json[message.data.id] = message.data;
-    //     saveConfig();
-    // }
+    if (message.event == "value" || message.event == "action") {
+        json[socket.room][message.event][message.data.id] = message.data;
+        saveConfig();
+    }
     io.sockets.in(socket.room).emit(message.event, message.data);
   });
 });
