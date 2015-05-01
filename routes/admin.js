@@ -7,11 +7,11 @@ var router = express.Router();
 // });
 
 router.get('/end-of-match', function(req, res, next) {
-    res.render('end-of-match-admin.jade', { esl: true } );
+    res.render('end-of-match-admin.jade', { esl: true, title: 'End-Of-Match Admin'} );
 });
 
 router.get('/messageboard', function(req, res, next) {
-    res.render('admin', { title: 'Admin Interface'});
+    res.render('messageboard-admin.jade', { title: 'Messageboard Admin'});
 });
 
 module.exports = router;
