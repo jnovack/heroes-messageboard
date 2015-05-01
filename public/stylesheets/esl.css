@@ -4,37 +4,63 @@ body {background: #000; cursor: none; font-family: 'Open Sans', sans-serif; colo
 
 #wrapper {width: 1920px; height: 1080px; overflow: hidden; float: left; background-image: url('../assets/backgrounds/esl.png'); }
 
-#tvsafe { width: 1600px; height: 900px; overflow: hidden; margin-top: 90px; margin-left: auto; margin-right: auto; }
+#tvsafe { width: 1600px; height: 900px; overflow: hidden; margin-top: 90px; margin-left: auto; margin-right: auto; padding-left: 20px; padding-right: 20px;}
 
 div.row {
-    margin-top: 8px;
+    margin-top: 12px;
 }
 
-h1 { font-size: 5em; }
-h2 { font-size: 4em; }
-h3 { font-size: 3em; }
-h4 { font-size: 4em; }
-h5 { font-size: 14em; }
-h6 { font-size: 1.5em; }
+div.pad-none { padding: 0px; }
+div.pad-small { padding: 2px; }
+
+div.heroes {
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+}
+div.heroes > div { margin-left: 16px; margin-right: 16px; }
+
+div.games { height: 440px;}
+div.game { margin-top: auto; margin-bottom: auto;}
+
+div.heroes-left{ justify-content: flex-end; }
+div.heroes-right{ justify-content: flex-start; }
+
+div.title { font-size: 4em; color: rgb(119,187,230); }
+div.team-name { font-size: 5em; color: white; }
+div.team-score { font-size: 14em; color: white; }
+div.versus { font-size: 2em; color: rgb(119,187,230); }
 
 div.flex { display: flex; height: 100%;}
 div.flex-center { align-items: center; align-content: center; }
+div.wide { width: 100%; }
 
-img.team {
-    width: 224px;
-    height: 224px;
-     -webkit-filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.7));
+div.inline-flex {   display: inline-flex;
+  align-items: center;
+  align-content: center; width: 100%;}
+
+div.teams { height: 278px; text-shadow: 2px 2px #3F3F3F; }
+
+div.loser  { -webkit-filter: grayscale(100%); filter: grayscale(100%); opacity: 0.8}
+
+span.announcement { font-size: 2.4em; }
+
+div.winner {
+    background: -moz-linear-gradient(top,  rgba(89,145,165,0) 23%, rgba(89,145,165,0.43) 33%, rgba(98,157,184,0.68) 39%, rgba(118,185,227,1) 53%, rgba(119,187,230,0.96) 54%, rgba(119,187,230,0) 76%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(23%,rgba(89,145,165,0)), color-stop(33%,rgba(89,145,165,0.43)), color-stop(39%,rgba(98,157,184,0.68)), color-stop(53%,rgba(118,185,227,1)), color-stop(54%,rgba(119,187,230,0.96)), color-stop(76%,rgba(119,187,230,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(89,145,165,0) 23%,rgba(89,145,165,0.43) 33%,rgba(98,157,184,0.68) 39%,rgba(118,185,227,1) 53%,rgba(119,187,230,0.96) 54%,rgba(119,187,230,0) 76%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(89,145,165,0) 23%,rgba(89,145,165,0.43) 33%,rgba(98,157,184,0.68) 39%,rgba(118,185,227,1) 53%,rgba(119,187,230,0.96) 54%,rgba(119,187,230,0) 76%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(89,145,165,0) 23%,rgba(89,145,165,0.43) 33%,rgba(98,157,184,0.68) 39%,rgba(118,185,227,1) 53%,rgba(119,187,230,0.96) 54%,rgba(119,187,230,0) 76%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(89,145,165,0) 23%,rgba(89,145,165,0.43) 33%,rgba(98,157,184,0.68) 39%,rgba(118,185,227,1) 53%,rgba(119,187,230,0.96) 54%,rgba(119,187,230,0) 76%); /* W3C */
 }
 
-div.loser > div > div { -webkit-filter: grayscale(100%); filter: grayscale(100%); }
+.divimage { padding: 4px; }
 
-
-div.winner > div > div {
-    -webkit-box-shadow: 0px 0px 20px 0px rgba(18,212,0,1);
-    -moz-box-shadow: 0px 0px 20px 0px rgba(18,212,0,1);
-    box-shadow: 0px 0px 20px 0px rgba(18,212,0,1);
+div.winner > div {
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(119,187,230,1);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(119,187,230,1);
+    box-shadow: 0px 0px 20px 0px rgba(119,187,230,1);
 }
-
 
 /*
  ***** Media Queries *****

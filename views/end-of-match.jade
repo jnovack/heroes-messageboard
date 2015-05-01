@@ -4,165 +4,111 @@ block head
   link(href="stylesheets/esl.css", rel="stylesheet")
   link(href="stylesheets/divimage.css", rel="stylesheet")
 
+block footer
+  script(src="javascripts/end-of-match.js")
+
 block content
 
   div(id='tvsafe').tvsafe
     div.row
       div.col-lg-12.text-center
-        h1.title Match Summary
+        div(id='title').title Match Summary
 
-    div.row
+    div.row.teams.flex.flex-center
       div.col-lg-4.text-center
-        img(src="assets/teams/tempostorm.png").team
-        h3 Tempo Storm
-      div.col-lg-1.text-center.flex.flex-center
-        h5 2
-      div.col-lg-2.text-center.flex.flex-center
-        div
-          h4 vs
-      div.col-lg-1.text-center.flex.flex-center
-        h5 3
+        div(id='team1-name').team-name Tempo<br>Storm
+      div.col-lg-1.text-center
+        div(id='team1-score').team-score 2
+      div.col-lg-2.text-center
+        div.versus vs
+      div.col-lg-1.text-center
+        div(id='team2-score').team-score 3
       div.col-lg-4.text-center
-        img(src="assets/teams/cloud9vortex.png").team
-        h3 Cloud 9 Maelstrom
+        div(id='team2-name').team-name Cloud 9 Maelstrom
+
+    div.games.inline-flex
+      div.col-lg-12.pad-none
+
+        div(id='game1-container').row.game
+          div(id='game1-team1').col-lg-5.text-center.winner.pad-small.heroes.heroes-left
+              div(id='game1-team1-hero1').divimage.divimagelg.divimage-chen
+              div(id='game1-team1-hero2').divimage.divimagelg.divimage-diablo
+              div(id='game1-team1-hero3').divimage.divimagelg.divimage-abathur
+              div(id='game1-team1-hero4').divimage.divimagelg.divimage-tyrande
+              div(id='game1-team1-hero5').divimage.divimagelg.divimage-tyrael
+          div.col-lg-2.text-center.pad-small
+            div(id='game1-map').divimage.divimage-map-small.divimage-sky-temple-small
+          div(id='game1-team2').col-lg-5.text-center.loser.pad-small.heroes.heroes-right
+              div(id='game1-team2-hero1').divimage.divimagelg.divimage-tychus
+              div(id='game1-team2-hero2').divimage.divimagelg.divimage-gazlowe
+              div(id='game1-team2-hero3').divimage.divimagelg.divimage-lili
+              div(id='game1-team2-hero4').divimage.divimagelg.divimage-nova
+              div(id='game1-team2-hero5').divimage.divimagelg.divimage-valla
+
+        div(id='game2-container').row.game
+          div(id='game2-team1').col-lg-5.text-center.winner.pad-small.heroes.heroes-left
+              div(id='game2-team1-hero1').divimage.divimagelg.divimage-chen
+              div(id='game2-team1-hero2').divimage.divimagelg.divimage-diablo
+              div(id='game2-team1-hero3').divimage.divimagelg.divimage-abathur
+              div(id='game2-team1-hero4').divimage.divimagelg.divimage-tyrande
+              div(id='game2-team1-hero5').divimage.divimagelg.divimage-tyrael
+          div.col-lg-2.text-center.pad-small
+            div(id='game2-map').divimage.divimage-map-small.divimage-sky-temple-small
+          div(id='game2-team2').col-lg-5.text-center.loser.pad-small.heroes.heroes-right
+              div(id='game2-team2-hero1').divimage.divimagelg.divimage-tychus
+              div(id='game2-team2-hero2').divimage.divimagelg.divimage-gazlowe
+              div(id='game2-team2-hero3').divimage.divimagelg.divimage-lili
+              div(id='game2-team2-hero4').divimage.divimagelg.divimage-nova
+              div(id='game2-team2-hero5').divimage.divimagelg.divimage-valla
+
+        div(id='game3-container').row.game
+          div(id='game3-team1').col-lg-5.text-center.winner.pad-small.heroes.heroes-left
+              div(id='game3-team1-hero1').divimage.divimagelg.divimage-chen
+              div(id='game3-team1-hero2').divimage.divimagelg.divimage-diablo
+              div(id='game3-team1-hero3').divimage.divimagelg.divimage-abathur
+              div(id='game3-team1-hero4').divimage.divimagelg.divimage-tyrande
+              div(id='game3-team1-hero5').divimage.divimagelg.divimage-tyrael
+          div.col-lg-2.text-center.pad-small
+            div(id='game3-map').divimage.divimage-map-small.divimage-sky-temple-small
+          div(id='game3-team2').col-lg-5.text-center.loser.pad-small.heroes.heroes-right
+              div(id='game3-team2-hero1').divimage.divimagelg.divimage-tychus
+              div(id='game3-team2-hero2').divimage.divimagelg.divimage-gazlowe
+              div(id='game3-team2-hero3').divimage.divimagelg.divimage-lili
+              div(id='game3-team2-hero4').divimage.divimagelg.divimage-nova
+              div(id='game3-team2-hero5').divimage.divimagelg.divimage-valla
+
+        div(id='game4-container').row.game
+          div(id='game4-team1').col-lg-5.text-center.winner.pad-small.heroes.heroes-left
+              div(id='game4-team1-hero1').divimage.divimagelg.divimage-chen
+              div(id='game4-team1-hero2').divimage.divimagelg.divimage-diablo
+              div(id='game4-team1-hero3').divimage.divimagelg.divimage-abathur
+              div(id='game4-team1-hero4').divimage.divimagelg.divimage-tyrande
+              div(id='game4-team1-hero5').divimage.divimagelg.divimage-tyrael
+          div.col-lg-2.text-center.pad-small
+            div(id='game4-map').divimage.divimage-map-small.divimage-sky-temple-small
+          div(id='game4-team2').col-lg-5.text-center.loser.pad-small.heroes.heroes-right
+              div(id='game4-team2-hero1').divimage.divimagelg.divimage-tychus
+              div(id='game4-team2-hero2').divimage.divimagelg.divimage-gazlowe
+              div(id='game4-team2-hero3').divimage.divimagelg.divimage-lili
+              div(id='game4-team2-hero4').divimage.divimagelg.divimage-nova
+              div(id='game4-team2-hero5').divimage.divimagelg.divimage-valla
+
+        div(id='game5-container').row.game
+          div(id='game5-team1').col-lg-5.text-center.winner.pad-small.heroes.heroes-left
+              div(id='game5-team1-hero1').divimage.divimagelg.divimage-chen
+              div(id='game5-team1-hero2').divimage.divimagelg.divimage-diablo
+              div(id='game5-team1-hero3').divimage.divimagelg.divimage-abathur
+              div(id='game5-team1-hero4').divimage.divimagelg.divimage-tyrande
+              div(id='game5-team1-hero5').divimage.divimagelg.divimage-tyrael
+          div.col-lg-2.text-center.pad-small
+            div(id='game5-map').divimage.divimage-map-small.divimage-sky-temple-small
+          div(id='game5-team2').col-lg-5.text-center.loser.pad-small.heroes.heroes-right
+              div(id='game5-team2-hero1').divimage.divimagelg.divimage-tychus
+              div(id='game5-team2-hero2').divimage.divimagelg.divimage-gazlowe
+              div(id='game5-team2-hero3').divimage.divimagelg.divimage-lili
+              div(id='game5-team2-hero4').divimage.divimagelg.divimage-nova
+              div(id='game5-team2-hero5').divimage.divimagelg.divimage-valla
 
     div.row
-      div.col-lg-5.text-center.winner
-        div.col-lg-2
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-chen
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-diablo
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-abathur
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-tyrande
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-tyrael
-      div.col-lg-2.text-center
-        div.divimage.divimagewide.divimage-sky-temple
-      div.col-lg-5.text-center.loser
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-tychus
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-gazlowe
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-lili
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-nova
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-valla
-        div.col-lg-2
-
-    div.row
-      div.col-lg-5.text-center.loser
-        div.col-lg-2
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-abathur
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-tyrande
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-tyrael
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-chen
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-diablo
-
-      div.col-lg-2.text-center
-        div.divimage.divimagewide.divimage-blackhearts-bay
-      div.col-lg-5.text-center.winner
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-nova
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-valla
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-tychus
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-gazlowe
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-lili
-        div.col-lg-2
-
-    div.row
-      div.col-lg-5.text-center.loser
-        div.col-lg-2
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-tychus
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-gazlowe
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-lili
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-nova
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-valla
-      div.col-lg-2.text-center
-        div.divimage.divimagewide.divimage-garden-of-terror
-      div.col-lg-5.text-center.winner
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-chen
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-diablo
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-abathur
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-tyrande
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-tyrael
-        div.col-lg-2
-
-    div.row
-      div.col-lg-5.text-center.winner
-        div.col-lg-2
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-abathur
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-chen
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-tyrande
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-tyrael
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-diablo
-      div.col-lg-2.text-center
-        div.divimage.divimagewide.divimage-haunted-mines
-      div.col-lg-5.text-center.loser
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-lili
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-nova
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-tychus
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-gazlowe
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-valla
-        div.col-lg-2
-
-    div.row
-      div.col-lg-5.text-center.loser
-        div.col-lg-2
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-chen
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-diablo
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-abathur
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-tyrande
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-tyrael
-      div.col-lg-2.text-center
-        div.divimage.divimagewide.divimage-cursed-hollow
-      div.col-lg-5.text-center.winner
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-tychus
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-gazlowe
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-lili
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-nova
-        div.col-lg-2
-          div.divimage.divimagelg.divimage-valla
-        div.col-lg-2
+      div.col-lg-12.text-center
+        span(id='announcement').announcement Coming Up Next: Cloud 9 battles 2arc Gaming in the finals...

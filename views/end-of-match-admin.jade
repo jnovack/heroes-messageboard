@@ -1,0 +1,301 @@
+extends layout
+
+block content
+  style.
+    .row { margin-top: 24px;}
+
+  div.row
+    div.col-lg-12
+      div.control-group
+        label(for='title',class='control-label') Title
+        div.controls
+          input(type='text',id='title',name='title',placeholder="Match Summary",class='form-control')
+
+  div.row
+    div.col-md-6
+      div.control-group
+        label(for='subtitle1',class='control-label') SubTitle Top Line
+        div.controls
+          input(data-group="subtitle-text",type='text',id='subtitle1',name='subtitle1',placeholder='Solo Queue',class='form-control')
+    div.col-md-6
+      div.control-group
+        label(for='subtitle2',class='control-label') SubTitle Bottom Lane
+        div.controls
+          input(data-group="subtitle-text",type='text',id='subtitle2',name='subtitle2',placeholder='Quick Match',class='form-control')
+    div.col-lg-12
+      ul.nav.nav-pills.nav-justified
+        li(data-group="subtitle-pills",id="subtitleText")
+          a(href="#") Use Text
+        li(data-group="subtitle-pills",id="subtitleAFKBreak")
+          a(href="#") AFK On Break
+        li(data-group="subtitle-pills",id="subtitleAFKCustom")
+          a(href="#") AFK Custom
+
+  div.row
+    div.col-md-8
+      +hero-select('sidebar_header_video','Theme Hero')
+    div.col-md-4
+      div.control-group
+        label(for='rank',class='control-label') Rank
+        div.controls
+          input(data-group='value',type='text',id='rank',name='rank',placeholder="25",class='form-control')
+
+  div.row
+
+  div.row
+    div.col-lg-12
+      div(role='tabpanel')
+        ul(role='tablist').nav.nav-tabs
+          li(role='presentation').active
+            a(href='#tab-map',aria-expanded='true',role='tab',data-toggle='tab')
+              span Map Info
+          li(role='presentation')
+            a(href='#tab-hero',aria-expanded='false',role='tab',data-toggle='tab')
+              span Hero Info
+          li(role='presentation')
+            a(href='#tab-voice',aria-expanded='false',role='tab',data-toggle='tab')
+              span Voice Info
+          li(role='presentation')
+            a(href='#tab-crawl',aria-expanded='false',role='tab',data-toggle='tab')
+              span(id='label-crawl').label.label-primary Crawl
+          li(role='presentation')
+            a(href='#tab-messages',aria-expanded='false',role='tab',data-toggle='tab')
+              span Messages
+        div.tab-content
+          div(role='tabpanel',id='tab-map').tab-pane.active.has-primary
+            div.col-md-3
+              div(id="blackhearts-bay")
+                div.control-group
+                  label(for='blackhearts-bay-percent',class='control-label') blackhearts-bay
+                  div.controls
+                    input(data-group='value',type='text',id='blackhearts-bay-percent',placeholder="52",class='form-control')
+            div.col-md-3
+              div(id="cursed-hollow")
+                div.control-group
+                  label(for='cursed-hollow-percent',class='control-label') cursed-hollow
+                  div.controls
+                    input(data-group='value',type='text',id='cursed-hollow-percent',placeholder="54",class='form-control')
+            div.col-md-3
+              div(id="dragon-shire")
+                div.control-group
+                  label(for='dragon-shire-percent',class='control-label') dragon-shire
+                  div.controls
+                    input(data-group='value',type='text',id='dragon-shire-percent',placeholder="53",class='form-control')
+            div.col-md-3
+              div(id="haunted-mines")
+                div.control-group
+                  label(for='haunted-mines-percent',class='control-label') haunted-mines
+                  div.controls
+                    input(data-group='value',type='text',id='haunted-mines-percent',placeholder="52",class='form-control')
+            div.col-md-3
+              div(id="garden-of-terror")
+                div.control-group
+                  label(for='garden-of-terror-percent',class='control-label') garden-of-terror
+                  div.controls
+                    input(data-group='value',type='text',id='garden-of-terror-percent',placeholder="46",class='form-control')
+            div.col-md-3
+              div(id="sky-temple")
+                div.control-group
+                  label(for='sky-temple-percent',class='control-label') sky-temple
+                  div.controls
+                    input(data-group='value',type='text',id='sky-temple-percent',placeholder="50",class='form-control')
+            div.col-md-3
+              div(id="tomb-of-the-spider-queen")
+                div.control-group
+                  label(for='tomb-of-the-spider-queen-percent',class='control-label') tomb-of-the-spider-queen
+                  div.controls
+                    input(data-group='value',type='text',id='tomb-of-the-spider-queen-percent',placeholder="46",class='form-control')
+          div(role='tabpanel',id='tab-hero').tab-pane
+            div.row
+              div.col-lg-12
+                div.col-md-3
+                  div(id="warrior")
+                    div.control-group
+                      label(for='warrior-value',class='control-label') warrior
+                      div.controls
+                        input(data-group='value',type='text',id='warrior-value',placeholder="123",class='form-control')
+                div.col-md-3
+                  div(id="assassin")
+                    div.control-group
+                      label(for='assassin-value',class='control-label') assassin
+                      div.controls
+                        input(data-group='value',type='text',id='assassin-value',placeholder="234",class='form-control')
+                div.col-md-3
+                  div(id="support")
+                    div.control-group
+                      label(for='support-value',class='control-label') support
+                      div.controls
+                        input(data-group='value',type='text',id='support-value',placeholder="345",class='form-control')
+                div.col-md-3
+                  div(id="specialist")
+                    div.control-group
+                      label(for='specialist-value',class='control-label') specialist
+                      div.controls
+                        input(data-group='value',type='text',id='specialist-value',placeholder="456",class='form-control')
+            div.row
+              div.col-lg-12
+                div.col-md-4
+                  div(id="hero1")
+                    +hero-select('hero1-text','Hero 1')
+                    div.col-lg-8
+                      div.control-group
+                        label(for='hero1-progress',class='control-label') hero1-progress
+                        div.controls
+                          input(data-group='value',type='text',id='hero1-progress',placeholder="2345/4750",class='form-control')
+                    div.col-lg-4
+                      div.control-group
+                        label(for='hero1-level',class='control-label') hero1-level
+                        div.controls
+                          input(data-group='value',type='text',id='hero1-level',placeholder="10",class='form-control')
+                div.col-md-4
+                  div(id="hero2")
+                    +hero-select('hero2-text','Hero 2')
+                    div.col-lg-8
+                      div.control-group
+                        label(for='hero2-progress',class='control-label') hero2-progress
+                        div.controls
+                          input(data-group='value',type='text',id='hero2-progress',placeholder="2345/4750",class='form-control')
+                    div.col-lg-4
+                      div.control-group
+                        label(for='hero2-level',class='control-label') hero2-level
+                        div.controls
+                          input(data-group='value',type='text',id='hero2-level',placeholder="10",class='form-control')
+                div.col-md-4
+                  div(id="hero3")
+                    +hero-select('hero3-text','Hero 3')
+                    div.col-lg-8
+                      div.control-group
+                        label(for='hero3-progress',class='control-label') hero3-progress
+                        div.controls
+                          input(data-group='value',type='text',id='hero3-progress',placeholder="2345/4750",class='form-control')
+                    div.col-lg-4
+                      div.control-group
+                        label(for='hero3-level',class='control-label') hero3-level
+                        div.controls
+                          input(data-group='value',type='text',id='hero3-level',placeholder="10",class='form-control')
+          div(role='tabpanel',id='tab-crawl').tab-pane
+              div.col-lg-12
+                div.control-group
+                  label(for='crawl-text',class='control-label') Crawl
+                  div.controls
+                    textarea(type='text',id='crawl-text',name='crawl-text',placeholder=':: <strong>Heroes of the Dorm</strong> :: Boston College defeated Western Ontario in a 2-0 victory.  ||  Arizona State beat Texas A&M in a 2-0 victory.',class='form-control')
+
+              div.col-lg-12
+                ul.nav.nav-pills.nav-justified
+                  li(data-group="crawl-pills",id="crawlBlack")
+                    a(href="#") Default Crawl
+                  li(data-group="crawl-pills",id="crawlBlue")
+                    a(href="#") Priority Crawl
+                  li(data-group="crawl-pills",id="crawlRed")
+                    a(href="#") Urgent Crawl
+                  li(data-group="crawl-pills",id="crawlDisable")
+                    a(href="#") Disable Crawl
+          div(role='tabpanel',id='tab-messages').tab-pane
+            div.row
+              div.col-lg-12
+                fieldset.active
+                  legend Message 01 of 10
+                  div.control-group
+                    label(for='message1-text',class='control-label') message
+                    div.controls
+                      textarea(data-group='value',type='text',id='message1-text',placeholder="A is for Apple",class='form-control')
+                  div.control-group
+                    label(for='message1-date',class='control-label') date
+                    div.controls
+                      input(data-group='value',type='text',id='message1-date',placeholder="Apple",class='form-control')
+            div.row
+              div.col-lg-12
+                fieldset
+                  legend Message 02 of 10
+                  div.control-group
+                    label(for='message2-text',class='control-label') message
+                    div.controls
+                      textarea(data-group='value',type='text',id='message2-text',placeholder="B is for Banana",class='form-control')
+                  div.control-group
+                    label(for='message2-date',class='control-label') date
+                    div.controls
+                      input(data-group='value',type='text',id='message2-date',placeholder="Banana",class='form-control')
+            div.row
+              div.col-lg-12
+                fieldset
+                  legend Message 03 of 10
+                  div.control-group
+                    label(for='message3-text',class='control-label') message
+                    div.controls
+                      textarea(data-group='value',type='text',id='message3-text',placeholder="C is for Cucumber",class='form-control')
+                  div.control-group
+                    label(for='message3-date',class='control-label') date
+                    div.controls
+                      input(data-group='value',type='text',id='message3-date',placeholder="Cucumber",class='form-control')
+          div(role='tabpanel',id='tab-voice').tab-pane
+            div.row
+              div.col-lg-12
+                div.btn-toolbar
+                  div.btn-group
+                    a(data-group="voice-pills",id="voiceHide",href='#').btn.btn-sm.btn-success Voice Tab is VISIBLE
+                    a(data-group="voice-pills",id="voiceShow",href='#',style="display: none").btn.btn-sm.btn-danger Voice Tab is HIDDEN
+            div.row
+              div.col-lg-12
+                div.col-md-4
+                  div(id="voice1")
+                    +talent-select('voice1-picture','voice1-picture')
+                    div.control-group
+                      label(for='voice1-text',class='control-label') voice1-text
+                      div.controls
+                        input(data-group='text',type='text',id='voice1-text',placeholder="TickleMeOzmo",class='form-control')
+                div.col-md-4
+                  div(id="voice2")
+                    +talent-select('voice2-picture','voice2-picture')
+                    div.control-group
+                      label(for='voice2-text',class='control-label') voice2-text
+                      div.controls
+                        input(data-group='text',type='text',id='voice2-text',placeholder="TickleMeOzmo",class='form-control')
+                div.col-md-4
+                  div(id="voice3")
+                    +talent-select('voice3-picture','voice3-picture')
+                    div.control-group
+                      label(for='voice3-text',class='control-label') voice3-text
+                      div.controls
+                        input(data-group='text',type='text',id='voice3-text',placeholder="TickleMeOzmo",class='form-control')
+            div.row
+              div.col-lg-12
+                div.col-md-4
+                  div(id="voice4")
+                    +talent-select('voice4-picture','voice4-picture')
+                    div.control-group
+                      label(for='voice4-text',class='control-label') voice4-text
+                      div.controls
+                        input(data-group='text',type='text',id='voice4-text',placeholder="TickleMeOzmo",class='form-control')
+                div.col-md-4
+                  div(id="voice5")
+                    +talent-select('voice5-picture','voice5-picture')
+                    div.control-group
+                      label(for='voice5-text',class='control-label') voice5-text
+                      div.controls
+                        input(data-group='text',type='text',id='voice5-text',placeholder="TickleMeOzmo",class='form-control')
+                div.col-md-4
+                  div(id="voice6")
+                    +talent-select('voice6-picture','voice6-picture')
+                    div.control-group
+                      label(for='voice6-text',class='control-label') voice6-text
+                      div.controls
+                        input(data-group='text',type='text',id='voice6-text',placeholder="TickleMeOzmo",class='form-control')
+
+          div(role='tabpanel',id='tab-template').tab-pane
+            div.col-lg-12
+              div.col-md-2
+                div(id="template")
+                  div.control-group
+                    label(for='template-value',class='control-label') template
+                    div.controls
+                      input(data-group='value',type='text',id='template-value',placeholder="52",class='form-control')
+
+  hr
+
+  div.row
+    div.col-lg-12
+      a(href="#",class="btn btn-primary",id="reloadButton") Reload
+      a(href="#",class="btn btn-warning",id="hideMsgButton") Hide Messages
+      a(href="#",class="btn btn-success",id="showMsgButton", style="display: none") Show Messages
+
+  script(src="/javascripts/admin.js")
