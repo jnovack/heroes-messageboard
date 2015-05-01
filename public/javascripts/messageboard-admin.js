@@ -196,7 +196,7 @@ $("#crawlRed").click(function() {
  */
 
 $("select").change(function() {
-    message = { event: 'value', data: { id: $(this).attr("id"), text: $("#" + $(this).attr("id") + " option:selected").text() } };
+    message = { event: 'value', data: { id: $(this).attr("data-for"), text: $("#" + $(this).attr("id") + " option:selected").text() } };
     send(message);
     save(message.data.id, message.data.text);
 });
