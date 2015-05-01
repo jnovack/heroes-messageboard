@@ -8,6 +8,7 @@ var app = require('../app');
 var debug = require('debug')('heroes-messageboard:server');
 var http = require('http');
 var fs = require('fs');
+var util = require('util');
 
 /**
  * Get port from environment and store in Express.
@@ -40,19 +41,33 @@ server.on('listening', onListening);
 var io = require('socket.io')(server);
 io.on('connection', function(socket){
   console.log('a user connected');
-  for (var event in json) {
-    console.log("sending " + event);
-    console.log(json[event]);
-    socket.emit("value", json[event]);
-  }
+
+  socket.on('join', function(room) {
+    if (socket.room) {
+      console.log("a user left " + socket.room);
+      socket.leave(socket.room);
+    }
+    socket.join(room);
+    socket.room = room;
+    console.log("a user joined " + room);
+    socket.emit('joined', room);
+  });
+
+  // TODO - Broadcast on join
+  // for (var event in json) {
+  //   console.log("sending " + event);
+  //   console.log(json[event]);
+  //   socket.emit("value", json[event]);
+  // }
 
   socket.on('broadcast', function(message) {
-    console.log(message);
-    if (message.event != "reload") {
-        json[message.data.id] = message.data;
-        saveConfig();
-    }
-    io.sockets.emit(message.event, message.data);
+    console.dir(socket.room + " -- " + util.inspect(message, { depth: 2 }) );
+    // TODO - Save states
+    // if (message.event != "reload") {
+    //     json[message.data.id] = message.data;
+    //     saveConfig();
+    // }
+    io.sockets.in(socket.room).emit(message.event, message.data);
   });
 });
 
