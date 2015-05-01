@@ -1,6 +1,19 @@
 mixin select-option(name)
   option&attributes(attributes)= name
 
+mixin map-select(id,name)
+  label(for=id,class='control-label')= name
+  select(id=id).form-control
+    +select-option("Please Select Map")(selected,disabled)
+    +select-option("blackhearts-bay")
+    +select-option("cursed-hollow")
+    +select-option("dragon-shire")
+    +select-option("garden-of-terror")
+    +select-option("haunted-mines")
+    +select-option("sky-temple")
+    +select-option("tomb-of-the-spider-queen")
+
+
 mixin hero-select(id,name)
   label(for=id,class='control-label')= name
   select(id=id).form-control

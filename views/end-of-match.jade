@@ -1,30 +1,31 @@
 extends layout
 
 block head
-  link(href="stylesheets/esl.css", rel="stylesheet")
-  link(href="stylesheets/divimage.css", rel="stylesheet")
+  link(href="/stylesheets/esl.css", rel="stylesheet")
+  link(href="/stylesheets/divimage.css", rel="stylesheet")
+  script(src="/javascripts/socket.js")
 
 block footer
-  script(src="javascripts/end-of-match.js")
+  script(src="/javascripts/end-of-match.js")
 
 block content
 
   div(id='tvsafe').tvsafe
     div.row
       div.col-lg-12.text-center
-        div(id='title').title Match Summary
+        div(id='title').text.title Match Summary
 
     div.row.teams.flex.flex-center
       div.col-lg-4.text-center
-        div(id='team1-name').team-name Tempo<br>Storm
+        div(id='team1-name').html.team-name Tempo<br>Storm
       div.col-lg-1.text-center
-        div(id='team1-score').team-score 2
+        div(id='team1-score').value.team-score 2
       div.col-lg-2.text-center
         div.versus vs
       div.col-lg-1.text-center
-        div(id='team2-score').team-score 3
+        div(id='team2-score').value.team-score 3
       div.col-lg-4.text-center
-        div(id='team2-name').team-name Cloud 9 Maelstrom
+        div(id='team2-name').html.team-name Cloud 9 Maelstrom
 
     div.games.inline-flex
       div.col-lg-12.pad-none
@@ -37,7 +38,7 @@ block content
               div(id='game1-team1-hero4').divimage.divimagelg.divimage-tyrande
               div(id='game1-team1-hero5').divimage.divimagelg.divimage-tyrael
           div.col-lg-2.text-center.pad-small
-            div(id='game1-map').divimage.divimage-map-small.divimage-sky-temple-small
+            div(id='game1-map').divimage.map-small.divimage-sky-temple
           div(id='game1-team2').col-lg-5.text-center.loser.pad-small.heroes.heroes-right
               div(id='game1-team2-hero1').divimage.divimagelg.divimage-tychus
               div(id='game1-team2-hero2').divimage.divimagelg.divimage-gazlowe
@@ -53,7 +54,7 @@ block content
               div(id='game2-team1-hero4').divimage.divimagelg.divimage-tyrande
               div(id='game2-team1-hero5').divimage.divimagelg.divimage-tyrael
           div.col-lg-2.text-center.pad-small
-            div(id='game2-map').divimage.divimage-map-small.divimage-sky-temple-small
+            div(id='game2-map').divimage.map-small.divimage-sky-temple
           div(id='game2-team2').col-lg-5.text-center.loser.pad-small.heroes.heroes-right
               div(id='game2-team2-hero1').divimage.divimagelg.divimage-tychus
               div(id='game2-team2-hero2').divimage.divimagelg.divimage-gazlowe
@@ -69,7 +70,7 @@ block content
               div(id='game3-team1-hero4').divimage.divimagelg.divimage-tyrande
               div(id='game3-team1-hero5').divimage.divimagelg.divimage-tyrael
           div.col-lg-2.text-center.pad-small
-            div(id='game3-map').divimage.divimage-map-small.divimage-sky-temple-small
+            div(id='game3-map').divimage.map-small.divimage-sky-temple
           div(id='game3-team2').col-lg-5.text-center.winner.pad-small.heroes.heroes-right
               div(id='game3-team2-hero1').divimage.divimagelg.divimage-tychus
               div(id='game3-team2-hero2').divimage.divimagelg.divimage-gazlowe
@@ -85,7 +86,7 @@ block content
               div(id='game4-team1-hero4').divimage.divimagelg.divimage-tyrande
               div(id='game4-team1-hero5').divimage.divimagelg.divimage-tyrael
           div.col-lg-2.text-center.pad-small
-            div(id='game4-map').divimage.divimage-map-small.divimage-sky-temple-small
+            div(id='game4-map').divimage.map-small.divimage-sky-temple
           div(id='game4-team2').col-lg-5.text-center.winner.pad-small.heroes.heroes-right
               div(id='game4-team2-hero1').divimage.divimagelg.divimage-tychus
               div(id='game4-team2-hero2').divimage.divimagelg.divimage-gazlowe
@@ -101,7 +102,7 @@ block content
               div(id='game5-team1-hero4').divimage.divimagelg.divimage-tyrande
               div(id='game5-team1-hero5').divimage.divimagelg.divimage-tyrael
           div.col-lg-2.text-center.pad-small
-            div(id='game5-map').divimage.divimage-map-small.divimage-sky-temple-small
+            div(id='game5-map').divimage.map-small.divimage-sky-temple
           div(id='game5-team2').col-lg-5.text-center.loser.pad-small.heroes.heroes-right
               div(id='game5-team2-hero1').divimage.divimagelg.divimage-tychus
               div(id='game5-team2-hero2').divimage.divimagelg.divimage-gazlowe
