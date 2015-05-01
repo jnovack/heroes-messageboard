@@ -1,8 +1,3 @@
-socket.on('connect', function() {
-    console.log("connected.");
-    socket.emit('join', 'end-of-match');
-});
-
 var save = function(key, value) { return; };
 var read = function(key) { return; };
 
@@ -100,18 +95,6 @@ $("#subtitleAFKCustom").click(function() {
     $("#subtitle1").parent().parent().removeClass("has-success");
     $("#subtitle2").parent().parent().addClass("has-success");
     send(message);
-});
-
-$("#hero").change(function() {
-    message = { event: 'hero', data: { text: $("#hero").val() } };
-    send(message);
-    save('hero', message.data.text);
-});
-
-$("#rank").blur(function() {
-    message = { event: 'rank', data: { text: $("#rank").val() } };
-    send(message);
-    save('rank', message.data.text);
 });
 
 
