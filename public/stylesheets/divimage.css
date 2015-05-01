@@ -22,6 +22,12 @@
     background-size: 90px 50px;
 }
 
+.divimage-map-small {
+    height: 72px;
+    width: 264px;
+    background-size: 264px 72px;
+}
+
 .divimage-transparent { background-image: url('../images/transparent.png'); border: none;}
 
 /* Maps */
@@ -33,6 +39,15 @@
 .divimage-garden-of-terror { background-image: url('../assets/maps/garden-of-terror-mini.jpg'); }
 .divimage-sky-temple { background-image: url('../assets/maps/sky-temple-mini.jpg'); }
 .divimage-tomb-of-the-spider-queen { background-image: url('../assets/maps/tomb-of-the-spider-queen-mini.jpg'); }
+
+
+.divimage-blackhearts-bay-small { background-image: url('../assets/maps/blackhearts-bay-small.jpg'); }
+.divimage-cursed-hollow-small { background-image: url('../assets/maps/cursed-hollow-small.jpg'); }
+.divimage-dragon-shire-small { background-image: url('../assets/maps/dragon-shire-small.jpg'); }
+.divimage-haunted-mines-small { background-image: url('../assets/maps/haunted-mines-small.jpg'); }
+.divimage-garden-of-terror-small { background-image: url('../assets/maps/garden-of-terror-small.jpg'); }
+.divimage-sky-temple-small { background-image: url('../assets/maps/sky-temple-small.jpg'); }
+.divimage-tomb-of-the-spider-queen-small { background-image: url('../assets/maps/tomb-of-the-spider-queen-small.jpg'); }
 
 
 /* Heroes */
