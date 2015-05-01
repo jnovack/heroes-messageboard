@@ -6,10 +6,8 @@ var router = express.Router();
 //   res.render('index', { title: 'Express' });
 // });
 
-
-//TODO - /messageboard
-router.get('/', function(req, res, next) {
-    res.sendFile('index.html', { root: publicDir });
+router.get('/messageboard', function(req, res, next) {
+    res.sendFile(req.app.get('publicDir') + '/messageboard.html');
 });
 
 router.get('/end-of-match', function(req, res, next) {
