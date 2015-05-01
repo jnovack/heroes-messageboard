@@ -23,15 +23,13 @@
     background-size: 90px 50px;
 }
 
-.map-small {
-    height: 72px;
-    width: 264px;
-    background-size: 264px 72px;
-}
-
+.center { margin-left: auto; margin-right: auto; }
 .divimage-transparent { background-image: url('../images/transparent.png'); border: none;}
 
 /* Maps */
+
+.map-mini { height: 50px; width: 90px; background-size: 90px 50px; }
+.map-small { height: 72px; width: 264px; background-size: 264px 72px; }
 
 .divimage-blackhearts-bay { background-image: url('../assets/maps/blackhearts-bay-mini.jpg'); }
 .divimage-cursed-hollow { background-image: url('../assets/maps/cursed-hollow-mini.jpg'); }
@@ -41,6 +39,13 @@
 .divimage-sky-temple { background-image: url('../assets/maps/sky-temple-mini.jpg'); }
 .divimage-tomb-of-the-spider-queen { background-image: url('../assets/maps/tomb-of-the-spider-queen-mini.jpg'); }
 
+.map-mini.divimage-blackhearts-bay { background-image: url('../assets/maps/blackhearts-bay-mini.jpg'); }
+.map-mini.divimage-cursed-hollow { background-image: url('../assets/maps/cursed-hollow-mini.jpg'); }
+.map-mini.divimage-dragon-shire { background-image: url('../assets/maps/dragon-shire-mini.jpg'); }
+.map-mini.divimage-haunted-mines { background-image: url('../assets/maps/haunted-mines-mini.jpg'); }
+.map-mini.divimage-garden-of-terror { background-image: url('../assets/maps/garden-of-terror-mini.jpg'); }
+.map-mini.divimage-sky-temple { background-image: url('../assets/maps/sky-temple-mini.jpg'); }
+.map-mini.divimage-tomb-of-the-spider-queen { background-image: url('../assets/maps/tomb-of-the-spider-queen-mini.jpg'); }
 
 .map-small.divimage-blackhearts-bay { background-image: url('../assets/maps/blackhearts-bay-small.jpg'); }
 .map-small.divimage-cursed-hollow { background-image: url('../assets/maps/cursed-hollow-small.jpg'); }

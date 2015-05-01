@@ -1,5 +1,36 @@
 var socket = io();
 
+socket.on('connect', function() {
+    socket.emit('join', 'end-of-match');
+});
+
+socket.on('reload', function(data){
+    console.log("reloading...");
+    location.reload();
+});
+
+socket.on('action', function(data) {
+    console.log(data);
+    if (data.action == 'ignore') {
+        $("#"+data.id).attr('data-ignore', data.value);
+    }
+    if (data.action == 'visible') {
+        $("#"+data.id).attr('data-visible', data.value);
+        if (data.value == 'hide') {
+            $("#"+data.id).fadeOut();
+        }
+        if (data.value == 'show') {
+            $("#"+data.id).fadeIn();
+        }
+    }
+});
+
+socket.on('value', function(data) {
+    console.log(data);
+    updateValue(data.id, data.text);
+});
+
+
 function replaceClass(classLike, id) {
     var classNames = $("#"+id).attr("class").toString().split(' ');
     var prefix = classLike.substring(0, classLike.indexOf('-'));
@@ -11,37 +42,33 @@ function replaceClass(classLike, id) {
     $("#"+id).addClass(classLike);
 }
 
-socket.on('connect', function() {
-    socket.emit('join', 'end-of-match');
-});
+function updateValue(id, value) {
+    console.log("updateValue: " + id + " - " + value);
 
-socket.on('reload', function(data){
-    console.log("reloading...");
-    location.reload();
-});
-
-socket.on('value', function(data) {
-    console.log(data);
-
-        $("#"+data.id).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+    if ($("#"+id).is("div")) {
+        $("#"+id).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
             $(this).removeClass("animated bounceIn");
         });
+    }
 
-        if ($("#"+data.id).hasClass("value")) {
-            $("#"+data.id).text(data.text).addClass("animated bounceIn");
-        }
+    if ($("#"+id).is("input")) {
+        $("#"+id).val(value);
+    }
 
-        if ($("#"+data.id).hasClass("text")) {
-            $("#"+data.id).text(data.text).addClass("animated bounceIn");
-        }
+    if ($("#"+id).hasClass("value")) {
+        $("#"+id).text(value).addClass("animated bounceIn");
+    }
 
-        if ($("#"+data.id).hasClass("html")) {
-            $("#"+data.id).html(data.text).addClass("animated bounceIn");
-        }
+    if ($("#"+id).hasClass("text")) {
+        $("#"+id).text(value).addClass("animated bounceIn");
+    }
 
-        if ($("#"+data.id).hasClass("divimage")) {
-            replaceClass("divimage-"+data.text, data.id);
-            $("#"+data.id).addClass("animated bounceIn");
-        }
+    if ($("#"+id).hasClass("html")) {
+        $("#"+id).html(value).addClass("animated bounceIn");
+    }
 
-});
+    if ($("#"+id).hasClass("divimage")) {
+        replaceClass("divimage-"+value, id);
+        $("#"+id).addClass("animated bounceIn");
+    }
+}

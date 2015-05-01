@@ -3,7 +3,7 @@ mixin select-option(name)
 
 mixin map-select(id,name)
   label(for=id,class='control-label')= name
-  select(id=id).form-control
+  select(data-for=id,id=id+'-select').form-control
     +select-option("Please Select Map")(selected,disabled)
     +select-option("blackhearts-bay")
     +select-option("cursed-hollow")
@@ -16,7 +16,7 @@ mixin map-select(id,name)
 
 mixin hero-select(id,name)
   label(for=id,class='control-label')= name
-  select(id=id).form-control
+  select(data-for=id,id=id+'-select').form-control
     +select-option("Please Select Hero")(selected,disabled)
     +select-option("abathur")
     +select-option("anubarak")
@@ -97,7 +97,7 @@ mixin skin-select(id,name)
 
 mixin talent-select(id,name)
   label(for=id,class='control-label')= name
-  select(id=id).form-control
+  select(data-for=id,id=id+'-select').form-control
     +select-option("Please Select Talent")(selected,disabled)
     +select-option("transparent")
     +select-option("- Generic")(disabled)

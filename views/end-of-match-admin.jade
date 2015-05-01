@@ -1,11 +1,13 @@
 extends layout
 
 block head
+  link(href="/stylesheets/divimage.css", rel="stylesheet")
   script(src="/javascripts/socket.js")
   style.
     .nav-tabs>li { background-color: #ECF0F1 }
 
 block footer
+  script(src="/javascripts/end-of-match.js")
   script(src="/javascripts/end-of-match-admin.js")
 
 block content
@@ -51,6 +53,13 @@ block content
 
   div.row
     div.col-lg-12
+      div.control-group
+        label(for='announcement',class='control-label') Announcement
+        div.controls
+          input(data-group='text',type='text',id='announcement',name='announcement',placeholder="Coming Up: The finals!",class='form-control')
+
+  div.row
+    div.col-lg-12
       div(role='tabpanel')
         ul(role='tablist').nav.nav-tabs
           - for (var i = 1; i < 6; ++i) {
@@ -68,23 +77,38 @@ block content
                     span= i
               div.row
                 div.col-lg-12
-                  ul.nav.nav-pills.nav-justified
-                    li(data-group="game"+i+"-pills",id="game"+i+"Reset",data-game="game"+i,data-action="reset")
-                      a(href="#") Reset
-                    li(data-group="game"+i+"-pills",id="game"+i+"Team1",data-team="team1")
-                      a(href="#") Team 1 Wins
-                    li(data-group="game"+i+"-pills",id="game"+i+"Team2",data-team="team2")
-                      a(href="#") Team 2 Wins
-                    li(data-group="game"+i+"-pills",id="game"+i+"Disable",data-game="game"+i,data-action="disable")
-                      a(href="#") Disable
-                    li(data-group="game"+i+"-pills",id="game"+i+"Enable",data-game="game"+i,data-action="enable", style="display: none")
-                      a(href="#") Enable
+                  div.btn-toolbar
+                    a(data-group="game"+i+"-pills",id="game"+i+"Reset",data-game="game"+i,data-action="reset").btn.btn-sm.btn-warning Reset
+                    a(data-group="game-team-pills",id="game"+i+"-team1",data-game="game"+i,data-team="team1",data-class="info").btn.btn-sm.btn-default Team 1 Wins
+                    a(data-group="game-team-pills",id="game"+i+"-team2",data-game="game"+i,data-team="team2",data-class="info").btn.btn-sm.btn-default Team 2 Wins
+                    a(data-group="game-control-pills",id="game"+i+"-disable",data-game="game"+i,data-action="hide",data-class="danger",style="display: none").btn.btn-sm.btn-danger Disable
+                    a(data-group="game-control-pills",id="game"+i+"-enable",data-game="game"+i,data-action="show",data-class="success").btn.btn-sm.btn-success Enable
               div.row
-                div.col-md-8
+                div.col-md-1
+                  div(id='game'+i+'-team1-hero1').divimage
+                div.col-md-1
+                  div(id='game'+i+'-team1-hero2').divimage
+                div.col-md-1
+                  div(id='game'+i+'-team1-hero3').divimage
+                div.col-md-1
+                  div(id='game'+i+'-team1-hero4').divimage
+                div.col-md-1
+                  div(id='game'+i+'-team1-hero5').divimage
+                div.col-md-2
+                  div(id='game'+i+'-map').center.divimage.map-mini
+                div.col-md-1
+                  div(id='game'+i+'-team2-hero1').divimage
+                div.col-md-1
+                  div(id='game'+i+'-team2-hero2').divimage
+                div.col-md-1
+                  div(id='game'+i+'-team2-hero3').divimage
+                div.col-md-1
+                  div(id='game'+i+'-team2-hero4').divimage
+                div.col-md-1
+                  div(id='game'+i+'-team2-hero5').divimage
+              div.row
+                div.col-md-12
                   +map-select('game'+i+'-map','map')
-                div.col-md-4
-                  div(id='game1-map').divimage.divimage-map-small
-              div.col-lg-12
                 div.col-md-6
                   +hero-select('game'+i+'-team1-hero1','team1-hero1')
                   +hero-select('game'+i+'-team1-hero2','team1-hero2')

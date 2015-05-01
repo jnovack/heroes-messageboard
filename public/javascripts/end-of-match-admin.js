@@ -30,10 +30,11 @@ if(typeof(Storage) !== "undefined") {
     reload = function() {
         var json = JSON.parse(localStorage.getItem("json"));
         if (json === null) {
-            return undefined;
+            localStorage.setItem("json", JSON.stringify({}));
+            return {};
         }
         $.each( json, function (id, value) {
-            $("#" + id).val(value);
+            updateValue(id, value);
         });
     }
 } else {
@@ -162,9 +163,18 @@ $("#crawlRed").click(function() {
  */
 
 $("select").change(function() {
-    message = { event: 'value', data: { id: $(this).attr("id"), text: $("#" + $(this).attr("id") + " option:selected").text() } };
+    message = { event: 'value', data: { id: $(this).attr("data-for"), text: $("#" + $(this).attr("id") + " option:selected").text() } };
     send(message);
     save(message.data.id, message.data.text);
+});
+
+$("[data-group='game-control-pills']").click(function() {
+    var game = $(this).attr("data-game");
+    $("[data-game='"+game+"']").show();
+    $(this).hide();
+    replaceClass("label-"+$(this).attr("data-class"),"label-"+game);
+    var id = game + '-container';
+    send({ event: 'action', data: { id: id, action: "visible", value: $(this).attr("data-action") }});
 });
 
 // Increment or decrement value fields with up/down arrows
