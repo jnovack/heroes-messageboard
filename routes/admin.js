@@ -6,10 +6,6 @@ var router = express.Router();
 //   res.render('index', { title: 'Express' });
 // });
 
-// router.get('/', function(req, res, next) {
-//     res.sendFile('index.html', { root: publicDir });
-// });
-
 router.get('/end-of-match', function(req, res, next) {
     res.render('end-of-match-admin.jade', { esl: true } );
 });
