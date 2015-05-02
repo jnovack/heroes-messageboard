@@ -1,17 +1,19 @@
+@import url('base.css');
+
 * {margin: 0px; padding: 0px; font-weight: normal; list-style-type: none;}
 
 body {background: #000; cursor: none; font-family: 'Open Sans', sans-serif; color: white; }
 
-#wrapper {width: 1920px; height: 1080px; overflow: hidden; float: left; background-image: url('../assets/backgrounds/esl.png'); }
+#wrapper {width: 1920px; height: 1080px; overflow: hidden; float: left; }
 
 #tvsafe { width: 1600px; height: 900px; overflow: hidden; margin-top: 90px; margin-left: auto; margin-right: auto; padding-left: 20px; padding-right: 20px;}
+
+#wrapper { background-image: url('../assets/backgrounds/esl.png'); }
+
 
 div.row {
     margin-top: 6px;
 }
-
-div.pad-none { padding: 0px; }
-div.pad-small { padding: 2px; }
 
 div.heroes {
   display: inline-flex;
@@ -30,14 +32,6 @@ div.title { font-size: 4em; color: rgb(119,187,230); }
 div.team-name { font-size: 5em; color: white; }
 div.team-score { font-size: 14em; color: white; }
 div.versus { font-size: 2em; color: rgb(119,187,230); }
-
-div.flex { display: flex; height: 100%;}
-div.flex-center { align-items: center; align-content: center; }
-div.wide { width: 100%; }
-
-div.inline-flex {   display: inline-flex;
-  align-items: center;
-  align-content: center; width: 100%;}
 
 div.teams { height: 278px; text-shadow: 2px 2px #3F3F3F; }
 
@@ -63,61 +57,3 @@ div.winner > div {
     box-shadow: 0px 0px 20px 0px rgba(119,187,230,1);
 }
 
-/*
- ***** Media Queries *****
- */
-
-@media screen and (min-width: 1367px) and (max-width: 1920px){
-    #wrapper {
-        transform: scale(1.0);
-        -webkit-transform: scale(1.0);
-        -moz-transform: scale(1.0);
-        left: 0px;
-        top: 0px;
-        position: absolute;
-    }
-}
-
-@media screen and (min-width: 1281px) and (max-width: 1366px), screen and (max-height: 765px){
-    #wrapper {
-        transform: scale(0.7114583333333);
-        -webkit-transform: scale(0.7114583333333);
-        -moz-transform: scale(0.7114583333333);
-        left: -277px;
-        top: -156px;
-        position: absolute;
-    }
-}
-
-@media screen and (min-width: 961px) and (max-width: 1280px){
-    #wrapper {
-        transform: scale(0.6666666666667);
-        -webkit-transform: scale(0.6666666666667);
-        -moz-transform: scale(0.6666666666667);
-        left: -320px;
-        top: -180px;
-        ;position: absolute;
-    }
-}
-
-@media screen and (min-width: 855px) and (max-width: 960px){
-    #wrapper {
-        transform: scale(0.5);
-        -webkit-transform: scale(0.5);
-        -moz-transform: scale(0.5);
-        left: -480px;
-        top: -270px;
-        position: absolute;
-    }
-}
-
-@media screen and (min-width: 1px) and (max-width: 854px){
-    #wrapper {
-        transform: scale(0.4444444444444);
-        -webkit-transform: scale(0.4444444444444);
-        -moz-transform: scale(0.4444444444444);
-        left: -534px;
-        top: -300px;
-        position: absolute;
-    }
-}
