@@ -11,39 +11,10 @@ function send(message) {
     console.log(message);    
 }
 
-if(typeof(Storage) !== "undefined") {
-    console.log("has storage");
-    save = function(key, value) {
-        var json = JSON.parse(localStorage.getItem("json"));
-        json[key] = value;
-        localStorage.setItem("json", JSON.stringify(json));
-        console.log(key + " saved: " + value);
-    };
-    read = function(key) {
-        var json = JSON.parse(localStorage.getItem("json"));
-        if (json === null || json[key] === undefined) {
-            return undefined;
-        }
-        console.log(json[key]);
-        return json[key];
-    };
-    reload = function() {
-        var json = JSON.parse(localStorage.getItem("json"));
-        if (json === null) {
-            localStorage.setItem("json", JSON.stringify({}));
-            return {};
-        }
-        $.each( json, function (id, value) {
-            updateValue(id, value);
-        });
-    }
-} else {
-    console.log("does not has storage");
-}
-
 $("#reloadButton").click(function() {
     send({ event: 'reload' });
 });
+
 $("#hideMsgButton").click(function() {
     message = { event: 'hide-messages' };
     send(message);
@@ -64,13 +35,11 @@ $("#showMsgButton").click(function() {
 $("#subtitle1").blur(function() {
     message = { event: 'value', data: { id: "mainview_header_subtitle", text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
     send(message);
-    save('subtitle1', $("#subtitle1").val());
 });
 
 $("#subtitle2").blur(function() {
     message = { event: 'value', data: { id: "mainview_header_subtitle", text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
     send(message);
-    save('subtitle2', $("#subtitle2").val());
 });
 
 $("#subtitleText").click(function() {
@@ -124,7 +93,6 @@ $("#voiceShow").click(function() {
 $("#crawl-text").blur(function() {
     message = { event: 'value', data: { id: "crawl-text", text: $("#crawl-text").val() } };
     send(message);
-    save('crawl-text', message.data.text);
 });
 
 $("#crawlDisable").click(function() {
@@ -165,7 +133,6 @@ $("#crawlRed").click(function() {
 $("select").change(function() {
     message = { event: 'value', data: { id: $(this).attr("data-for"), text: $("#" + $(this).attr("id") + " option:selected").text() } };
     send(message);
-    save(message.data.id, message.data.text);
 });
 
 $("[data-group='game-control-pills']").click(function() {
@@ -211,7 +178,6 @@ $("input[data-group='value']").change(function() {
         $(this).val(parseInt(result));
         message = { event: 'value', data: { id: $(this).attr("id"), text: $(this).val() } };
         send(message);
-        save(message.data.id, message.data.text);
     }
 });
 
@@ -222,7 +188,6 @@ $("input[data-group='text']").change(function() {
     if (pattern.test(result)) {
         message = { event: 'value', data: { id: $(this).attr("id"), text: $(this).val() } };
         send(message);
-        save(message.data.id, message.data.text);
     }
 });
 
