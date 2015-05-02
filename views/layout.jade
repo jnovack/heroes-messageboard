@@ -11,7 +11,12 @@ html
     block head
 
   body
+    - if (admin) {
+    div.container
+      block content
+    - } else {
     div(id='wrapper').container
       block content
+    - }
 
-  block footer
+    block footer
