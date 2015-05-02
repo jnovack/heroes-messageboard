@@ -33,7 +33,7 @@ block content
     div.games.inline-flex
       div.col-sm-12.pad-none
         - for (var i = 1; i < 6; ++i) {
-          div(id='game'+i+'-container').row.game
+          div(id='game'+i+'-container',style='display: none').row.game
             div(id='game'+i+'-team1',data-group='game-heroes',data-team='team1',role='trigger',data-trigger='team-scores').col-sm-5.text-center.pad-small.heroes.heroes-left
               div(id='game'+i+'-team1-hero1').divimage.divimagelg.divimage-transparent
               div(id='game'+i+'-team1-hero2').divimage.divimagelg.divimage-transparent
