@@ -17,34 +17,32 @@ block content
 
     div.row.teams.flex.flex-center
       div.col-sm-4.text-center
-        div(id='team1-name').html.team-name Tempo<br>Storm
-      div.col-sm-1.text-center
-        div(id='team1-score').value.team-score 2
+        div(id='team1-name').html.team-name Team 1
       div.col-sm-2.text-center
-        div.versus vs
-      div.col-sm-1.text-center
-        div(id='team2-score').value.team-score 3
+        div(id='team1-score').value.team-score 0
+      div.col-sm-2.text-center
+        div(id='team2-score').value.team-score 0
       div.col-sm-4.text-center
-        div(id='team2-name').html.team-name Cloud 9 Maelstrom
+        div(id='team2-name').html.team-name Team 2
 
     div.games.inline-flex
       div.col-sm-12.pad-none
         - for (var i = 1; i < 6; ++i) {
           div(id='game'+i+'-container').row.game
-            div(id='game'+i+'-team1').col-sm-5.text-center.winner.pad-small.heroes.heroes-left
-              div(id='game'+i+'-team1-hero1').divimage.divimagelg.divimage-chen
-              div(id='game'+i+'-team1-hero2').divimage.divimagelg.divimage-diablo
-              div(id='game'+i+'-team1-hero3').divimage.divimagelg.divimage-abathur
-              div(id='game'+i+'-team1-hero4').divimage.divimagelg.divimage-tyrande
-              div(id='game'+i+'-team1-hero5').divimage.divimagelg.divimage-tyrael
+            div(id='game'+i+'-team1',data-group='game-heroes',data-team='team1',role='trigger',data-trigger='team-scores').col-sm-5.text-center.pad-small.heroes.heroes-left
+              div(id='game'+i+'-team1-hero1').divimage.divimagelg.divimage-transparent
+              div(id='game'+i+'-team1-hero2').divimage.divimagelg.divimage-transparent
+              div(id='game'+i+'-team1-hero3').divimage.divimagelg.divimage-transparent
+              div(id='game'+i+'-team1-hero4').divimage.divimagelg.divimage-transparent
+              div(id='game'+i+'-team1-hero5').divimage.divimagelg.divimage-transparent
             div.col-sm-2.pad-small
-              div(id='game'+i+'-map').divimage.center.map-small.divimage-sky-temple
-            div(id='game'+i+'-team2').col-sm-5.text-center.loser.pad-small.heroes.heroes-right
-              div(id='game'+i+'-team2-hero1').divimage.divimagelg.divimage-tychus
-              div(id='game'+i+'-team2-hero2').divimage.divimagelg.divimage-gazlowe
-              div(id='game'+i+'-team2-hero3').divimage.divimagelg.divimage-lili
-              div(id='game'+i+'-team2-hero4').divimage.divimagelg.divimage-nova
-              div(id='game'+i+'-team2-hero5').divimage.divimagelg.divimage-valla
+              div(id='game'+i+'-map').divimage.center.map-small.divimage-transparent
+            div(id='game'+i+'-team2',data-group='game-heroes',data-team='team2',role='trigger',data-trigger='team-scores').col-sm-5.text-center.pad-small.heroes.heroes-right
+              div(id='game'+i+'-team2-hero1').divimage.divimagelg.divimage-transparent
+              div(id='game'+i+'-team2-hero2').divimage.divimagelg.divimage-transparent
+              div(id='game'+i+'-team2-hero3').divimage.divimagelg.divimage-transparent
+              div(id='game'+i+'-team2-hero4').divimage.divimagelg.divimage-transparent
+              div(id='game'+i+'-team2-hero5').divimage.divimagelg.divimage-transparent
         - }
 
     div.row

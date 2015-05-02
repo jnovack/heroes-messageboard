@@ -54,64 +54,42 @@ block content
   div.row
     div.col-lg-12
       div(role='tabpanel')
-        ul(role='tablist').nav.nav-tabs
+        ul(role='tablist',id='tablist-games').nav.nav-tabs
           - for (var i = 1; i < 6; ++i) {
             li(role='presentation')
               a(href='#tab-game'+i,aria-expanded='false',role='tab',data-toggle='tab')
-                span(id='label-game'+i).label.label-primary Game 
+                span(id='label-game'+i).label.label-danger Game 
                   span= i
           - }
         div.tab-content
           - for (var i = 1; i < 6; ++i) {
-            div(role='tabpanel',id='tab-game'+i).tab-pane
+            div(role='tabpanel',id='tab-game'+i).tab-pane.fade
+              div.row.hidden
+                div(id='game'+i+'-container',role='trigger',data-game='game'+i,data-trigger='game-control-pills')
               div.row
-                div.col-lg-12
-                  span Game
-                    span= i
-              div.row
-                div.col-lg-12
+                div.col-lg-12.text-center
                   div.btn-toolbar
-                    a(data-group='game'+i+'-pills',id='game'+i+'Reset',data-game='game'+i,data-action='reset').btn.btn-sm.btn-warning Reset
-                    a(data-group='game-team-pills',id='game'+i+'-team1',data-game='game'+i,data-team='team1',data-class='info').btn.btn-sm.btn-default Team 1 Wins
-                    a(data-group='game-team-pills',id='game'+i+'-team2',data-game='game'+i,data-team='team2',data-class='info').btn.btn-sm.btn-default Team 2 Wins
-                    a(data-group='game-control-pills',id='game'+i+'-disable',data-game='game'+i,data-action='hide',data-class='danger',style='display: none').btn.btn-sm.btn-danger Disable
-                    a(data-group='game-control-pills',id='game'+i+'-enable',data-game='game'+i,data-action='show',data-class='success').btn.btn-sm.btn-success Enable
+                    a(data-group='game'+i+'-pills',id='game'+i+'Reset',data-game='game'+i,data-action='reset').btn.btn-lg.btn-warning Reset
+                    a(data-group='game-team-pills',id='game'+i+'-team1',data-game='game'+i,data-team='team1',data-class='info',data-trigger='game-team-pills',role='trigger').btn.btn-lg.btn-default Team 1 Wins
+                    a(data-group='game-team-pills',id='game'+i+'-team2',data-game='game'+i,data-team='team2',data-class='info',data-trigger='game-team-pills',role='trigger').btn.btn-lg.btn-default Team 2 Wins
+                    a(data-group='game-control-pills',id='game'+i+'-hide',data-game='game'+i,data-action='hide',data-class='danger',style='display: none').btn.btn-lg.btn-danger Disable
+                    a(data-group='game-control-pills',id='game'+i+'-show',data-game='game'+i,data-action='show',data-class='success').btn.btn-lg.btn-success Enable
               div.row
-                div.col-md-1
-                  div(id='game'+i+'-team1-hero1').divimage
-                div.col-md-1
-                  div(id='game'+i+'-team1-hero2').divimage
-                div.col-md-1
-                  div(id='game'+i+'-team1-hero3').divimage
-                div.col-md-1
-                  div(id='game'+i+'-team1-hero4').divimage
-                div.col-md-1
-                  div(id='game'+i+'-team1-hero5').divimage
-                div.col-md-2
-                  div(id='game'+i+'-map').center.divimage.map-mini
-                div.col-md-1
-                  div(id='game'+i+'-team2-hero1').divimage
-                div.col-md-1
-                  div(id='game'+i+'-team2-hero2').divimage
-                div.col-md-1
-                  div(id='game'+i+'-team2-hero3').divimage
-                div.col-md-1
-                  div(id='game'+i+'-team2-hero4').divimage
-                div.col-md-1
-                  div(id='game'+i+'-team2-hero5').divimage
-              div.row
-                div.col-md-12
+                div.col-md-4
+                  div(id='game'+i+'-map').center.divimage.map-small
+                div.col-md-6
                   +map-select('game'+i+'-map','map')
-                div.col-md-6
-                  +hero-select('game'+i+'-team1-hero1','team1-hero1')
-                  +hero-select('game'+i+'-team1-hero2','team1-hero2')
-                  +hero-select('game'+i+'-team1-hero3','team1-hero3')
-                  +hero-select('game'+i+'-team1-hero4','team1-hero4')
-                  +hero-select('game'+i+'-team1-hero5','team1-hero5')
-                div.col-md-6
-                  +hero-select('game'+i+'-team2-hero1','team2-hero1')
-                  +hero-select('game'+i+'-team2-hero2','team2-hero2')
-                  +hero-select('game'+i+'-team2-hero3','team2-hero3')
-                  +hero-select('game'+i+'-team2-hero4','team2-hero4')
-                  +hero-select('game'+i+'-team2-hero5','team2-hero5')
+
+              - for (var x = 1; x < 6; ++x) {
+                div.row
+                  div.col-md-2
+                    div(id='game'+i+'-team1-hero'+x).center.divimage.divimagelg
+                  div.col-md-4
+                    +hero-select('game'+i+'-team1-hero'+x,'team1-hero'+x)
+                  div.col-md-4
+                    +hero-select('game'+i+'-team2-hero'+x,'team2-hero'+x)
+                  div.col-md-2
+                    div(id='game'+i+'-team2-hero'+x).center.divimage.divimagelg
+              - }
+
           - }

@@ -15,6 +15,8 @@ div.row {
     margin-top: 6px;
 }
 
+.divimage { padding: 4px; }
+
 div.heroes {
   display: inline-flex;
   align-items: center;
@@ -22,25 +24,25 @@ div.heroes {
 }
 div.heroes > div { margin-left: 16px; margin-right: 16px; }
 
-div.games { height: 440px;}
+div.games { height: 476px; }
 div.game { margin-top: 16px; margin-bottom: 16px;}
 
-div.heroes-left{ justify-content: flex-end; }
-div.heroes-right{ justify-content: flex-start; }
+div.heroes-left { justify-content: flex-end; padding-right: 40px; }
+div.heroes-right { justify-content: flex-start; padding-left: 40px; }
 
 div.title { font-size: 4em; color: rgb(119,187,230); }
 div.team-name { font-size: 5em; color: white; }
 div.team-score { font-size: 14em; color: white; }
 div.versus { font-size: 2em; color: rgb(119,187,230); }
 
-div.teams { height: 278px; text-shadow: 2px 2px #3F3F3F; }
+div.teams { height: 256px; text-shadow: 2px 2px #3F3F3F; }
 
-div.loser  { -webkit-filter: grayscale(100%); filter: grayscale(100%); opacity: 0.8; }
-div.loser > div.divimage { -webkit-transform: scale(0.9);}
+div.game-loser  { -webkit-filter: grayscale(100%); filter: grayscale(100%); opacity: 0.8; }
+div.game-loser > div.divimage { -webkit-transform: scale(0.9);}
 
 span.announcement { font-size: 2.4em; }
 
-div.winner {
+div.game-winner {
     background: -moz-linear-gradient(top,  rgba(89,145,165,0) 23%, rgba(89,145,165,0.43) 33%, rgba(98,157,184,0.68) 39%, rgba(118,185,227,1) 53%, rgba(119,187,230,0.96) 54%, rgba(119,187,230,0) 76%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(23%,rgba(89,145,165,0)), color-stop(33%,rgba(89,145,165,0.43)), color-stop(39%,rgba(98,157,184,0.68)), color-stop(53%,rgba(118,185,227,1)), color-stop(54%,rgba(119,187,230,0.96)), color-stop(76%,rgba(119,187,230,0))); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top,  rgba(89,145,165,0) 23%,rgba(89,145,165,0.43) 33%,rgba(98,157,184,0.68) 39%,rgba(118,185,227,1) 53%,rgba(119,187,230,0.96) 54%,rgba(119,187,230,0) 76%); /* Chrome10+,Safari5.1+ */
