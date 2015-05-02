@@ -51,9 +51,7 @@ div.game-winner {
     background: linear-gradient(to bottom,  rgba(89,145,165,0) 23%,rgba(89,145,165,0.43) 33%,rgba(98,157,184,0.68) 39%,rgba(118,185,227,1) 53%,rgba(119,187,230,0.96) 54%,rgba(119,187,230,0) 76%); /* W3C */
 }
 
-.divimage { padding: 4px; }
-
-div.winner > div {
+div.game-winner > div {
     -webkit-box-shadow: 0px 0px 20px 0px rgba(119,187,230,1);
     -moz-box-shadow: 0px 0px 20px 0px rgba(119,187,230,1);
     box-shadow: 0px 0px 20px 0px rgba(119,187,230,1);

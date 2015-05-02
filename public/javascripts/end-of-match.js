@@ -23,10 +23,25 @@ socket.on('action', function(data) {
             $("#"+data.id).fadeIn();
         }
     }
+    if (data.action == 'class') {
+        replaceClass(data.value, data.id);
+    }
+    // Trigger any follow up actions
+    $('#'+data.id).trigger('trigger', data);
 });
 
 socket.on('value', function(data) {
     updateValue(data.id, data.text);
+});
+
+
+$("[role='trigger']").on('trigger', function(event, data) {
+    var elements = $(this).attr('data-trigger');
+
+    if (elements == "team-scores") {
+        $('#team1-score').text($("[data-group='game-heroes'][data-team='team1'].game-winner").size());
+        $('#team2-score').text($("[data-group='game-heroes'][data-team='team2'].game-winner").size());
+    }
 });
 
 

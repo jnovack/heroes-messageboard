@@ -28,6 +28,26 @@ $("#showMsgButton").click(function() {
     $("#showMsgButton").hide();
 });
 
+// Specific actions for admin page
+$("[role='trigger']").on('trigger', function(event, data) {
+    var game = $(this).attr('data-game');
+    var elements = $(this).attr('data-trigger');
+
+    if (elements == "game-team-pills") {
+        if (data.value == "game-winner") {
+            $(this).addClass("label-info");
+        }
+        $('#team1-score').val($("[data-group='game-team-pills'][data-team='team1'].label-info").size());
+        $('#team2-score').val($("[data-group='game-team-pills'][data-team='team2'].label-info").size());
+    }
+
+    if (elements == "game-control-pills") {
+        $("[data-group='"+elements+"'][data-game='"+game+"']").show();
+        $("#"+game+"-"+data.value).hide();
+        replaceClass("label-"+$("#"+game+"-"+data.value).attr("data-class"),"label-"+game);
+    }
+});
+
 /*
  ***** SubTitle *****
  */
@@ -135,6 +155,19 @@ $("select").change(function() {
     send(message);
 });
 
+
+$("[data-group='game-team-pills']").click(function() {
+    var game = $(this).attr("data-game");
+    var team = $(this).attr("data-team");
+    var other = $("[data-group='game-team-pills'][data-game='"+game+"']").not("[data-team='"+team+"']").attr("data-team");
+    $('#'+game+"-"+other).removeClass("label-info");
+    $(this).addClass("label-info");
+    $('#team1-score').val($("[data-group='game-team-pills'][data-team='team1'].label-info").size());
+    $('#team2-score').val($("[data-group='game-team-pills'][data-team='team2'].label-info").size());
+    send({ event: 'action', data: { id: game+"-"+team, action: "class", value: "game-winner" }});
+    send({ event: 'action', data: { id: game+"-"+other, action: "class", value: "game-loser" }});
+});
+
 $("[data-group='game-control-pills']").click(function() {
     var game = $(this).attr("data-game");
     $("[data-game='"+game+"']").show();
@@ -198,4 +231,5 @@ $(document).keyup(function(e) {
 
 // When we are ready, set page up for the user
 $(document).ready( function() {
+    $('#tablist-games a[href="#tab-game1"]').tab('show');
 });
