@@ -195,7 +195,7 @@ $("input[data-group='value']").keydown( function( event ) {
 // Process input of value field
 //   perform maths if needed
 //   send if good input
-$("input[data-group='value']").blur(function() {
+$("input[data-group='value']").change(function() {
     result = $(this).val();
     if (result.indexOf("/") > 0) {
         console.log(result);
@@ -216,10 +216,10 @@ $("input[data-group='value']").blur(function() {
 });
 
 
-$("input[data-group='text']").blur(function() {
+$("input[data-group='text']").change(function() {
     result = $(this).val();
     pattern = new RegExp(/[a-zA-Z0-9 ]/);
-    if (pattern.test(result) || result == "") {
+    if (pattern.test(result)) {
         message = { event: 'value', data: { id: $(this).attr("id"), text: $(this).val() } };
         send(message);
         save(message.data.id, message.data.text);
