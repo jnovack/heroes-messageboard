@@ -26,7 +26,6 @@ socket.on('action', function(data) {
 });
 
 socket.on('value', function(data) {
-    console.log(data);
     updateValue(data.id, data.text);
 });
 

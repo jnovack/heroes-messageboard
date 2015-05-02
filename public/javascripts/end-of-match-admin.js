@@ -198,6 +198,4 @@ $(document).keyup(function(e) {
 
 // When we are ready, set page up for the user
 $(document).ready( function() {
-    // TODO Fix Subtitle loading
-    reload();
 });
