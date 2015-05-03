@@ -11,17 +11,11 @@ body {background: #000; cursor: none; font-family: 'Open Sans', sans-serif; colo
 #wrapper { background-image: url('../assets/backgrounds/esl.png'); }
 
 
-div.row {
-    margin-top: 6px;
-}
+div.row { margin-top: 4px; }
 
 .divimage { padding: 4px; }
 
-div.heroes {
-  display: inline-flex;
-  align-items: center;
-  align-content: center;
-}
+div.heroes { display: inline-flex; align-items: center; align-content: center; }
 div.heroes > div { margin-left: 16px; margin-right: 16px; }
 
 div.games { height: 476px; }
@@ -30,9 +24,9 @@ div.game { margin-top: 16px; margin-bottom: 16px;}
 div.heroes-left { justify-content: flex-end; padding-right: 40px; }
 div.heroes-right { justify-content: flex-start; padding-left: 40px; }
 
-div.title { font-size: 4em; color: rgb(119,187,230); }
+div.title { font-size: 4em; margin-top: 12px; color: rgb(119,187,230); }
 div.team-name { font-size: 5em; color: white; }
-div.team-score { font-size: 14em; color: white; }
+div.team-score { font-size: 12em; color: white; }
 div.versus { font-size: 2em; color: rgb(119,187,230); }
 
 div.teams { height: 256px; text-shadow: 2px 2px #3F3F3F; }
@@ -68,9 +62,10 @@ div.game-winner > div {
     height: 64px;
     background-size: 64px;
     background-image: url('../images/vs-blue.png');
-    -webkit-filter: drop-shadow(0px 0px 4px #007d9a);
-    /*-webkit-animation-name:bluePulse;-webkit-animation-duration: 3s; -webkit-animation-iteration-count: infinite;*/
 }
+
+/*  -webkit-filter: drop-shadow(0px 0px 4px #007d9a);
+    -webkit-animation-name:bluePulse;-webkit-animation-duration: 3s; -webkit-animation-iteration-count: infinite; */
 
 @-webkit-keyframes bluePulse {
     from { -webkit-filter: drop-shadow(0px 0px 4px #007d9a); }
