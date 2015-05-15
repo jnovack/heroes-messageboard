@@ -4,6 +4,9 @@ div.flex { display: flex; height: 100%;}
 div.flex-center { align-items: center; align-content: center; }
 div.wide { width: 100%; }
 div.inline-flex { display: inline-flex; align-items: center; align-content: center; width: 100%;}
+div.flex-end { justify-content: flex-end;}
+div.flex-start { justify-content: flex-start; }
+
 
 div.pad-none { padding: 0px; }
 div.pad-small { padding: 2px; }

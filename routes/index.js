@@ -11,7 +11,7 @@ router.get('/messageboard', function(req, res, next) {
 });
 
 router.get('/end-of-match', function(req, res, next) {
-    res.render('end-of-match.jade', { esl: true } );
+    res.render('end-of-match.jade', { } );
 });
 
 module.exports = router;

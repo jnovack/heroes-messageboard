@@ -133,22 +133,26 @@ $("#rank").blur(function() {
 
 
 /*
+ ***** Toggle Pills *****
+ */
+
+$("[data-group='toggle-pills']").click(function() {
+    var set = $(this).attr('data-set');
+    var partner = $(this).attr('data-partner');
+    var value = $(this).attr('data-value');
+
+    message = { event: 'action', data: { id: set+'_container', action: 'ignore', value: value } };
+    send(message);
+    $("#"+set+partner).show();
+    $(this).hide();
+});
+
+/*
  ***** Voice *****
  */
 
-$("#voiceHide").click(function() {
-    message = { event: 'action', data: { id: 'voice_container', action: 'ignore', value: 'true' } };
-    send(message);
-    $("#voiceShow").show();
-    $("#voiceHide").hide();
-});
-$("#voiceShow").click(function() {
-    message = { event: 'action', data: { id: 'voice_container', action: 'ignore', value: 'false' } };
-    send(message);
-    $("#voiceHide").show();
-    $("#voiceShow").hide();
-});
-
+//  $('#voice1-picture-select option:eq(' + parseInt($("#voice1-text").val().toLowerCase(), 36) % 33 + ')').attr('selected', 'selected');
+//  $('#voice1-picture-select').change();
 
 /*
  ***** Crawl *****

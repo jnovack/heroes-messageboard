@@ -64,123 +64,135 @@ block content
               span Messages
         div.tab-content
           div(role='tabpanel',id='tab-map').tab-pane.active.has-primary
-            div.col-md-3
-              div(id="blackhearts-bay")
-                div.control-group
-                  label(for='blackhearts-bay-percent',class='control-label') blackhearts-bay
-                  div.controls
-                    input(data-group='value',type='text',id='blackhearts-bay-percent',placeholder="52",class='form-control')
-            div.col-md-3
-              div(id="cursed-hollow")
-                div.control-group
-                  label(for='cursed-hollow-percent',class='control-label') cursed-hollow
-                  div.controls
-                    input(data-group='value',type='text',id='cursed-hollow-percent',placeholder="54",class='form-control')
-            div.col-md-3
-              div(id="dragon-shire")
-                div.control-group
-                  label(for='dragon-shire-percent',class='control-label') dragon-shire
-                  div.controls
-                    input(data-group='value',type='text',id='dragon-shire-percent',placeholder="53",class='form-control')
-            div.col-md-3
-              div(id="haunted-mines")
-                div.control-group
-                  label(for='haunted-mines-percent',class='control-label') haunted-mines
-                  div.controls
-                    input(data-group='value',type='text',id='haunted-mines-percent',placeholder="52",class='form-control')
-            div.col-md-3
-              div(id="garden-of-terror")
-                div.control-group
-                  label(for='garden-of-terror-percent',class='control-label') garden-of-terror
-                  div.controls
-                    input(data-group='value',type='text',id='garden-of-terror-percent',placeholder="46",class='form-control')
-            div.col-md-3
-              div(id="sky-temple")
-                div.control-group
-                  label(for='sky-temple-percent',class='control-label') sky-temple
-                  div.controls
-                    input(data-group='value',type='text',id='sky-temple-percent',placeholder="50",class='form-control')
-            div.col-md-3
-              div(id="tomb-of-the-spider-queen")
-                div.control-group
-                  label(for='tomb-of-the-spider-queen-percent',class='control-label') tomb-of-the-spider-queen
-                  div.controls
-                    input(data-group='value',type='text',id='tomb-of-the-spider-queen-percent',placeholder="46",class='form-control')
+            div.row
+              div.col-lg-12
+                div.btn-toolbar
+                  div.btn-group
+                    a(data-group="toggle-pills",data-set='map',data-partner='Show',data-value='true',id="mapHide",href='#').btn.btn-sm.btn-success Map Tab is VISIBLE
+                    a(data-group="toggle-pills",data-set='map',data-partner='Hide',data-value='false',id="mapShow",href='#',style="display: none").btn.btn-sm.btn-danger Map Tab is HIDDEN
+            div.row
+              div.col-md-3
+                div(id="blackhearts-bay")
+                  div.control-group
+                    label(for='blackhearts-bay-percent',class='control-label') blackhearts-bay
+                    div.controls
+                      input(data-group='value',type='text',id='blackhearts-bay-percent',placeholder="52",class='form-control')
+              div.col-md-3
+                div(id="cursed-hollow")
+                  div.control-group
+                    label(for='cursed-hollow-percent',class='control-label') cursed-hollow
+                    div.controls
+                      input(data-group='value',type='text',id='cursed-hollow-percent',placeholder="54",class='form-control')
+              div.col-md-3
+                div(id="dragon-shire")
+                  div.control-group
+                    label(for='dragon-shire-percent',class='control-label') dragon-shire
+                    div.controls
+                      input(data-group='value',type='text',id='dragon-shire-percent',placeholder="53",class='form-control')
+              div.col-md-3
+                div(id="haunted-mines")
+                  div.control-group
+                    label(for='haunted-mines-percent',class='control-label') haunted-mines
+                    div.controls
+                      input(data-group='value',type='text',id='haunted-mines-percent',placeholder="52",class='form-control')
+              div.col-md-3
+                div(id="garden-of-terror")
+                  div.control-group
+                    label(for='garden-of-terror-percent',class='control-label') garden-of-terror
+                    div.controls
+                      input(data-group='value',type='text',id='garden-of-terror-percent',placeholder="46",class='form-control')
+              div.col-md-3
+                div(id="sky-temple")
+                  div.control-group
+                    label(for='sky-temple-percent',class='control-label') sky-temple
+                    div.controls
+                      input(data-group='value',type='text',id='sky-temple-percent',placeholder="50",class='form-control')
+              div.col-md-3
+                div(id="tomb-of-the-spider-queen")
+                  div.control-group
+                    label(for='tomb-of-the-spider-queen-percent',class='control-label') tomb-of-the-spider-queen
+                    div.controls
+                      input(data-group='value',type='text',id='tomb-of-the-spider-queen-percent',placeholder="46",class='form-control')
           div(role='tabpanel',id='tab-hero').tab-pane
             div.row
               div.col-lg-12
-                div.col-md-3
-                  div(id="warrior")
-                    div.control-group
-                      label(for='warrior-value',class='control-label') warrior
-                      div.controls
-                        input(data-group='value',type='text',id='warrior-value',placeholder="123",class='form-control')
-                div.col-md-3
-                  div(id="assassin")
-                    div.control-group
-                      label(for='assassin-value',class='control-label') assassin
-                      div.controls
-                        input(data-group='value',type='text',id='assassin-value',placeholder="234",class='form-control')
-                div.col-md-3
-                  div(id="support")
-                    div.control-group
-                      label(for='support-value',class='control-label') support
-                      div.controls
-                        input(data-group='value',type='text',id='support-value',placeholder="345",class='form-control')
-                div.col-md-3
-                  div(id="specialist")
-                    div.control-group
-                      label(for='specialist-value',class='control-label') specialist
-                      div.controls
-                        input(data-group='value',type='text',id='specialist-value',placeholder="456",class='form-control')
+                div.btn-toolbar
+                  div.btn-group
+                    a(data-group="toggle-pills",data-set='hero',data-partner='Show',data-value='true',id="heroHide",href='#').btn.btn-sm.btn-success Hero Tab is VISIBLE
+                    a(data-group="toggle-pills",data-set='hero',data-partner='Hide',data-value='false',id="heroShow",href='#',style="display: none").btn.btn-sm.btn-danger Hero Tab is HIDDEN
             div.row
-              div.col-lg-12
-                div.col-md-4
-                  div(id="hero1")
-                    +hero-select('hero1-text','Hero 1')
-                    div.col-lg-8
-                      div.control-group
-                        label(for='hero1-progress',class='control-label') hero1-progress
-                        div.controls
-                          input(data-group='value',type='text',id='hero1-progress',placeholder="2345/4750",class='form-control')
-                    div.col-lg-4
-                      div.control-group
-                        label(for='hero1-level',class='control-label') hero1-level
-                        div.controls
-                          input(data-group='value',type='text',id='hero1-level',placeholder="10",class='form-control')
-                div.col-md-4
-                  div(id="hero2")
-                    +hero-select('hero2-text','Hero 2')
-                    div.col-lg-8
-                      div.control-group
-                        label(for='hero2-progress',class='control-label') hero2-progress
-                        div.controls
-                          input(data-group='value',type='text',id='hero2-progress',placeholder="2345/4750",class='form-control')
-                    div.col-lg-4
-                      div.control-group
-                        label(for='hero2-level',class='control-label') hero2-level
-                        div.controls
-                          input(data-group='value',type='text',id='hero2-level',placeholder="10",class='form-control')
-                div.col-md-4
-                  div(id="hero3")
-                    +hero-select('hero3-text','Hero 3')
-                    div.col-lg-8
-                      div.control-group
-                        label(for='hero3-progress',class='control-label') hero3-progress
-                        div.controls
-                          input(data-group='value',type='text',id='hero3-progress',placeholder="2345/4750",class='form-control')
-                    div.col-lg-4
-                      div.control-group
-                        label(for='hero3-level',class='control-label') hero3-level
-                        div.controls
-                          input(data-group='value',type='text',id='hero3-level',placeholder="10",class='form-control')
+              div.col-md-3
+                div(id="warrior")
+                  div.control-group
+                    label(for='warrior-value',class='control-label') warrior
+                    div.controls
+                      input(data-group='value',type='text',id='warrior-value',placeholder="123",class='form-control')
+              div.col-md-3
+                div(id="assassin")
+                  div.control-group
+                    label(for='assassin-value',class='control-label') assassin
+                    div.controls
+                      input(data-group='value',type='text',id='assassin-value',placeholder="234",class='form-control')
+              div.col-md-3
+                div(id="support")
+                  div.control-group
+                    label(for='support-value',class='control-label') support
+                    div.controls
+                      input(data-group='value',type='text',id='support-value',placeholder="345",class='form-control')
+              div.col-md-3
+                div(id="specialist")
+                  div.control-group
+                    label(for='specialist-value',class='control-label') specialist
+                    div.controls
+                      input(data-group='value',type='text',id='specialist-value',placeholder="456",class='form-control')
+            div.row
+              div.col-md-4
+                div(id="hero1")
+                  +hero-select('hero1-text','Hero 1')
+                  div.col-lg-8
+                    div.control-group
+                      label(for='hero1-progress',class='control-label') hero1-progress
+                      div.controls
+                        input(data-group='value',type='text',id='hero1-progress',placeholder="2345/4750",class='form-control')
+                  div.col-lg-4
+                    div.control-group
+                      label(for='hero1-level',class='control-label') hero1-level
+                      div.controls
+                        input(data-group='value',type='text',id='hero1-level',placeholder="10",class='form-control')
+              div.col-md-4
+                div(id="hero2")
+                  +hero-select('hero2-text','Hero 2')
+                  div.col-lg-8
+                    div.control-group
+                      label(for='hero2-progress',class='control-label') hero2-progress
+                      div.controls
+                        input(data-group='value',type='text',id='hero2-progress',placeholder="2345/4750",class='form-control')
+                  div.col-lg-4
+                    div.control-group
+                      label(for='hero2-level',class='control-label') hero2-level
+                      div.controls
+                        input(data-group='value',type='text',id='hero2-level',placeholder="10",class='form-control')
+              div.col-md-4
+                div(id="hero3")
+                  +hero-select('hero3-text','Hero 3')
+                  div.col-lg-8
+                    div.control-group
+                      label(for='hero3-progress',class='control-label') hero3-progress
+                      div.controls
+                        input(data-group='value',type='text',id='hero3-progress',placeholder="2345/4750",class='form-control')
+                  div.col-lg-4
+                    div.control-group
+                      label(for='hero3-level',class='control-label') hero3-level
+                      div.controls
+                        input(data-group='value',type='text',id='hero3-level',placeholder="10",class='form-control')
           div(role='tabpanel',id='tab-crawl').tab-pane
+            div.row
               div.col-lg-12
                 div.control-group
                   label(for='crawl-text',class='control-label') Crawl
                   div.controls
                     textarea(type='text',id='crawl-text',name='crawl-text',placeholder=':: <strong>Heroes of the Dorm</strong> :: Boston College defeated Western Ontario in a 2-0 victory.  ||  Arizona State beat Texas A&M in a 2-0 victory.',class='form-control')
-
+            div.row
               div.col-lg-12
                 ul.nav.nav-pills.nav-justified
                   li(data-group="crawl-pills",id="crawlBlack")
@@ -233,8 +245,8 @@ block content
               div.col-lg-12
                 div.btn-toolbar
                   div.btn-group
-                    a(data-group="voice-pills",id="voiceHide",href='#').btn.btn-sm.btn-success Voice Tab is VISIBLE
-                    a(data-group="voice-pills",id="voiceShow",href='#',style="display: none").btn.btn-sm.btn-danger Voice Tab is HIDDEN
+                    a(data-group="toggle-pills",data-set='voice',data-partner='Show',data-value='true',id="voiceHide",href='#').btn.btn-sm.btn-success Voice Tab is VISIBLE
+                    a(data-group="toggle-pills",data-set='voice',data-partner='Hide',data-value='false',id="voiceShow",href='#',style="display: none").btn.btn-sm.btn-danger Voice Tab is HIDDEN
             div.row
               div.col-lg-12
                 div.col-md-4

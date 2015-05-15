@@ -23,22 +23,22 @@ block content
           input(data-group='text',type='text',id='title',name='title',placeholder='Match Summary',class='form-control')
 
   div.row
-    div.col-md-4
+    div.col-sm-4
       div.control-group
         label(for='team1-name',class='control-label') Team 1 Name
         div.controls
           input(data-group='text',type='text',id='team1-name',name='team1-name',placeholder='Rancho Carne Toros',class='form-control')
-    div.col-md-2
+    div.col-sm-2
       div.control-group
         label(for='team1-score',class='control-label') Team 1 Score
         div.controls
           input(data-group='value',type='text',id='team1-score',name='team1-score',placeholder='0',class='form-control',disabled,value=0)
-    div.col-md-2
+    div.col-sm-2
       div.control-group
         label(for='team2-score',class='control-label') Team 2 Score
         div.controls
           input(data-group='value',type='text',id='team1-score',name='team1-score',placeholder='0',class='form-control',disabled,value=0)
-    div.col-md-4
+    div.col-sm-4
       div.control-group
         label(for='team2-name',class='control-label') Team 2 Name
         div.controls
@@ -75,20 +75,20 @@ block content
                     a(data-group='game-control-pills',id='game'+i+'-hide',data-game='game'+i,data-action='hide',data-class='danger',style='display: none').btn.btn-danger Disable
                     a(data-group='game-control-pills',id='game'+i+'-show',data-game='game'+i,data-action='show',data-class='success').btn.btn-success Enable
               div.row
-                div.col-md-4
-                  div(id='game'+i+'-map').center.divimage.map-small
-                div.col-md-6
+                div.col-sm-8
                   +map-select('game'+i+'-map','map')
+                div.col-sm-4
+                  div(id='game'+i+'-map').center.divimage.map-small
 
               - for (var x = 1; x < 6; ++x) {
                 div.row
-                  div.col-md-2
+                  div.col-sm-2
                     div(id='game'+i+'-team1-hero'+x).center.divimage.divimagelg
-                  div.col-md-4
+                  div.col-sm-4
                     +hero-select('game'+i+'-team1-hero'+x,'team1-hero'+x)
-                  div.col-md-4
+                  div.col-sm-4
                     +hero-select('game'+i+'-team2-hero'+x,'team2-hero'+x)
-                  div.col-md-2
+                  div.col-sm-2
                     div(id='game'+i+'-team2-hero'+x).center.divimage.divimagelg
               - }
 
