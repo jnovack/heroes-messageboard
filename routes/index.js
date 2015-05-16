@@ -7,7 +7,7 @@ var router = express.Router();
 // });
 
 router.get('/messageboard', function(req, res, next) {
-    res.sendFile(req.app.get('publicDir') + '/messageboard.html');
+    res.render('messageboard.jade', { title: "Heroes of the Storm - Message Board" } );
 });
 
 router.get('/end-of-match', function(req, res, next) {
