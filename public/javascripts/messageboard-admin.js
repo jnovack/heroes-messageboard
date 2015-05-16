@@ -9,6 +9,9 @@ function send(message) {
 
 var classes_label = "label-primary label-default label-info label-success label-danger label-warning";
 
+/*
+ ***** Master Buttons *****
+ */
 
 $("#reloadButton").click(function() {
     send({ event: 'reload' });
@@ -26,30 +29,14 @@ $("#showMsgButton").click(function() {
     $("#showMsgButton").hide();
 });
 
-$("#title").blur(function() {
-    message = { event: 'value', data: { id: "mainview_header_title", text: $("#title").val() } };
-    send(message);
-    save('title', message.data.text);
-});
 
 /*
  ***** SubTitle *****
  */
 
-$("#subtitle1").blur(function() {
-    message = { event: 'value', data: { id: "mainview_header_subtitle", text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
-    send(message);
-    save('subtitle1', $("#subtitle1").val());
-});
-
-$("#subtitle2").blur(function() {
-    message = { event: 'value', data: { id: "mainview_header_subtitle", text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
-    send(message);
-    save('subtitle2', $("#subtitle2").val());
-});
-
 $("#subtitleText").click(function() {
-    message = { event: 'value', data: { id: "mainview_header_subtitle", text: $("#subtitle1").val() + "<br>" + $("#subtitle2").val() } };
+    message = { event: 'value', data: { id: "subtitle1", text: $("#subtitle1").val() } };
+    message = { event: 'value', data: { id: "subtitle2", text: $("#subtitle2").val() } };
     $("[data-group='subtitle-pills']").removeClass("active");
     $(this).addClass("active");
     $("#subtitle1").parent().parent().addClass("has-success");
@@ -57,7 +44,8 @@ $("#subtitleText").click(function() {
     send(message);
 });
 $("#subtitleAFKBreak").click(function() {
-    message = { event: 'value', data: { id: "mainview_header_subtitle", text: "AFK" + "<br>" + "On Break" } };
+    message = { event: 'value', data: { id: "subtitle1", text: "Away From Keyboard" } };
+    message = { event: 'value', data: { id: "subtitle2", text: "On Break" } };
     $("[data-group='subtitle-pills']").removeClass("active");
     $(this).addClass("active");
     $("#subtitle1").parent().parent().removeClass("has-success");
@@ -65,24 +53,13 @@ $("#subtitleAFKBreak").click(function() {
     send(message);
 });
 $("#subtitleAFKCustom").click(function() {
-    message = { event: 'value', data: { id: "mainview_header_subtitle", text: "AFK"+ "<br>" + $("#subtitle2").val() } };
+    message = { event: 'value', data: { id: "subtitle1", text: "Away From Keyboard" } };
+    message = { event: 'value', data: { id: "subtitle2", text: $("#subtitle2").val() } };
     $("[data-group='subtitle-pills']").removeClass("active");
     $(this).addClass("active");
     $("#subtitle1").parent().parent().removeClass("has-success");
     $("#subtitle2").parent().parent().addClass("has-success");
     send(message);
-});
-
-$("#hero").change(function() {
-    message = { event: 'hero', data: { text: $("#hero").val() } };
-    send(message);
-    save('hero', message.data.text);
-});
-
-$("#rank").blur(function() {
-    message = { event: 'rank', data: { text: $("#rank").val() } };
-    send(message);
-    save('rank', message.data.text);
 });
 
 
@@ -94,11 +71,15 @@ $("[data-group='toggle-pills']").click(function() {
     var set = $(this).attr('data-set');
     var partner = $(this).attr('data-partner');
     var value = $(this).attr('data-value');
+    var label = "success"
+
+    if (partner == "Show") { label == "danger" }
 
     message = { event: 'action', data: { id: set+'_container', action: 'ignore', value: value } };
     send(message);
     $("#"+set+partner).show();
     $(this).hide();
+    $("#label-"+set).removeClass(classes_label).addClass("label-"+label);
 });
 
 /*
@@ -115,7 +96,6 @@ $("[data-group='toggle-pills']").click(function() {
 $("#crawl-text").blur(function() {
     message = { event: 'value', data: { id: "crawl-text", text: $("#crawl-text").val() } };
     send(message);
-    save('crawl-text', message.data.text);
 });
 
 $("#crawlDisable").click(function() {
@@ -156,7 +136,6 @@ $("#crawlRed").click(function() {
 $("select").change(function() {
     message = { event: 'value', data: { id: $(this).attr("data-for"), text: $("#" + $(this).attr("id") + " option:selected").text() } };
     send(message);
-    save(message.data.id, message.data.text);
 });
 
 // Increment or decrement value fields with up/down arrows
@@ -193,18 +172,16 @@ $("input[data-group='value']").blur(function() {
         $(this).val(parseInt(result));
         message = { event: 'value', data: { id: $(this).attr("id"), text: $(this).val() } };
         send(message);
-        save(message.data.id, message.data.text);
     }
 });
 
 
 $("input[data-group='text']").blur(function() {
     result = $(this).val();
-    pattern = new RegExp(/[a-zA-Z0-9 ]/);
+    pattern = new RegExp(/[a-zA-Z0-9 \'\"\!\@\#\$\%\^\&\*\(\)\-\_\+\=\[\]]/);
     if (pattern.test(result) || result == "") {
         message = { event: 'value', data: { id: $(this).attr("id"), text: $(this).val() } };
         send(message);
-        save(message.data.id, message.data.text);
     }
 });
 
@@ -213,8 +190,42 @@ $(document).keyup(function(e) {
     if (e.keyCode == 27) { $(document.activeElement).blur(); }   // escape key maps to keycode `27`
 });
 
-// When we are ready, set page up for the user
-$(document).ready( function() {
-    // TODO Fix Subtitle loading
-    reload();
+socket.on('action', function(data) {
+    console.log(data);
+
+    if (data.action == 'ignore') {
+        // Toggles
+        $.each( $("[data-element='"+data.id+"']"), function(val, obj) {
+            if ($(this).attr('data-value') == data.value) {
+                var set = $(this).attr('data-set');
+                var partner = $(obj).attr('data-partner');
+                var label = "success"
+
+                if (partner == "Show") { label = "danger"; }
+                $("#"+set+partner).show();
+                $(this).hide();
+                $("#label-"+set).removeClass(classes_label).addClass("label-"+label);
+            }
+        });
+    }
+});
+
+
+socket.on('value', function(data) {
+    console.log(data);
+
+    // Admin helper functions
+    if (typeof $('#'+data.id).prop('type') !== undefined) {
+        switch ($('#'+data.id).prop('type')) {
+            case "text":
+                $("#"+data.id).val(data.text);
+                break;
+            case "select-one":
+                    $('#'+data.id + ' option[value=' + data.text + ']').prop('selected', true);
+                break;
+            default:
+                console.log($('#'+data.id).prop('type'));
+        }
+    }
+
 });

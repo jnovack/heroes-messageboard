@@ -1,5 +1,5 @@
 mixin select-option(name)
-  option&attributes(attributes)= name
+  option(value=name)&attributes(attributes)= name
 
 mixin map-select(id,name)
   label(for=id,class='control-label')= name
@@ -16,7 +16,7 @@ mixin map-select(id,name)
 
 mixin hero-select(id,name)
   label(for=id,class='control-label')= name
-  select(data-for=id,id=id+'-select').form-control
+  select(data-for=id,id=id).form-control
     +select-option("Please Select Hero")(selected,disabled)
     +select-option("abathur")
     +select-option("anubarak")
@@ -99,7 +99,7 @@ mixin skin-select(id,name)
 
 mixin talent-select(id,name)
   label(for=id,class='control-label')= name
-  select(data-for=id,id=id+'-select').form-control
+  select(data-for=id,id=id).form-control
     +select-option("Please Select Talent")(selected,disabled)
     +select-option("transparent")
     +select-option("- Generic")(disabled)

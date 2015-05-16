@@ -11,9 +11,9 @@ block head
     body { cursor: none; }
 
 block footer
-  script(src="/javascripts/socket.js")
   script(src="/javascripts/messageboard.js")
   script(src="/socket.io/socket.io.js")
+  script(src="/javascripts/socket.js")
   script(src="/javascripts/socket-messageboard.js")
 
 block content
@@ -21,7 +21,7 @@ block content
     #sidebar
       #sidebar_header
         #sidebar_header_container
-          video#sidebar_header_video.video.valla(autoplay="", loop="", muted="", src="assets/hero-videos/valla.mp4", type="video/mp4")
+          video#hero-video.video.valla(autoplay="", loop="", muted="", src="assets/hero-videos/valla.mp4", type="video/mp4")
       #sidebar_body
         #timer_percent
         #map_container.hidden(data-group="sidebar_body_containers",data-ignore='true')
@@ -129,11 +129,15 @@ block content
       #sidebar_footer
         #sidebar_footer_container
           #sidebar_footer_description Hero League
-          #sidebar_footer_text 16
+          #sidebar_footer_text
+            #rank.value 16
     #mainview
       #mainview_header.flex.flex-align-items-center.flex-justify-between
-        #mainview_header_title.text &#160;
-        #mainview_header_subtitle.html &#160;
+        #mainview_header_title
+          #title.text &#160;
+        #mainview_header_subtitle
+          #subtitle1.text &#160;
+          #subtitle2.text &#160;
         #mainview_header_icon.icon(style='display: none;')
           img(src="")
       #mainview_body

@@ -11,15 +11,6 @@ socket.on('reload', function(data){
     location.reload();
 });
 
-// TODO - Save actions and load them upon pageload
-
-socket.on('rank', function(data) {
-    console.log("rank: " + data.text);
-    $("#sidebar_footer_text").html(data.text);
-    $("#sidebar_footer_text").addClass("animated bounceIn");
-
-});
-
 socket.on('hide-messages', function(data) {
     $("#mainview_body").fadeOut();
 });
@@ -97,7 +88,7 @@ socket.on('value', function(data) {
         }
 
         if ($("#"+data.id).hasClass("video")) {
-            $("#sidebar_header_video").attr('src', "assets/hero-videos/"+data.text+".mp4").removeClass().addClass("video " + data.text);
+            $("#"+data.id).attr('src', "assets/hero-videos/"+data.text+".mp4").removeClass().addClass("video " + data.text);
         }
 
         if ($("#"+data.id).hasClass("percent")) {

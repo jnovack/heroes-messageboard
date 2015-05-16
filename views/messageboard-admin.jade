@@ -11,19 +11,19 @@ block content
         div.control-group
           label(for='title',class='control-label') Title
           div.controls
-            input(type='text',id='title',name='title',placeholder="TickleMeOzmo",class='form-control')
+            input(data-group="text",type='text',id='title',name='title',placeholder="Title of the Stream",class='form-control')
 
     div.row
       div.col-md-6
         div.control-group
           label(for='subtitle1',class='control-label') SubTitle Top Line
           div.controls
-            input(data-group="subtitle-text",type='text',id='subtitle1',name='subtitle1',placeholder='Solo Queue',class='form-control')
+            input(data-group="text",type='text',id='subtitle1',name='subtitle1',placeholder='Solo Queue',class='form-control')
       div.col-md-6
         div.control-group
-          label(for='subtitle2',class='control-label') SubTitle Bottom Lane
+          label(for='subtitle2',class='control-label') SubTitle Bottom Line
           div.controls
-            input(data-group="subtitle-text",type='text',id='subtitle2',name='subtitle2',placeholder='Quick Match',class='form-control')
+            input(data-group="text",type='text',id='subtitle2',name='subtitle2',placeholder='Quick Match',class='form-control')
       div.col-lg-12
         ul.nav.nav-pills.nav-justified
           li(data-group="subtitle-pills",id="subtitleText")
@@ -35,7 +35,7 @@ block content
 
     div.row
       div.col-md-8
-        +hero-select('sidebar_header_video','Theme Hero')
+        +hero-select('hero-video','Hero Video')
       div.col-md-4
         div.control-group
           label(for='rank',class='control-label') Rank
@@ -50,13 +50,13 @@ block content
           ul(role='tablist').nav.nav-tabs
             li(role='presentation').active
               a(href='#tab-map',aria-expanded='true',role='tab',data-toggle='tab')
-                span Map Info
+                span(id='label-map').label.label-primary Map Info
             li(role='presentation')
               a(href='#tab-hero',aria-expanded='false',role='tab',data-toggle='tab')
-                span Hero Info
+                span(id='label-hero').label.label-primary Hero Info
             li(role='presentation')
               a(href='#tab-voice',aria-expanded='false',role='tab',data-toggle='tab')
-                span Voice Info
+                span(id='label-voice').label.label-primary Voice Info
             li(role='presentation')
               a(href='#tab-crawl',aria-expanded='false',role='tab',data-toggle='tab')
                 span(id='label-crawl').label.label-primary Crawl
@@ -69,8 +69,8 @@ block content
                 div.col-lg-12
                   div.btn-toolbar
                     div.btn-group
-                      a(data-group="toggle-pills",data-set='map',data-partner='Show',data-value='true',id="mapHide",href='#').btn.btn-sm.btn-success Map Tab is VISIBLE
-                      a(data-group="toggle-pills",data-set='map',data-partner='Hide',data-value='false',id="mapShow",href='#',style="display: none").btn.btn-sm.btn-danger Map Tab is HIDDEN
+                      a(data-group="toggle-pills",data-set='map',data-partner='Show',data-value='true',id="mapHide",data-element="map_container",href='#').btn.btn-sm.btn-success Map Tab is VISIBLE
+                      a(data-group="toggle-pills",data-set='map',data-partner='Hide',data-value='false',id="mapShow",data-element="map_container",href='#',style="display: none").btn.btn-sm.btn-danger Map Tab is HIDDEN
               div.row
                 div.col-md-3
                   div(id="blackhearts-bay")
@@ -119,8 +119,8 @@ block content
                 div.col-lg-12
                   div.btn-toolbar
                     div.btn-group
-                      a(data-group="toggle-pills",data-set='hero',data-partner='Show',data-value='true',id="heroHide",href='#').btn.btn-sm.btn-success Hero Tab is VISIBLE
-                      a(data-group="toggle-pills",data-set='hero',data-partner='Hide',data-value='false',id="heroShow",href='#',style="display: none").btn.btn-sm.btn-danger Hero Tab is HIDDEN
+                      a(data-group="toggle-pills",data-set='hero',data-partner='Show',data-value='true',id="heroHide",data-element="hero_container",href='#').btn.btn-sm.btn-success Hero Tab is VISIBLE
+                      a(data-group="toggle-pills",data-set='hero',data-partner='Hide',data-value='false',id="heroShow",data-element="hero_container",href='#',style="display: none").btn.btn-sm.btn-danger Hero Tab is HIDDEN
               div.row
                 div.col-md-3
                   div(id="warrior")
@@ -246,8 +246,8 @@ block content
                 div.col-lg-12
                   div.btn-toolbar
                     div.btn-group
-                      a(data-group="toggle-pills",data-set='voice',data-partner='Show',data-value='true',id="voiceHide",href='#').btn.btn-sm.btn-success Voice Tab is VISIBLE
-                      a(data-group="toggle-pills",data-set='voice',data-partner='Hide',data-value='false',id="voiceShow",href='#',style="display: none").btn.btn-sm.btn-danger Voice Tab is HIDDEN
+                      a(data-group="toggle-pills",data-set='voice',data-partner='Show',data-value='true',id="voiceHide",data-element="voice_container",href='#').btn.btn-sm.btn-success Voice Tab is VISIBLE
+                      a(data-group="toggle-pills",data-set='voice',data-partner='Hide',data-value='false',id="voiceShow",data-element="voice_container",href='#',style="display: none").btn.btn-sm.btn-danger Voice Tab is HIDDEN
               div.row
                 div.col-lg-12
                   div.col-md-4
@@ -256,21 +256,21 @@ block content
                       div.control-group
                         label(for='voice1-text',class='control-label') voice1-text
                         div.controls
-                          input(data-group='text',type='text',id='voice1-text',placeholder="TickleMeOzmo",class='form-control')
+                          input(data-group='text',type='text',id='voice1-text',placeholder="Player 1",class='form-control')
                   div.col-md-4
                     div(id="voice2")
                       +talent-select('voice2-picture','voice2-picture')
                       div.control-group
                         label(for='voice2-text',class='control-label') voice2-text
                         div.controls
-                          input(data-group='text',type='text',id='voice2-text',placeholder="TickleMeOzmo",class='form-control')
+                          input(data-group='text',type='text',id='voice2-text',placeholder="Player 2",class='form-control')
                   div.col-md-4
                     div(id="voice3")
                       +talent-select('voice3-picture','voice3-picture')
                       div.control-group
                         label(for='voice3-text',class='control-label') voice3-text
                         div.controls
-                          input(data-group='text',type='text',id='voice3-text',placeholder="TickleMeOzmo",class='form-control')
+                          input(data-group='text',type='text',id='voice3-text',placeholder="Player 3",class='form-control')
               div.row
                 div.col-lg-12
                   div.col-md-4
@@ -279,21 +279,21 @@ block content
                       div.control-group
                         label(for='voice4-text',class='control-label') voice4-text
                         div.controls
-                          input(data-group='text',type='text',id='voice4-text',placeholder="TickleMeOzmo",class='form-control')
+                          input(data-group='text',type='text',id='voice4-text',placeholder="Player 4",class='form-control')
                   div.col-md-4
                     div(id="voice5")
                       +talent-select('voice5-picture','voice5-picture')
                       div.control-group
                         label(for='voice5-text',class='control-label') voice5-text
                         div.controls
-                          input(data-group='text',type='text',id='voice5-text',placeholder="TickleMeOzmo",class='form-control')
+                          input(data-group='text',type='text',id='voice5-text',placeholder="Player 5",class='form-control')
                   div.col-md-4
                     div(id="voice6")
                       +talent-select('voice6-picture','voice6-picture')
                       div.control-group
                         label(for='voice6-text',class='control-label') voice6-text
                         div.controls
-                          input(data-group='text',type='text',id='voice6-text',placeholder="TickleMeOzmo",class='form-control')
+                          input(data-group='text',type='text',id='voice6-text',placeholder="Player 6",class='form-control')
 
             div(role='tabpanel',id='tab-template').tab-pane
               div.col-lg-12
@@ -313,4 +313,5 @@ block content
         a(href="#",class="btn btn-success",id="showMsgButton", style="display: none") Show Messages
 
 block footer
+    script(src="/javascripts/socket.js")
     script(src="/javascripts/messageboard-admin.js")
