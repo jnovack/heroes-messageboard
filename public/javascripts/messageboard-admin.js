@@ -1,60 +1,14 @@
-var socket = io();
-
-
 socket.on('connect', function() {
-    console.log("connected.");
     socket.emit('join', 'messageboard');
 });
-
-socket.on('joined', function(data){
-    console.log("joined " + data);
-});
-
-socket.on('log', function(data) {
-    console.log(data);
-});
-
-var save = function(key, value) { return; };
-var read = function(key) { return; };
-
-//TODO - Process config push from server
-
-var classes_label = "label-primary label-default label-info label-success label-danger label-warning";
-
 
 function send(message) {
     socket.emit('broadcast', message);
     console.log(message);    
 }
 
-if(typeof(Storage) !== "undefined") {
-    console.log("has storage");
-    save = function(key, value) {
-        var json = JSON.parse(localStorage.getItem("json"));
-        json[key] = value;
-        localStorage.setItem("json", JSON.stringify(json));
-        console.log(key + " saved: " + value);
-    };
-    read = function(key) {
-        var json = JSON.parse(localStorage.getItem("json"));
-        if (json === null || json[key] === undefined) {
-            return undefined;
-        }
-        console.log(json[key]);
-        return json[key];
-    };
-    reload = function() {
-        var json = JSON.parse(localStorage.getItem("json"));
-        if (json === null) {
-            return undefined;
-        }
-        $.each( json, function (id, value) {
-            $("#" + id).val(value);
-        });
-    }
-} else {
-    console.log("does not has storage");
-}
+var classes_label = "label-primary label-default label-info label-success label-danger label-warning";
+
 
 $("#reloadButton").click(function() {
     send({ event: 'reload' });

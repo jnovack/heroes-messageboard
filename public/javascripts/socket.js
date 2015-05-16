@@ -1,5 +1,9 @@
 var socket = io();
 
+socket.on('connect', function() {
+    console.log("connected.");
+});
+
 socket.on('joined', function(data){
     console.log("joined " + data);
 });
@@ -7,7 +11,6 @@ socket.on('joined', function(data){
 socket.on('log', function(data) {
     console.log(data);
 });
-
 
 function properName(hero) {
     if (hero.indexOf('_') > 0) {
