@@ -215,7 +215,7 @@ socket.on('value', function(data) {
     console.log(data);
 
     // Admin helper functions
-    if (typeof $('#'+data.id).prop('type') !== undefined) {
+    if (typeof $('#'+data.id).prop('type') !== "undefined") {
         switch ($('#'+data.id).prop('type')) {
             case "text":
                 $("#"+data.id).val(data.text);
