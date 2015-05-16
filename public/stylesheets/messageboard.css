@@ -2,12 +2,12 @@
 
 * {margin: 0px; padding: 0px; font-weight: normal; list-style-type: none;}
 
-body {background: #000; cursor: none; font-family: 'Open Sans', sans-serif; color: white;}
+body {background: #000; cursor: none; color: white;}
 
 strong { color: #FFFFFF; font-weight: 600; }
 .link { color: rgb(36,144,255); text-decoration: underline; }
-.hidden { display: none; !important }
-.percent::after { content: "%"; }
+.hidden { display: none !important; }
+.percent::after { font-size: 0.8em; content: "%"; }
 
 .color-green { color: rgb(0, 128, 0);}
 .color-greener { color: rgb(0, 192, 0);}
@@ -24,9 +24,9 @@ strong { color: #FFFFFF; font-weight: 600; }
  ***** Side Bar ******
  */
 
-#sidebar {width: 400px; height: 100%; background: url('../images/sidebar_bg.png'); float: left;}
+#sidebar {width: 400px; height: 100%; background: url('../images/themes/blue/sidebar.png'); float: left;}
 
-#sidebar_header {width: 400px; height: 350px; background-color: #222; background-image: url('../images/noise_overlay.png') repeat; border-bottom: solid 1px rgba(0,0,0,0.80);}
+#sidebar_header {width: 400px; height: 350px; background-color: #222; background-image: url('../images/themes/blue/noise.png') repeat; border-bottom: solid 1px rgba(0,0,0,0.80);}
 #sidebar_header_container { width: 400px; height: 350px; overflow: hidden;}
 #sidebar_header_container video { width: 1300px; }
 
@@ -48,18 +48,17 @@ strong { color: #FFFFFF; font-weight: 600; }
 #sidebar_body div ul li h3 {width: 240px; margin: 5px 0px 0px 10px; padding: 0px; color: #FFF; font-size: 16px; line-height: 16px; text-transform: uppercase; float: left;}
 */
 #sidebar_body > div  {position: absolute; width: 340px; margin: 0px 0px 0px 24px; }
-#sidebar_body div h1 {color: #FFF; font-family: one_extra_bold; font-size: 50px; line-height: 50px; text-transform: uppercase; float: left;}
-#sidebar_body div h2 { margin-top: 12px;}
-#sidebar_body div ul {width: 340px; border-top: solid 1px rgba(0,0,0,0.50); border-bottom: /*solid 1px rgba(255,255,255,0.10);*/ }
-#sidebar_body div ul li {width: 100%; padding: 8px 0px 8px 0px; border-top: solid 1px rgba(255,255,255,0.10); border-bottom: solid 1px rgba(0,0,0,0.50); height:46px; display: flex; align-items: center; align-content: center;}
-#sidebar_body div ul li:last-of-type {border-bottom: none;}
+#sidebar_body div h1 {color: #FFF; font-size: 50px; line-height: 50px; text-transform: uppercase; float: left;}
+#sidebar_body div div.heading { color: #969696; line-height: 1.1em; font-weight: 500; font-size: 2em; margin-bottom: 10px; margin-top: 12px; }
+#sidebar_body div ul { width: 340px; border-top: solid 1px rgba(0,0,0,0.50); /* border-bottom: solid 1px rgba(255,255,255,0.10); */ }
+#sidebar_body div ul li { width: 100%; padding: 8px 0px 8px 0px; border-top: solid 1px rgba(255,255,255,0.10); border-bottom: solid 1px rgba(0,0,0,0.50); height:64px; display: flex; align-items: center; align-content: center;}
+#sidebar_body div ul li:last-of-type { border-bottom: none;}
 #sidebar_body div ul li img { height: 50px; padding-right: 4px; }
-#sidebar_body div ul li div.li-text { margin-left: 4px; margin-right: 8px; font-size: 1.4em; width: 186px; }
+#sidebar_body div ul li div.li-text { margin-left: 4px; margin-right: 8px; font-size: 1.4em; width: 172px; line-height: 20px;}
 #sidebar_body div ul li div.li-text-name { color: #FFFFFF; }
 #sidebar_body div ul li div.li-text-progress { height: 10px; }
 #sidebar_body div ul li div.li-text-desc { color: #999999; font-size: 0.6em; }
-#sidebar_body div ul li div.li-number { font-size: 1.9em; width: 64px; text-align: right; text-shadow: 1px 1px #000000; }
-
+#sidebar_body div ul li div.li-number { font-size: 1.9em; width: 64px; text-align: center; text-shadow: 1px 1px #000000; }
 
 /*
 #specials_container {width: 340px; margin: 30px 0px 0px 30px; float: left;}
@@ -73,27 +72,27 @@ strong { color: #FFFFFF; font-weight: 600; }
 */
 #sidebar_footer {width: 400px; height: 161px; background: rgba(255,255,255,0.05) url('../images/heroleague-blank.png') repeat; border-top: solid 1px rgba(255,255,255,0.10); overflow:hidden; float: left;}
 #sidebar_footer_container {width: 400px; height: 161px; position: relative; display: block;}
-#sidebar_footer_description { color: #FFF; font-size: 12px; margin: 51px 0px 0px 164px; font-family: arial; text-shadow: 0px -2px 1px #000; }
-#sidebar_footer_text {color: #FFF; font-size: 50px; margin: -10px 0px 0px 164px; font-family: "arial black"; text-shadow: 0px -2px 1px #000;  }
+#sidebar_footer_description { color: #FFF; font-size: 12px; margin: 51px 0px 0px 164px; text-shadow: 0px -2px 1px #000; }
+#sidebar_footer_text {color: #FFF; font-size: 50px; margin: -10px 0px 0px 164px; font-family: "Arial Black"; text-shadow: 0px -2px 1px #000;  }
 
 
 /*
  ***** Main View *****
  */
 
-#mainview {width: 1520px; height: 1080px; background: url('../images/mainview_repeat.png') repeat; -webkit-box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 1); float: left;}
-#mainview_header {width: 1520px; height: 159px; background: rgba(0,0,0,0.50) url('../images/noise_overlay.png') repeat; float: left;}
-#mainview_header h1 {width:850px; height: 90px; margin: 40px 0px 0px 40px; padding: 0px; color: #FFF; font-weight: lighter; font-size: 90px; line-height: 90px; text-shadow: 0px -2px 1px #000; float: left;}
-#mainview_header h2 {min-width: 220px; margin: 40px 40px 0px 0px; padding: 0px; color: #FFF; font-weight: lighter; font-size: 90px; line-height: 90px; text-align: right; text-transform: uppercase; text-shadow: 0px -2px 1px #000; float: right;}
-#mainview_header h3 {margin: 45px 20px 0px 0px; padding: 0px; color: #FFF; font-weight: lighter; font-size: 36px; line-height: 42px; letter-spacing: 1.5px; text-align: right; text-transform: uppercase; text-shadow: 0px -2px 1px #000; float: right;}
+#mainview {width: 1520px; height: 1080px; background: url('../images/themes/blue/mainview.png') repeat; -webkit-box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 1); float: left;}
+#mainview_header {width: 1520px; height: 159px; background: rgba(0,0,0,0.50) url('../images/themes/blue/noise.png') repeat; float: left; padding: 0px 40px 0px 40px; }
+#mainview_header_title { height: 90px; padding: 0px; color: #FFF; font-weight: lighter; font-size: 90px; line-height: 90px; text-shadow: 0px -2px 1px #000; float: left;}
+#mainview_header_subtitle { padding: 0px; color: #FFF; font-weight: lighter; font-size: 36px; line-height: 42px; letter-spacing: 1.5px; text-align: right; text-transform: uppercase; text-shadow: 0px -2px 1px #000; float: right;}
+#mainview_header_icon { padding: 0px; color: #FFF; font-weight: lighter; font-size: 90px; line-height: 90px; text-align: right; text-transform: uppercase; text-shadow: 0px -2px 1px #000; float: right;}
 
 #mainview_body {width: 100%; min-height: 865px; max-height: 865px; float: left; overflow: hidden;}
 #mainview_body ul { width: 1520px; border-top: solid 1px #000; border-bottom: solid 1px rgba(255,255,255,0.05); float: left;}
 #mainview_body ul li {opacity: 0; width: 1520px; padding:20px 0px 20px 0px; border-bottom: solid 1px #1B1B1B; border-top: solid 1px rgba(255,255,255,0.05); float: left; }
 #mainview_body ul li.dim {background: rgba(0,0,0,0.15);}
-#mainview_body ul li h1 {width:1200px; margin: 0px 40px 0px 40px; color: #BBB; font-size: 30px; line-height: 40px; text-shadow: 0px 2px 0px #000; word-wrap: break-word; float: left;}
-#mainview_body ul li h1 img { float: left; padding-right: 16px;}
-#mainview_body ul li h2 {width: 190px; margin: 10px 40px 0px 0px; color: #666; font-size: 24px; text-align: right; line-height: 24px; text-transform: uppercase; text-shadow: 0px -1px 0px #000; float: right;}
+#mainview_body ul li span.message { min-height: 80px; width:1200px; margin: 0px 40px 0px 40px; color: #BBB; font-size: 30px; line-height: 40px; text-shadow: 0px 2px 0px #000; word-wrap: break-word; float: left;}
+#mainview_body ul li span.message img { float: left; padding-right: 16px;}
+#mainview_body ul li span.tag {width: 190px; margin: 10px 40px 0px 0px; color: #666; font-size: 24px; text-align: right; line-height: 24px; text-transform: uppercase; text-shadow: 0px -1px 0px #000; float: right;}
 
 #mainview_footer { background-color: #1F1F1F; height: 56px; margin-top:1024px; z-index: 999; font-size: 2.2em; text-shadow: 1px 1px #000000; border: 1px solid #000000;}
 
@@ -135,6 +134,8 @@ strong { color: #FFFFFF; font-weight: 600; }
 .progress {
   overflow: hidden;
   height: 10px;
+  margin-top: 6px;
+  margin-bottom: 0px;
   background-color: #4B4E4F;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);

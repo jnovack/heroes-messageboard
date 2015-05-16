@@ -119,20 +119,23 @@ socket.on('value', function(data) {
         }
 
         if ($("#"+data.id).hasClass("ratio")) {
+            $("#"+data.id).text(data.text).addClass("animated bounceIn");
             var group = $("#"+data.id).attr('data-group');
             var total = 0;
-            $.each( $("[data-group='"+group+"']"), function(id, value) {
-                total += parseInt($(value).text());
+            $.each( $("[data-group='"+group+"']"), function(val, obj) {
+                if ($.isNumeric(parseInt($(obj).text()))) {
+                    total = Math.max(parseInt($(obj).text()),total);
+                    // total += parseInt($(obj).text());
+                }
             });
-            var percent = data.text*100/total;
-            if  (percent  < 10) { $("#"+data.id).removeClass(redgreen).addClass("color-reddest"); }
-            if ((percent >= 10) && (percent < 17)) { $("#"+data.id).removeClass(redgreen).addClass("color-redder"); }
-            if ((percent >= 17) && (percent < 25)) { $("#"+data.id).removeClass(redgreen).addClass("color-red"); }
-            if ((percent >= 25) && (percent < 33)) { $("#"+data.id).removeClass(redgreen).addClass("color-green"); }
-            if ((percent >= 33) && (percent < 40)) { $("#"+data.id).removeClass(redgreen).addClass("color-greener"); }
-            if  (percent >= 40) { $("#"+data.id).removeClass(redgreen).addClass("color-greenest"); }
+            $.each( $("[data-group='"+group+"']"), function(val, obj) {
+                if ($.isNumeric(total)) {
+                    id = $(this).attr('id').substring(0,$(this).attr('id').indexOf("-"));
+                    var percent = parseInt($(obj).text())*100/total;
+                    $("#"+id+"-progress").css("width", percent + "%");
+                }
+            });
 
-            $("#"+data.id).text(data.text).addClass("animated bounceIn");
         }
 
     }
