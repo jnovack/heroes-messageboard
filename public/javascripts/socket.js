@@ -1,11 +1,11 @@
 var socket = io();
 
 socket.on('connect', function() {
-    console.log("connected.");
+    console.log("socket.io - connected");
 });
 
 socket.on('joined', function(data){
-    console.log("joined " + data);
+    console.log("socket.io - joined " + data);
 });
 
 socket.on('log', function(data) {
@@ -22,6 +22,9 @@ function properName(hero) {
             break;
         case 'etc':
             return "ETC";
+            break;
+        case 'kaelthas':
+            return "Kael'thas";
             break;
         case 'lili':
             return "Li Li";
