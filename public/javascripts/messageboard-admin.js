@@ -195,7 +195,7 @@ socket.on('action', function(data) {
 
     if (data.action == 'ignore') {
         // Toggles
-        $.each( $("[data-element='"+data.id+"']"), function(val, obj) {
+        $.each( $("[data-element='"+data.id+"']"), function(i, obj) {
             if ($(this).attr('data-value') == data.value) {
                 var set = $(this).attr('data-set');
                 var partner = $(obj).attr('data-partner');
