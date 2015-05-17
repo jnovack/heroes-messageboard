@@ -35,19 +35,15 @@ block content
           - for (var i = 1; i < 6; ++i) {
             div(id='game'+i+'-container',style='display: none').row.game
               div(id='game'+i+'-team1',data-group='game-heroes',data-team='team1',role='trigger',data-trigger='team-scores').col-sm-5.text-center.pad-small.heroes.heroes-left
-                div(id='game'+i+'-team1-hero1').divimage.divimagelg.divimage-transparent
-                div(id='game'+i+'-team1-hero2').divimage.divimagelg.divimage-transparent
-                div(id='game'+i+'-team1-hero3').divimage.divimagelg.divimage-transparent
-                div(id='game'+i+'-team1-hero4').divimage.divimagelg.divimage-transparent
-                div(id='game'+i+'-team1-hero5').divimage.divimagelg.divimage-transparent
+                - for (var x = 1; x < 6; ++x) {
+                  div(id='game'+i+'-team1-hero'+x).divimage.divimagelg.divimage-transparent
+                - }
               div.col-sm-2.pad-small
                 div(id='game'+i+'-map').divimage.center.map-small.divimage-transparent
               div(id='game'+i+'-team2',data-group='game-heroes',data-team='team2',role='trigger',data-trigger='team-scores').col-sm-5.text-center.pad-small.heroes.heroes-right
-                div(id='game'+i+'-team2-hero1').divimage.divimagelg.divimage-transparent
-                div(id='game'+i+'-team2-hero2').divimage.divimagelg.divimage-transparent
-                div(id='game'+i+'-team2-hero3').divimage.divimagelg.divimage-transparent
-                div(id='game'+i+'-team2-hero4').divimage.divimagelg.divimage-transparent
-                div(id='game'+i+'-team2-hero5').divimage.divimagelg.divimage-transparent
+                - for (var x = 1; x < 6; ++x) {
+                  div(id='game'+i+'-team2-hero'+x).divimage.divimagelg.divimage-transparent
+                - }
           - }
 
       div.row
