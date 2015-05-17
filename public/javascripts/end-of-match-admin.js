@@ -232,11 +232,6 @@ $("input[data-group='text']").change(function() {
     }
 });
 
-// Catch ESC anywhere to blur the element, which should process the input
-$(document).keyup(function(e) {
-    if (e.keyCode == 27) { $(document.activeElement).blur(); }   // escape key maps to keycode `27`
-});
-
 // When we are ready, set page up for the user
 $(document).ready( function() {
     $('#tablist-games a[href="#tab-game1"]').tab('show');

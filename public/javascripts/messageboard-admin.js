@@ -185,10 +185,6 @@ $("input[data-group='text']").blur(function() {
     }
 });
 
-// Catch ESC anywhere to blur the element, which should process the input
-$(document).keyup(function(e) {
-    if (e.keyCode == 27) { $(document.activeElement).blur(); }   // escape key maps to keycode `27`
-});
 
 socket.on('action', function(data) {
     console.log(data);

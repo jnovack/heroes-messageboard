@@ -39,3 +39,8 @@ function properName(hero) {
             return hero.charAt(0).toUpperCase()+hero.substr(1).toLowerCase();
     }
 }
+
+// Catch ESC anywhere to blur the element, which should process the input
+$(document).keyup(function(e) {
+    if (e.keyCode == 27) { $(document.activeElement).blur(); }   // escape key maps to keycode `27`
+});
