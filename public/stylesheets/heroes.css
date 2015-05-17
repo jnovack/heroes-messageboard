@@ -25,6 +25,8 @@
 .portrait.gazlowe            { margin-left: -773px; margin-top: -373px; -webkit-transform: scale(0.75); }
 .portrait.illidan            { margin-left: -794px; margin-top: -235px; -webkit-transform: scale(0.7); }
 .portrait.jaina              { margin-left: -842px; margin-top: -215px; -webkit-transform: scale(0.9); }
+.portrait.johanna			 { /* TODO */ }
+.portrait.kaelthas			 { /* TODO */ }
 .portrait.kerrigan           { margin-left: -880px; margin-top: -150px; -webkit-transform: scale(1); }
 .portrait.lili               { margin-left: -879px; margin-top: -311px; -webkit-transform: scale(1); }
 .portrait.malfurion          { margin-left: -868px; margin-top: -242px; -webkit-transform: scale(1); }
@@ -63,6 +65,7 @@
 .gazlowe            {   margin-left: -622px;    margin-top: -213px; }
 .illidan            {   margin-left: -650px;    margin-top: -110px; }
 .jaina              {   margin-left: -579px;    margin-top: -136px; }
+.johanna			{   /* TODO */ }
 .kaelthas           {   margin-left: -655px;    margin-top: -75px; }
 .kerrigan           {   margin-left: -636px;    margin-top: -89px; }
 .lili               {   margin-left: -615px;    margin-top: -180px; }
