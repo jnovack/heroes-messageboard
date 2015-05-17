@@ -116,10 +116,34 @@ $("#crawl-text").blur(function() {
  */
 
 $("select").change(function() {
-    message = { event: 'value', data: { id: $(this).attr("data-for"), text: $("#" + $(this).attr("id") + " option:selected").text() } };
+    message = { event: 'value', data: { id: $(this).attr("data-for"), text: $("#" + $(this).attr("id") + " option:selected").val() } };
     send(message);
 });
 
+
+$("[data-group='game-reset-pills']").click(function() {
+    var game = $(this).attr("data-game");
+
+    // Reset Winners
+    replaceClass('btn-default',game+"-team1");
+    replaceClass('btn-default',game+"-team2");
+    $('#team1-score').val($("[data-group='game-team-pills'][data-team='team1'].btn-info").size());
+    $('#team2-score').val($("[data-group='game-team-pills'][data-team='team2'].btn-info").size());
+    send({ event: 'action', data: { id: game+"-team1", action: "class", value: "game-undecided" }});
+    send({ event: 'action', data: { id: game+"-team2", action: "class", value: "game-undecided" }});
+
+    // Reset Selects
+    $.each($("[data-group='"+game+"-selects']"), function (i, obj) {
+        $('#' + $(obj).attr('id') + ' option:eq(0)').prop('selected', true).change();
+    });
+
+    // Disable
+    $('#'+game+'-hide').hide();
+    $('#'+game+'-show').show();
+    replaceClass('label-danger','label-'+game);
+    send({ event: 'action', data: { id: game + '-container', action: "visible", value: 'hide' }});
+
+});
 
 $("[data-group='game-team-pills']").click(function() {
     var game = $(this).attr("data-game");
@@ -132,8 +156,8 @@ $("[data-group='game-team-pills']").click(function() {
         send({ event: 'action', data: { id: game+"-"+team, action: "class", value: "game-undecided" }});
         send({ event: 'action', data: { id: game+"-"+enemy, action: "class", value: "game-undecided" }});
     } else {
-        replaceClass('btn-default',$('#'+game+"-"+enemy));
-        replaceClass('btn-info',$('#'+game+"-"+team));
+        replaceClass('btn-default',game+"-"+enemy);
+        replaceClass('btn-info',game+"-"+team);
         $('#team1-score').val($("[data-group='game-team-pills'][data-team='team1'].btn-info").size());
         $('#team2-score').val($("[data-group='game-team-pills'][data-team='team2'].btn-info").size());
         send({ event: 'action', data: { id: game+"-"+team, action: "class", value: "game-winner" }});
@@ -141,6 +165,8 @@ $("[data-group='game-team-pills']").click(function() {
     }
 });
 
+
+// Enable / Disable
 $("[data-group='game-control-pills']").click(function() {
     var game = $(this).attr("data-game");
     $("[data-game='"+game+"']").show();

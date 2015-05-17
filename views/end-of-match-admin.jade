@@ -47,13 +47,6 @@ block content
 
     div.row
       div.col-lg-12
-        div.control-group
-          label(for='announcement',class='control-label') Announcement
-          div.controls
-            input(data-group='text',type='text',id='announcement',name='announcement',placeholder='Coming Up: The finals!',class='form-control')
-
-    div.row
-      div.col-lg-12
         div(role='tabpanel')
           ul(role='tablist',id='tablist-games').nav.nav-tabs
             - for (var i = 1; i < 6; ++i) {
@@ -70,27 +63,35 @@ block content
                 div.row
                   div.col-lg-12.text-center
                     div.btn-toolbar
-                      a(data-group='game'+i+'-pills',id='game'+i+'Reset',data-game='game'+i,data-action='reset').btn.btn-warning Reset
+                      a(data-group='game-reset-pills',id='game'+i+'Reset',data-game='game'+i,data-action='reset').btn.btn-warning Reset
                       a(data-group='game-team-pills',id='game'+i+'-team1',data-game='game'+i,data-team='team1',data-class='info',data-trigger='game-team-pills',role='trigger').btn.btn-default Team 1 Wins
                       a(data-group='game-team-pills',id='game'+i+'-team2',data-game='game'+i,data-team='team2',data-class='info',data-trigger='game-team-pills',role='trigger').btn.btn-default Team 2 Wins
                       a(data-group='game-control-pills',id='game'+i+'-hide',data-game='game'+i,data-action='hide',data-class='danger',style='display: none').btn.btn-danger Disable
                       a(data-group='game-control-pills',id='game'+i+'-show',data-game='game'+i,data-action='show',data-class='success').btn.btn-success Enable
                 div.row
                   div.col-sm-8
-                    +map-select('game'+i+'-map','map')
+                    +map-select('game'+i+'-map','map')(data-group='game'+i+'-selects',role='trigger',data-trigger='picture')
                   div.col-sm-4
-                    div(id='game'+i+'-map').center.divimage.map-small
+                    div(data-group='game'+i+'-pictures',id='game'+i+'-map-picture').center.divimage.map-small
 
                 - for (var x = 1; x < 6; ++x) {
                   div.row
                     div.col-sm-2
-                      div(id='game'+i+'-team1-hero'+x).center.divimage.divimagelg
+                      div(data-group='game'+i+'-pictures',id='game'+i+'-team1-hero'+x+'-picture').center.divimage.divimagelg
                     div.col-sm-4
-                      +hero-select('game'+i+'-team1-hero'+x,'team1-hero'+x)
+                      +hero-select('game'+i+'-team1-hero'+x,'team1-hero'+x)(data-group='game'+i+'-selects',role='trigger',data-trigger='picture')
                     div.col-sm-4
-                      +hero-select('game'+i+'-team2-hero'+x,'team2-hero'+x)
+                      +hero-select('game'+i+'-team2-hero'+x,'team2-hero'+x)(data-group='game'+i+'-selects',role='trigger',data-trigger='picture')
                     div.col-sm-2
-                      div(id='game'+i+'-team2-hero'+x).center.divimage.divimagelg
+                      div(data-group='game'+i+'-pictures',id='game'+i+'-team2-hero'+x+'-picture').center.divimage.divimagelg
                 - }
 
             - }
+
+    div.row
+      div.col-lg-12
+        div.control-group
+          label(for='announcement',class='control-label') Announcement
+          div.controls
+            input(data-group='text',type='text',id='announcement',name='announcement',placeholder='Coming Up: The finals!',class='form-control')
+
