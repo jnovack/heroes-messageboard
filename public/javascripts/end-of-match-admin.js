@@ -1,10 +1,6 @@
-var save = function(key, value) { return; };
-var read = function(key) { return; };
-
 //TODO - Process config push from server
 
 var classes_label = "label-primary label-default label-info label-success label-danger label-warning";
-
 
 function send(message) {
     socket.emit('broadcast', message);
@@ -113,37 +109,6 @@ $("#voiceShow").click(function() {
 $("#crawl-text").blur(function() {
     message = { event: 'value', data: { id: "crawl-text", text: $("#crawl-text").val() } };
     send(message);
-});
-
-$("#crawlDisable").click(function() {
-    $("[data-group='crawl-pills']").removeClass("active");
-    $(this).addClass("active");
-    $("#label-crawl").removeClass(classes_label).addClass("label-default");
-    send({ event: 'action', data: { id: "mainview_footer", action: "visible", value: "hide" }});
-});
-
-$("#crawlBlack").click(function() {
-    $("[data-group='crawl-pills']").removeClass("active");
-    $(this).addClass("active");
-    $("#label-crawl").removeClass(classes_label).addClass("label-primary");
-    send({ event: 'action', data: { id: "mainview_footer_marquee", action: "class", value: "marquee-black" }});
-    send({ event: 'action', data: { id: "mainview_footer", action: "visible", value: "show" }});
-});
-
-$("#crawlBlue").click(function() {
-    $("[data-group='crawl-pills']").removeClass("active");
-    $(this).addClass("active");
-    $("#label-crawl").removeClass(classes_label).addClass("label-info");
-    send({ event: 'action', data: { id: "mainview_footer_marquee", action: "class", value: "marquee-blue" }});
-    send({ event: 'action', data: { id: "mainview_footer", action: "visible", value: "show" }});
-});
-
-$("#crawlRed").click(function() {
-    $("[data-group='crawl-pills']").removeClass("active");
-    $(this).addClass("active");
-    $("#label-crawl").removeClass(classes_label).addClass("label-danger");
-    send({ event: 'action', data: { id: "mainview_footer_marquee", action: "class", value: "marquee-red" }});
-    send({ event: 'action', data: { id: "mainview_footer", action: "visible", value: "show" }});
 });
 
 /*
