@@ -42,6 +42,9 @@ $("[role='trigger']").on('trigger', function(event, data) {
         $('#team1-score').text($("[data-group='game-heroes'][data-team='team1'].game-winner").size());
         $('#team2-score').text($("[data-group='game-heroes'][data-team='team2'].game-winner").size());
     }
+    if (elements == "picture") {
+        replaceClass('divimage-'+data,$(this).attr('id') + '-picture');
+    }
 });
 
 
@@ -59,30 +62,46 @@ function replaceClass(classLike, id) {
 function updateValue(id, value) {
     console.log("updateValue: " + id + " - " + value);
 
-    if ($("#"+id).is("div")) {
-        $("#"+id).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-            $(this).removeClass("animated bounceIn");
-        });
-    }
+    if (typeof $('#'+id).prop('type') !== "undefined") {
+        // Admin page with inputs
+        switch ($('#'+id).prop('type')) {
+            case "text":
+                $("#"+id).val(value);
+                break;
+            case "select-one":
+                $('#'+id + ' option[value="' + value + '"]').prop('selected', true);
+                $('#'+id).trigger('trigger', value);
+                break;
+            default:
+                console.log($('#'+id).prop('type'));
+        }
+    } else {
+        // Viewer page with divs
+        if ($("#"+id).is("div")) {
+            $("#"+id).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                $(this).removeClass("animated bounceIn");
+            });
+        }
 
-    if ($("#"+id).is("input")) {
-        $("#"+id).val(value);
-    }
+        if ($("#"+id).is("input")) {
+            $("#"+id).val(value);
+        }
 
-    if ($("#"+id).hasClass("value")) {
-        $("#"+id).text(value).addClass("animated bounceIn");
-    }
+        if ($("#"+id).hasClass("value")) {
+            $("#"+id).text(value).addClass("animated bounceIn");
+        }
 
-    if ($("#"+id).hasClass("text")) {
-        $("#"+id).text(value).addClass("animated bounceIn");
-    }
+        if ($("#"+id).hasClass("text")) {
+            $("#"+id).text(value).addClass("animated bounceIn");
+        }
 
-    if ($("#"+id).hasClass("html")) {
-        $("#"+id).html(value).addClass("animated bounceIn");
-    }
+        if ($("#"+id).hasClass("html")) {
+            $("#"+id).html(value).addClass("animated bounceIn");
+        }
 
-    if ($("#"+id).hasClass("divimage")) {
-        replaceClass("divimage-"+value, id);
-        $("#"+id).addClass("animated bounceIn");
+        if ($("#"+id).hasClass("divimage")) {
+            replaceClass("divimage-"+value, id);
+            $("#"+id).addClass("animated bounceIn");
+        }
     }
 }
