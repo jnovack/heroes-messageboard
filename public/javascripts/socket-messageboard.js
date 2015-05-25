@@ -88,7 +88,7 @@ socket.on('value', function(data) {
         }
 
         if ($("#"+data.id).hasClass("video")) {
-            $("#"+data.id).attr('src', "assets/hero-videos/"+data.text+".mp4").removeClass().addClass("video " + data.text);
+            $("#"+data.id).attr('src', "assets/hero-videos/"+data.text+".webm").removeClass().addClass("video " + data.text);
         }
 
         if ($("#"+data.id).hasClass("percent")) {
