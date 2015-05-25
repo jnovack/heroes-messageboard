@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-// Initialize content 
+// Initialize content
 initContent();
 function initContent(){
     $('html, body').css('cursor','none');
@@ -25,8 +25,10 @@ function fadeMessage(){
         var footer = mvbody_height + mvhead_height;
 
         if (Math.floor(element > footer)){
+            // Fade Out
             $(this).fadeTo(0,0);
         } else {
+            // Fade In
             $(this).fadeTo(500,1);
         }
     });
@@ -34,11 +36,11 @@ function fadeMessage(){
 
 function paginateMessages(){
     fadeMessage();
-    
+
     clearTimeout(timer);
 
     var listAmount = $('#mainview_body ul li').size();
-    var listHeight = Math.ceil($('#mainview_body ul').height());    
+    var listHeight = Math.ceil($('#mainview_body ul').height());
     var itemHeight = $('#mainview_body ul li:nth-child(1)').height();
     var height = itemHeight + 43;
 
@@ -60,14 +62,14 @@ function paginateMessages(){
                 timer = setTimeout(paginateMessages, 10000);
                 fadeMessage();
             }
-         });    
+         });
     }else if(c > listAmount){
         clearTimeout(timer);
         timer = setTimeout(paginateMessages, 10000);
         //console.log('refreshed');
         c = 0;
     }
-    c++;    
+    c++;
 }
 
 // Hack to restart marquee if it breaks...
@@ -78,7 +80,7 @@ $('#mainview_footer').bind('changeData', function(e){
 });
 
 function resetTimer() {
-    $("#timer_percent").one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend' , function(event){  
+    $("#timer_percent").one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend' , function(event){
         rotateTabs();
     });
     $("#timer_percent").removeClass("countup").addClass("countdown");
@@ -91,7 +93,7 @@ function resetTimer() {
 }
 
 function rotateTabs() {
-    $("#timer_percent").one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend' , function(event){  
+    $("#timer_percent").one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend' , function(event){
         resetTimer();
     });
     $("#timer_percent").removeClass("countdown").addClass("countup");
