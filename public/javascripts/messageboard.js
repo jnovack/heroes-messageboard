@@ -39,13 +39,14 @@ function paginateMessages(){
 
     clearTimeout(timer);
 
+    var rotateTimer = 10000;
     var listAmount = $('#mainview_body ul li').size();
     var listHeight = Math.ceil($('#mainview_body ul').height());
     var itemHeight = $('#mainview_body ul li:nth-child(1)').height();
     var height = itemHeight + 43;
 
     if(c == 0){
-        timer = setTimeout(paginateMessages, 10000);
+        timer = setTimeout(paginateMessages, rotateTimer);
     }else if(c <= listAmount){
         $('#mainview_body ul').animate({
             marginTop: -height
@@ -57,15 +58,20 @@ function paginateMessages(){
             complete: function() {
                 clearTimeout(timer);
                 $('#mainview_body ul li:nth-child(1)').clone().appendTo('#mainview_body ul');
+                if ($('#mainview_body ul li:nth-last-child(2)').hasClass('dim')) {
+                    $('#mainview_body ul li:last-child').removeClass('dim');
+                } else {
+                    $('#mainview_body ul li:last-child').addClass('dim');
+                }
                 $('#mainview_body ul li:nth-child(1)').remove();
                 $('#mainview_body ul').css('margin-top', 0);
-                timer = setTimeout(paginateMessages, 10000);
+                timer = setTimeout(paginateMessages, rotateTimer);
                 fadeMessage();
             }
          });
     }else if(c > listAmount){
         clearTimeout(timer);
-        timer = setTimeout(paginateMessages, 10000);
+        timer = setTimeout(paginateMessages, rotateTimer);
         //console.log('refreshed');
         c = 0;
     }
