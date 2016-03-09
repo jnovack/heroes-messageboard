@@ -13,7 +13,6 @@ module.exports = function(grunt) {
                     env: {
                         NODE_ENV: 'dev'
                     },
-                    nodeArgs: ['--debug'],
                     cwd: __dirname,
                     callback: function (nodemon) {
                         nodemon.on('log', function (event) {
