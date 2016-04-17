@@ -8,27 +8,36 @@
   right: 0%;
   width: 0px;
   height: 0px;
-  border-top: 69px solid #272822; 
+  border-top: 69px solid #272822;
   border-left: 69px solid transparent;
 }
 
 /* 256px Portrait */
 .portrait.abathur            { margin-left: -838px; margin-top: -294px; -webkit-transform: scale(0.9); }
-.portrait.anubarak           { margin-left: -773px; margin-top: -312px; -webkit-transform: scale(0.7); }
+.portrait.anubarak           { margin-left: -700px; margin-top: -300px; -webkit-transform: scale(0.7); }
+.portrait.artanis            { margin-left: -700px; margin-top: -300px; -webkit-transform: scale(0.7); /* TODO */ }
 .portrait.arthas             { margin-left: -870px; margin-top: -145px; -webkit-transform: scale(0.9); }
 .portrait.azmodan            { margin-left: -837px; margin-top: -258px; -webkit-transform: scale(1); }
 .portrait.brightwing         { margin-left: -778px; margin-top: -283px; -webkit-transform: scale(0.75); }
 .portrait.chen               { margin-left: -833px; margin-top: -266px; -webkit-transform: scale(0.9); }
+.portrait.cho                { margin-left: -700px; margin-top: -300px; -webkit-transform: scale(0.7); /* TODO */ }
+.portrait.dehaka             { margin-left: -700px; margin-top: -300px; -webkit-transform: scale(0.7); /* TODO */ }
 .portrait.diablo             { margin-left: -799px; margin-top: -208px; -webkit-transform: scale(0.9); }
 .portrait.etc                { margin-left: -811px; margin-top: -293px; -webkit-transform: scale(0.7); }
 .portrait.falstad            { margin-left: -779px; margin-top: -260px; -webkit-transform: scale(0.75); }
+.portrait.gall               { margin-left: -700px; margin-top: -300px; -webkit-transform: scale(0.7); /* TODO */ }
 .portrait.gazlowe            { margin-left: -773px; margin-top: -373px; -webkit-transform: scale(0.75); }
+.portrait.greymane           { margin-left: -700px; margin-top: -300px; -webkit-transform: scale(0.7); /* TODO */ }
 .portrait.illidan            { margin-left: -794px; margin-top: -235px; -webkit-transform: scale(0.7); }
 .portrait.jaina              { margin-left: -842px; margin-top: -215px; -webkit-transform: scale(0.9); }
-.portrait.johanna			 { /* TODO */ }
-.portrait.kaelthas			 { /* TODO */ }
+.portrait.johanna            { margin-left: -700px; margin-top: -300px; -webkit-transform: scale(0.7); /* TODO */ }
 .portrait.kerrigan           { margin-left: -880px; margin-top: -150px; -webkit-transform: scale(1); }
+.portrait.kharazim           { margin-left: -700px; margin-top: -300px; -webkit-transform: scale(0.7); /* TODO */ }
+.portrait.leoric             { margin-left: -700px; margin-top: -300px; -webkit-transform: scale(0.7); /* TODO */ }
 .portrait.lili               { margin-left: -879px; margin-top: -311px; -webkit-transform: scale(1); }
+.portrait.li-ming            { margin-left: -700px; margin-top: -300px; -webkit-transform: scale(0.7); /* TODO */ }
+.portrait.lt-morales         { margin-left: -700px; margin-top: -300px; -webkit-transform: scale(0.7); /* TODO */ }
+.portrait.lunara             { margin-left: -700px; margin-top: -300px; -webkit-transform: scale(0.7); /* TODO */ }
 .portrait.malfurion          { margin-left: -868px; margin-top: -242px; -webkit-transform: scale(1); }
 .portrait.muradin            { margin-left: -804px; margin-top: -342px; -webkit-transform: scale(0.8); }
 .portrait.murky              { margin-left: -828px; margin-top: -366px; -webkit-transform: scale(0.75); }
@@ -36,18 +45,22 @@
 .portrait.nova               { margin-left: -896px; margin-top: -203px; -webkit-transform: scale(1); }
 .portrait.raynor             { margin-left: -824px; margin-top: -198px; -webkit-transform: scale(0.9); }
 .portrait.rehgar             { margin-left: -853px; margin-top: -207px; -webkit-transform: scale(1); }
+.portrait.rexxar             { margin-left: -700px; margin-top: -300px; -webkit-transform: scale(0.7); /* TODO */ }
 .portrait.sgt-hammer         { margin-left: -920px; margin-top: -137px; -webkit-transform: scale(1); }
 .portrait.sonya              { margin-left: -868px; margin-top: -224px; -webkit-transform: scale(1); }
 .portrait.stitches           { margin-left: -871px; margin-top: -194px; -webkit-transform: scale(1); }
 .portrait.sylvanas           { margin-left: -872px; margin-top: -138px; -webkit-transform: scale(1); }
 .portrait.tassadar           { margin-left: -866px; margin-top: -131px; -webkit-transform: scale(1); }
+.portrait.the-butcher        { margin-left: -700px; margin-top: -300px; -webkit-transform: scale(0.7); /* TODO */ }
 .portrait.the-lost-vikings   { margin-left: -822px; margin-top: -274px; -webkit-transform: scale(0.7); }
 .portrait.thrall             { margin-left: -857px; margin-top: -186px; -webkit-transform: scale(1); }
+.portrait.tracer             { margin-left: -700px; margin-top: -300px; -webkit-transform: scale(0.7); /* TODO */ }
 .portrait.tychus             { margin-left: -858px; margin-top: -190px; -webkit-transform: scale(1); }
 .portrait.tyrael             { margin-left: -856px; margin-top: -162px; -webkit-transform: scale(1); }
 .portrait.tyrande            { margin-left: -843px; margin-top: -194px; -webkit-transform: scale(0.9); }
 .portrait.uther              { margin-left: -845px; margin-top: -168px; -webkit-transform: scale(1); }
 .portrait.valla              { margin-left: -845px; margin-top: -168px; -webkit-transform: scale(1); }
+.portrait.xul                { margin-left: -700px; margin-top: -300px; -webkit-transform: scale(0.7); /* TODO */ }
 .portrait.zagara             { margin-left: -833px; margin-top: -258px; -webkit-transform: scale(1); }
 .portrait.zeratul            { margin-left: -835px; margin-top: -189px; -webkit-transform: scale(0.9); }
 
@@ -55,20 +68,30 @@
 /* Base */
 .abathur            {   margin-left: -667px;    margin-top: -207px; }
 .anubarak           {   margin-left: -660px;    margin-top: -195px; }
+.artanis            {   margin-left: -660px;    margin-top: -110px; }
 .arthas             {   margin-left: -650px;    margin-top: -107px; }
 .azmodan            {   margin-left: -644px;    margin-top: -150px; }
 .brightwing         {   margin-left: -650px;    margin-top: -150px; }
 .chen               {   margin-left: -650px;    margin-top: -180px; }
+.cho                {   margin-left: -630px;    margin-top: -60px;  }
+.dehaka             {   margin-left: -690px;    margin-top: -150px; }
 .diablo             {   margin-left: -650px;    margin-top: -115px; }
 .etc                {   margin-left: -674px;    margin-top: -137px; }
 .falstad            {   margin-left: -650px;    margin-top: -150px; }
+.gall               {   margin-left: -660px;    margin-top: -60px;  }
 .gazlowe            {   margin-left: -622px;    margin-top: -213px; }
+.greymane           {   margin-left: -590px;    margin-top: -110px; }
 .illidan            {   margin-left: -650px;    margin-top: -110px; }
 .jaina              {   margin-left: -579px;    margin-top: -136px; }
-.johanna			{   /* TODO */ }
-.kaelthas           {   margin-left: -655px;    margin-top: -75px; }
-.kerrigan           {   margin-left: -636px;    margin-top: -89px; }
+.johanna            {   margin-left: -690px;    margin-top: -110px; }
+.kaelthas           {   margin-left: -655px;    margin-top: -75px;  }
+.kerrigan           {   margin-left: -636px;    margin-top: -89px;  }
+.kharazim           {   margin-left: -640px;    margin-top: -130px; }
+.leoric             {   margin-left: -700px;    margin-top: -80px;  }
+.li-ming            {   margin-left: -680px;    margin-top: -80px;  }
 .lili               {   margin-left: -615px;    margin-top: -180px; }
+.lt-morales         {   margin-left: -650px;    margin-top: -100px; }
+.lunara             {   margin-left: -700px;    margin-top: -90px;  }
 .malfurion          {   margin-left: -658px;    margin-top: -122px; }
 .muradin            {   margin-left: -650px;    margin-top: -219px; }
 .murky              {   margin-left: -705px;    margin-top: -246px; }
@@ -76,18 +99,22 @@
 .nova               {   margin-left: -668px;    margin-top: -134px; }
 .raynor             {   margin-left: -650px;    margin-top: -140px; }
 .rehgar             {   margin-left: -683px;    margin-top: -157px; }
+.rexxar             {   margin-left: -530px;    margin-top: -210px; }
 .sgt-hammer         {   margin-left: -661px;    margin-top: -117px; }
 .sonya              {   margin-left: -636px;    margin-top: -171px; }
 .stitches           {   margin-left: -671px;    margin-top: -150px; }
 .sylvanas           {   margin-left: -720px;    margin-top: -120px; }
 .tassadar           {   margin-left: -679px;    margin-top: -100px; }
+.the-butcher        {   margin-left: -670px;    margin-top: -120px; }
 .the-lost-vikings   {   margin-left: -696px;    margin-top: -124px; }
 .thrall             {   margin-left: -650px;    margin-top: -119px; }
+.tracer             {   margin-left: -680px;    margin-top: -60px;  }
 .tychus             {   margin-left: -675px;    margin-top: -128px; }
-.tyrael             {   margin-left: -611px;    margin-top: -90px; }
+.tyrael             {   margin-left: -611px;    margin-top: -90px;  }
 .tyrande            {   margin-left: -613px;    margin-top: -117px; }
 .uther              {   margin-left: -650px;    margin-top: -150px; }
 .valla              {   margin-left: -667px;    margin-top: -100px; }
+.xul                {   margin-left: -650px;    margin-top: -140px; }
 .zagara             {   margin-left: -696px;    margin-top: -170px; }
 .zeratul            {   margin-left: -676px;    margin-top: -116px; }
 
