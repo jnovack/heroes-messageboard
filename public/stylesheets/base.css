@@ -20,11 +20,14 @@ div.center { margin-left: auto; margin-right: auto; }
 .flex-justify-end { -webkit-box-pack: justify; -webkit-justify-content: flex-end; -ms-flex-pack: justify; -moz-box-pack: justify; justify-content: flex-end; }
 .flex-wrap { -moz-box-wrap: wrap; -webkit-box-wrap: wrap; -webkit-flex-wrap: wrap; -ms-flexbox-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
-/* 
+/*
 .flex-start-all { -webkit-box-pack: justify; -webkit-justify-content: flex-start; -ms-flex-pack: justify; -moz-box-pack: justify; justify-content: flex-start; -webkit-box-align: flex-start; -webkit-align-items: flex-start; -moz-box-align: flex-start; -ms-flex-align: flex-start; align-items: flex-start; -webkit-box-align-content: flex-start; -webkit-align-content: flex-start; -ms-flex-align-content: flex-start; align-content: flex-start; }
 */
 
-div.wide { width: 100%; }
+.tall-important { height: 100% !important; }
+.wide-important { width: 100% !important; }
+.wide { width: 100%; }
+.tall { width: 100%; }
 div.inline-flex { display: inline-flex; align-items: center; align-content: center; width: 100%;}
 
 div.pad-none { padding: 0px; }
