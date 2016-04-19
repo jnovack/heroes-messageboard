@@ -59,6 +59,8 @@ socket.on('value', function(data) {
             $(this).removeClass("animated bounceIn");
         });
 
+        classes = $("#"+data.id).attr('data-classes');
+
         if ($("#"+data.id).hasClass("value")) {
             $("#"+data.id).text(data.text).addClass("animated bounceIn");
         }
@@ -72,7 +74,7 @@ socket.on('value', function(data) {
         }
 
         if ($("#"+data.id).hasClass("divimage")) {
-            $("#"+data.id).removeClass().addClass("animated bounceIn divimage divimage-"+data.text);
+            $("#"+data.id).removeClass().addClass("animated bounceIn divimage divimage-"+data.text+" "+classes);
         }
 
         if ($("#"+data.id).hasClass("linked-picture")) {
