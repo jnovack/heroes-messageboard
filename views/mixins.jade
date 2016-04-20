@@ -5,13 +5,16 @@ mixin map-select(id,name)
   label(for=id,class='control-label')= name
   select(data-for=id,id=id)&attributes(attributes).form-control
     +select-option("Please Select Map")(value='transparent',selected,disabled)
+    +select-option("battlefield-of-eternity")
     +select-option("blackhearts-bay")
     +select-option("cursed-hollow")
     +select-option("dragon-shire")
     +select-option("garden-of-terror")
     +select-option("haunted-mines")
+    +select-option("infernal-shrines")
     +select-option("sky-temple")
     +select-option("tomb-of-the-spider-queen")
+    +select-option("towers-of-doom")
 
 
 mixin hero-select(id,name)

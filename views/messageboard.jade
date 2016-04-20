@@ -105,7 +105,24 @@ block content
                 .li-text-progress.progress
                   #hero3-progress.progress-bar.progress-bar-info(style="width: 50%")
               #hero3-level.li-number.value.color-info
-        #voice_container.hidden(data-group="sidebar_body_containers")
+        #team_container.hidden(data-group="sidebar_body_containers",data-ignore='true')
+          div.heading Map
+          ul
+            li.tall-important
+              #team-map-picture.divimage(data-classes='divimagemed map-medium')
+          div.heading#blueteam Blue Team
+          ul
+            li.flex.flex-align-items-center.flex-justify-between
+              .divimage.divimage-transparent
+              #team-blue-text.li-text.text Team Name (Blue)
+              #team-blue-games.li-number.value.color-info
+          div.heading#redteam Red Team
+          ul
+            li.flex.flex-align-items-center.flex-justify-between
+              .divimage.divimage-transparent
+              #team-red-text.li-text.text Team Name (Red)
+              #team-red-games.li-number.value.color-info
+        #voice_container.hidden(data-group="sidebar_body_containers",data-ignore='true')
           div.heading Voice Chat
           ul
             li.flex.flex-align-items-center.flex-justify-start
