@@ -1,0 +1,51 @@
+extends layout
+
+block head
+  link(href="/stylesheets/end-of-match.css", rel="stylesheet")
+  link(href="/stylesheets/divimage.css", rel="stylesheet")
+  script(src="/javascripts/socket.js")
+
+block foot
+  script(src="/javascripts/end-of-match.js")
+
+block content
+  div(id='wrapper').container
+    div(id='tvsafe').tvsafe
+      div.row
+        div.col-sm-12.text-center
+          div(id='title').text.title Match Summary
+
+      div.row.teams.flex.flex-align-items-center.flex-align-content-center
+        div.col-sm-4.text-center
+          div(id='team1-name').html.team-name Team 1
+        div.col-sm-2.text-center
+          div(id='team1-score').value.team-score 0
+        div.col-sm-2.text-center
+          div(id='team2-score').value.team-score 0
+        div.col-sm-4.text-center
+          div(id='team2-name').html.team-name Team 2
+
+      div.row
+        div.col-lg-12
+          div.overlay-versus
+            div.overlay-versus-image
+
+      div.games.inline-flex
+        div.col-sm-12.pad-none
+          - for (var i = 1; i < 6; ++i) {
+            div(id='game'+i+'-container',style='display: none').row.game
+              div(id='game'+i+'-team1',data-group='game-heroes',data-team='team1',role='trigger',data-trigger='team-scores').col-sm-5.text-center.pad-small.heroes.heroes-left
+                - for (var x = 1; x < 6; ++x) {
+                  div(id='game'+i+'-team1-hero'+x).divimage.divimagelg.divimage-transparent
+                - }
+              div.col-sm-2.pad-small
+                div(id='game'+i+'-map').divimage.center.map-small.divimage-transparent
+              div(id='game'+i+'-team2',data-group='game-heroes',data-team='team2',role='trigger',data-trigger='team-scores').col-sm-5.text-center.pad-small.heroes.heroes-right
+                - for (var x = 1; x < 6; ++x) {
+                  div(id='game'+i+'-team2-hero'+x).divimage.divimagelg.divimage-transparent
+                - }
+          - }
+
+      div.row
+        div.col-sm-12.text-center
+          span(id='announcement').html.announcement

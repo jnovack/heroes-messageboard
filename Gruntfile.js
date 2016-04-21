@@ -5,14 +5,15 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         nodemon: {
             dev: {
-                script: 'bin/www',
+                script: 'index.js',
                 options: {
-                    ignore: ['node_modules/**', 'public/**','views/**'],
+                    watch: ['index.js', 'modules/**'],
                     ext: 'js',
-                    watch: ['bin/www', 'routes/**', 'app.js'],
+                    ignore: ['node_modules/**', 'modules/webserver/public/**'],
                     env: {
                         NODE_ENV: 'dev'
                     },
+                    nodeArgs: ['--debug'],
                     cwd: __dirname,
                     callback: function (nodemon) {
                         nodemon.on('log', function (event) {
@@ -23,13 +24,13 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-            files: ['bin/www', '*.js', '**/*.js', '!node_modules/**', '!.git/**', '!public/javascripts/**'],
+            files: ['*.js', '**/*.js', '*.json', '!node_modules/**', '!.git/**', '!modules/webserver/public/**', '!bower_components/**', '!test/**', 'nodemon.json'],
             tasks: ['jshint']
         },
         jshint: {
-            all: ['**/*.js', '**/*.json', '!node_modules/**', '!public/**'],
+            all: ['**/*.js', '**/*.json', '*.json', '!node_modules/**', '!modules/webserver/public/**', '!bower_components/**'],
             options: {
-                ignore: ['node_modules/**', 'public/**']
+                ignore: ['node_modules/**', 'modules/webserver/public/**', 'bower_components/**']
             }
         },
         concurrent: {

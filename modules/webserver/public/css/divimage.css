@@ -1,0 +1,166 @@
+.divimage {
+    height: 50px;
+    width: 50px;
+    margin-right: 2px;
+    background-size: 50px 50px;
+    border-radius: 8px;
+    border: 1px solid #333333;
+    border-top-color: #000000;
+    border-left-color: #000000;
+    border-bottom-color: #333333;
+    border-right-color: #333333;
+}
+
+.divimagelg {
+    height: 72px;
+    width: 72px;
+    background-size: 72px 72px;
+}
+
+.divimagewide {
+    height: 50px;
+    width: 90px;
+    background-size: 90px 50px;
+}
+
+.divimagemed { height: 200px; width: 354px; background-size: 354px 200px; }
+
+.divimage-transparent { background-image: url('../img/transparent.png'); border: none;}
+
+/* Maps */
+
+.map-mini { height: 50px; width: 90px; background-size: 90px 50px; }
+.map-small { height: 72px; width: 264px; background-size: 264px 72px; }
+.map-medium { height: 200px; width: 354px; background-size: 354px 200px; }
+
+
+.divimage-blackhearts-bay { background-image: url('../assets/maps/blackhearts-bay-mini.jpg'); }
+.divimage-cursed-hollow { background-image: url('../assets/maps/cursed-hollow-mini.jpg'); }
+.divimage-dragon-shire { background-image: url('../assets/maps/dragon-shire-mini.jpg'); }
+.divimage-haunted-mines { background-image: url('../assets/maps/haunted-mines-mini.jpg'); }
+.divimage-garden-of-terror { background-image: url('../assets/maps/garden-of-terror-mini.jpg'); }
+.divimage-sky-temple { background-image: url('../assets/maps/sky-temple-mini.jpg'); }
+.divimage-tomb-of-the-spider-queen { background-image: url('../assets/maps/tomb-of-the-spider-queen-mini.jpg'); }
+
+.map-mini.divimage-blackhearts-bay { background-image: url('../assets/maps/blackhearts-bay-mini.jpg'); }
+.map-mini.divimage-cursed-hollow { background-image: url('../assets/maps/cursed-hollow-mini.jpg'); }
+.map-mini.divimage-dragon-shire { background-image: url('../assets/maps/dragon-shire-mini.jpg'); }
+.map-mini.divimage-haunted-mines { background-image: url('../assets/maps/haunted-mines-mini.jpg'); }
+.map-mini.divimage-garden-of-terror { background-image: url('../assets/maps/garden-of-terror-mini.jpg'); }
+.map-mini.divimage-sky-temple { background-image: url('../assets/maps/sky-temple-mini.jpg'); }
+.map-mini.divimage-tomb-of-the-spider-queen { background-image: url('../assets/maps/tomb-of-the-spider-queen-mini.jpg'); }
+
+.map-small.divimage-blackhearts-bay { background-image: url('../assets/maps/blackhearts-bay-small.jpg'); }
+.map-small.divimage-cursed-hollow { background-image: url('../assets/maps/cursed-hollow-small.jpg'); }
+.map-small.divimage-dragon-shire { background-image: url('../assets/maps/dragon-shire-small.jpg'); }
+.map-small.divimage-haunted-mines { background-image: url('../assets/maps/haunted-mines-small.jpg'); }
+.map-small.divimage-garden-of-terror { background-image: url('../assets/maps/garden-of-terror-small.jpg'); }
+.map-small.divimage-sky-temple { background-image: url('../assets/maps/sky-temple-small.jpg'); }
+.map-small.divimage-tomb-of-the-spider-queen { background-image: url('../assets/maps/tomb-of-the-spider-queen-small.jpg'); }
+
+.map-medium.divimage-battlefield-of-eternity { background-image: url('../assets/maps/battlefield-of-eternity-medium.jpg'); }
+.map-medium.divimage-blackhearts-bay { background-image: url('../assets/maps/blackhearts-bay-medium.jpg'); }
+.map-medium.divimage-cursed-hollow { background-image: url('../assets/maps/cursed-hollow-medium.jpg'); }
+.map-medium.divimage-dragon-shire { background-image: url('../assets/maps/dragon-shire-medium.jpg'); }
+.map-medium.divimage-garden-of-terror { background-image: url('../assets/maps/garden-of-terror-medium.jpg'); }
+.map-medium.divimage-haunted-mines { background-image: url('../assets/maps/haunted-mines-medium.jpg'); }
+.map-medium.divimage-infernal-shrines { background-image: url('../assets/maps/infernal-shrines-medium.jpg'); }
+.map-medium.divimage-sky-temple { background-image: url('../assets/maps/sky-temple-medium.jpg'); }
+.map-medium.divimage-tomb-of-the-spider-queen { background-image: url('../assets/maps/tomb-of-the-spider-queen-medium.jpg'); }
+.map-medium.divimage-towers-of-doom { background-image: url('../assets/maps/towers-of-doom-medium.jpg'); }
+
+
+
+/* Heroes */
+
+.divimage-abathur { background-image: url('../assets/hero-portraits/abathur.jpg'); }
+.divimage-anubarak { background-image: url('../assets/hero-portraits/anubarak.jpg'); }
+.divimage-artanis { background-image: url('../assets/hero-portraits/artanis.jpg'); }
+.divimage-arthas { background-image: url('../assets/hero-portraits/arthas.jpg'); }
+.divimage-azmodan { background-image: url('../assets/hero-portraits/azmodan.jpg'); }
+.divimage-brightwing { background-image: url('../assets/hero-portraits/brightwing.jpg'); }
+.divimage-chen { background-image: url('../assets/hero-portraits/chen.jpg'); }
+.divimage-cho { background-image: url('../assets/hero-portraits/cho.jpg'); }
+.divimage-dehaka { background-image: url('../assets/hero-portraits/dehaka.jpg'); }
+.divimage-diablo { background-image: url('../assets/hero-portraits/diablo.jpg'); }
+.divimage-etc { background-image: url('../assets/hero-portraits/etc.jpg'); }
+.divimage-falstad { background-image: url('../assets/hero-portraits/falstad.jpg'); }
+.divimage-gall { background-image: url('../assets/hero-portraits/gall.jpg'); }
+.divimage-gazlowe { background-image: url('../assets/hero-portraits/gazlowe.jpg'); }
+.divimage-greymane { background-image: url('../assets/hero-portraits/greymane.jpg'); }
+.divimage-illidan { background-image: url('../assets/hero-portraits/illidan.jpg'); }
+.divimage-jaina { background-image: url('../assets/hero-portraits/jaina.jpg'); }
+.divimage-johanna { background-image: url('../assets/hero-portraits/johanna.jpg'); }
+.divimage-kaelthas { background-image: url('../assets/hero-portraits/kaelthas.jpg'); }
+.divimage-kerrigan { background-image: url('../assets/hero-portraits/kerrigan.jpg'); }
+.divimage-kharazim { background-image: url('../assets/hero-portraits/kharazim.jpg'); }
+.divimage-leoric { background-image: url('../assets/hero-portraits/leoric.jpg'); }
+.divimage-li-ming { background-image: url('../assets/hero-portraits/li-ming.jpg'); }
+.divimage-lili { background-image: url('../assets/hero-portraits/lili.jpg'); }
+.divimage-lt-morales { background-image: url('../assets/hero-portraits/lt-morales.jpg'); }
+.divimage-lunara { background-image: url('../assets/hero-portraits/lunara.jpg'); }
+.divimage-malfurion { background-image: url('../assets/hero-portraits/malfurion.jpg'); }
+.divimage-muradin { background-image: url('../assets/hero-portraits/muradin.jpg'); }
+.divimage-murky { background-image: url('../assets/hero-portraits/murky.jpg'); }
+.divimage-nazeebo { background-image: url('../assets/hero-portraits/nazeebo.jpg'); }
+.divimage-nova { background-image: url('../assets/hero-portraits/nova.jpg'); }
+.divimage-raynor { background-image: url('../assets/hero-portraits/raynor.jpg'); }
+.divimage-rehgar { background-image: url('../assets/hero-portraits/rehgar.jpg'); }
+.divimage-rexxar { background-image: url('../assets/hero-portraits/rexxar.jpg'); }
+.divimage-sgt-hammer { background-image: url('../assets/hero-portraits/sgt-hammer.jpg'); }
+.divimage-sonya { background-image: url('../assets/hero-portraits/sonya.jpg'); }
+.divimage-stitches { background-image: url('../assets/hero-portraits/stitches.jpg'); }
+.divimage-sylvanas { background-image: url('../assets/hero-portraits/sylvanas.jpg'); }
+.divimage-tassadar { background-image: url('../assets/hero-portraits/tassadar.jpg'); }
+.divimage-the-butcher { background-image: url('../assets/hero-portraits/the-butcher.jpg'); }
+.divimage-the-lost-vikings { background-image: url('../assets/hero-portraits/the-lost-vikings.jpg'); }
+.divimage-thrall { background-image: url('../assets/hero-portraits/thrall.jpg'); }
+.divimage-tracer { background-image: url('../assets/hero-portraits/tracer.jpg'); }
+.divimage-tychus { background-image: url('../assets/hero-portraits/tychus.jpg'); }
+.divimage-tyrael { background-image: url('../assets/hero-portraits/tyrael.jpg'); }
+.divimage-tyrande { background-image: url('../assets/hero-portraits/tyrande.jpg'); }
+.divimage-uther { background-image: url('../assets/hero-portraits/uther.jpg'); }
+.divimage-valla { background-image: url('../assets/hero-portraits/valla.jpg'); }
+.divimage-xul { background-image: url('../assets/hero-portraits/xul.jpg'); }
+.divimage-zagara { background-image: url('../assets/hero-portraits/zagara.jpg'); }
+.divimage-zeratul { background-image: url('../assets/hero-portraits/zeratul.jpg'); }
+
+/* Skins */
+
+.divimage-abathur_pajamathur { background-image: url('../assets/talents/fury.jpg'); }
+
+/* Talents */
+
+.divimage-apocalypse { background-image: url('../assets/talents/apocalypse.png'); }
+.divimage-avatar { background-image: url('../assets/talents/avatar.png'); }
+.divimage-battle-momentum { background-image: url('../assets/talents/battle-momentum.png'); }
+.divimage-berserk { background-image: url('../assets/talents/berserk.png'); }
+.divimage-betrayers-thirst { background-image: url('../assets/talents/betrayers-thirst.png'); }
+.divimage-breath-of-fire { background-image: url('../assets/talents/breath-of-fire.png'); }
+.divimage-burning-rage { background-image: url('../assets/talents/burning-rage.png'); }
+.divimage-conjurers-pursuit { background-image: url('../assets/talents/conjurers-pursuit.png'); }
+.divimage-dwarf-toss { background-image: url('../assets/talents/dwarf-toss.png'); }
+.divimage-face-melt { background-image: url('../assets/talents/face-melt.png'); }
+.divimage-fury { background-image: url('../assets/talents/fury.png'); }
+.divimage-gathering-power { background-image: url('../assets/talents/gathering-power.png'); }
+.divimage-ghost-wolf { background-image: url('../assets/talents/ghost-wolf.png'); }
+.divimage-giant-killer { background-image: url('../assets/talents/giant-killer.png'); }
+.divimage-haunting-wave { background-image: url('../assets/talents/haunting-wave.png'); }
+.divimage-holo-decoy { background-image: url('../assets/talents/holo-decoy.png'); }
+.divimage-ice-block { background-image: url('../assets/talents/ice-block.png'); }
+.divimage-imposing-presence { background-image: url('../assets/talents/imposing-presence.png'); }
+.divimage-maelstrom { background-image: url('../assets/talents/maelstrom.png'); }
+.divimage-mosh-pit { background-image: url('../assets/talents/mosh-pit.png'); }
+.divimage-overdrive { background-image: url('../assets/talents/overdrive.png'); }
+.divimage-polymorph { background-image: url('../assets/talents/polymorph.png'); }
+.divimage-possession { background-image: url('../assets/talents/possession.png'); }
+.divimage-regeneration-master { background-image: url('../assets/talents/regeneration-master.png'); }
+.divimage-rockstar { background-image: url('../assets/talents/rockstar.png'); }
+.divimage-second-wind { background-image: url('../assets/talents/second-wind.png'); }
+.divimage-shrink-ray { background-image: url('../assets/talents/shrink-ray.png'); }
+.divimage-storm-earth-fire { background-image: url('../assets/talents/storm-earth-fire.png'); }
+.divimage-summon-demon-warrior { background-image: url('../assets/talents/summon-demon-warrior.png'); }
+.divimage-vampiric-assault { background-image: url('../assets/talents/vampiric-assault.png'); }
+.divimage-war-paint { background-image: url('../assets/talents/war-paint.png'); }
+.divimage-whirlwind { background-image: url('../assets/talents/whirlwind.png'); }
+.divimage-wrath-of-the-berserker { background-image: url('../assets/talents/wrath-of-the-berserker.png'); }

@@ -1,0 +1,97 @@
+extends layout
+
+block head
+  link(href='/stylesheets/base.css', rel='stylesheet')
+  link(href='/stylesheets/divimage.css', rel='stylesheet')
+  script(src='/javascripts/socket.js')
+  style.
+    .nav-tabs>li { background-color: #ECF0F1 }
+
+block foot
+  script(src='/javascripts/end-of-match.js')
+  script(src='/javascripts/end-of-match-admin.js')
+
+block content
+  div.container
+    style.
+      .row { margin-top: 24px;}
+
+    div.row
+      div.col-lg-12
+        div.control-group
+          label(for='title',class='control-label') Title
+          div.controls
+            input(data-group='text',type='text',id='title',name='title',placeholder='Match Summary',class='form-control')
+
+    div.row
+      div.col-sm-4
+        div.control-group
+          label(for='team1-name',class='control-label') Team 1 Name
+          div.controls
+            input(data-group='text',type='text',id='team1-name',name='team1-name',placeholder='Rancho Carne Toros',class='form-control')
+      div.col-sm-2
+        div.control-group
+          label(for='team1-score',class='control-label') Team 1 Score
+          div.controls
+            input(data-group='value',type='text',id='team1-score',name='team1-score',placeholder='0',class='form-control',disabled,value=0)
+      div.col-sm-2
+        div.control-group
+          label(for='team2-score',class='control-label') Team 2 Score
+          div.controls
+            input(data-group='value',type='text',id='team1-score',name='team1-score',placeholder='0',class='form-control',disabled,value=0)
+      div.col-sm-4
+        div.control-group
+          label(for='team2-name',class='control-label') Team 2 Name
+          div.controls
+            input(data-group='text',type='text',id='team2-name',name='team2-name',placeholder='East Compton Clovers',class='form-control')
+
+    div.row
+      div.col-lg-12
+        div(role='tabpanel')
+          ul(role='tablist',id='tablist-games').nav.nav-tabs
+            - for (var i = 1; i < 6; ++i) {
+              li(role='presentation')
+                a(href='#tab-game'+i,aria-expanded='false',role='tab',data-toggle='tab')
+                  span(id='label-game'+i).label.label-danger Game
+                    span= i
+            - }
+          div.tab-content
+            - for (var i = 1; i < 6; ++i) {
+              div(role='tabpanel',id='tab-game'+i).tab-pane.fade
+                div.row.hidden
+                  div(id='game'+i+'-container',role='trigger',data-game='game'+i,data-trigger='game-control-pills')
+                div.row
+                  div.col-lg-12.text-center
+                    div.btn-toolbar
+                      a(data-group='game-reset-pills',id='game'+i+'Reset',data-game='game'+i,data-action='reset').btn.btn-warning Reset
+                      a(data-group='game-team-pills',id='game'+i+'-team1',data-game='game'+i,data-team='team1',data-class='info',data-trigger='game-team-pills',role='trigger').btn.btn-default Team 1 Wins
+                      a(data-group='game-team-pills',id='game'+i+'-team2',data-game='game'+i,data-team='team2',data-class='info',data-trigger='game-team-pills',role='trigger').btn.btn-default Team 2 Wins
+                      a(data-group='game-control-pills',id='game'+i+'-hide',data-game='game'+i,data-action='hide',data-class='danger',style='display: none').btn.btn-danger Disable
+                      a(data-group='game-control-pills',id='game'+i+'-show',data-game='game'+i,data-action='show',data-class='success').btn.btn-success Enable
+                div.row
+                  div.col-sm-8
+                    +map-select('game'+i+'-map','map')(data-group='game'+i+'-selects',role='trigger',data-trigger='picture')
+                  div.col-sm-4
+                    div(data-group='game'+i+'-pictures',id='game'+i+'-map-picture').center.divimage.map-small
+
+                - for (var x = 1; x < 6; ++x) {
+                  div.row
+                    div.col-sm-2
+                      div(data-group='game'+i+'-pictures',id='game'+i+'-team1-hero'+x+'-picture').center.divimage.divimagelg
+                    div.col-sm-4
+                      +hero-select('game'+i+'-team1-hero'+x,'team1-hero'+x)(data-group='game'+i+'-selects',role='trigger',data-trigger='picture')
+                    div.col-sm-4
+                      +hero-select('game'+i+'-team2-hero'+x,'team2-hero'+x)(data-group='game'+i+'-selects',role='trigger',data-trigger='picture')
+                    div.col-sm-2
+                      div(data-group='game'+i+'-pictures',id='game'+i+'-team2-hero'+x+'-picture').center.divimage.divimagelg
+                - }
+
+            - }
+
+    div.row
+      div.col-lg-12
+        div.control-group
+          label(for='announcement',class='control-label') Announcement
+          div.controls
+            input(data-group='text',type='text',id='announcement',name='announcement',placeholder='Coming Up: The finals!',class='form-control')
+

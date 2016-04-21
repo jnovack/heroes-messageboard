@@ -1,0 +1,204 @@
+extends layout
+
+block head
+  meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
+  link(rel="stylesheet", type="text/css", href="css/messageboard.css")
+  link(rel="stylesheet", type="text/css", href="css/heroes.css")
+  link(rel="stylesheet", type="text/css", href="css/divimage.css")
+  style.
+    body { cursor: none; }
+
+block foot
+  link(rel="stylesheet", href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css")
+  script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js")
+  script(src="/js/messageboard.js")
+  script(src="/js/socket-messageboard-common.js")
+  script(src="/js/socket-messageboard-view.js")
+
+block content
+  div(id='wrapper')
+    #sidebar
+      #sidebar_header
+        #sidebar_header_container
+          video#hero-video.video.valla(autoplay="", loop="", muted="", src="assets/hero-videos/valla.webm", type="video/webm")
+      #sidebar_body
+        #timer_percent
+        #map_container.hidden(data-group="sidebar_body_containers",data-ignore='true')
+          div.heading Maps
+          ul
+            li.flex.flex-align-items-center.flex-justify-between
+              #blackhearts-bay-picture.divimage.divimagewide.divimage-blackhearts-bay
+              #blackhearts-bay-text.li-text Blackheart"s Bay
+              #blackhearts-bay-percent.li-number.percent.font-opensans
+            li.flex.flex-align-items-center.flex-justify-between
+              #cursed-hollow-picture.divimage.divimagewide.divimage-cursed-hollow
+              #cursed-hollow-text.li-text Cursed Hollow
+              #cursed-hollow-percent.li-number.percent.font-opensans
+            li.flex.flex-align-items-center.flex-justify-between
+              #dragon-shire-picture.divimage.divimagewide.divimage-dragon-shire
+              #dragon-shire-text.li-text Dragon Shire
+              #dragon-shire-percent.li-number.percent.font-opensans
+            li.flex.flex-align-items-center.flex-justify-between
+              #haunted-mines-picture.divimage.divimagewide.divimage-haunted-mines
+              #haunted-mines-text.li-text Haunted Mines
+              #haunted-mines-percent.li-number.percent.font-opensans
+            li.flex.flex-align-items-center.flex-justify-between
+              #garden-of-terror-picture.divimage.divimagewide.divimage-garden-of-terror
+              #garden-of-terror-text.li-text Garden of Terror
+              #garden-of-terror-percent.li-number.percent.font-opensans
+            li.flex.flex-align-items-center.flex-justify-between
+              #sky-temple-picture.divimage.divimagewide.divimage-sky-temple
+              #sky-temple-text.li-text Sky Temple
+              #sky-temple-percent.li-number.percent.font-opensans
+            li.flex.flex-align-items-center.flex-justify-between
+              #tomb-of-the-spider-queen-picture.divimage.divimagewide.divimage-tomb-of-the-spider-queen
+              #tomb-of-the-spider-queen-text.li-text Tomb of the Spider Queen
+              #tomb-of-the-spider-queen-percent.li-number.percent.font-opensans
+        #hero_container.hidden(data-group="sidebar_body_containers",data-ignore='true')
+          div.heading Games Played
+          ul
+            li.flex.flex-align-items-center.flex-justify-between
+              img(src="assets/roles/warrior-mini.png")
+              #warrior-text.li-text Warrior
+                .li-text-progress.progress
+                  #warrior-progress.progress-bar.progress-bar-info(style="width: 50%")
+              #warrior-value.li-number.ratio.color-info(data-group="games-played")
+            li.flex.flex-align-items-center.flex-justify-between
+              img(src="assets/roles/assassin-mini.png")
+              #assassin-text.li-text Assassin
+                .li-text-progress.progress
+                  #assassin-progress.progress-bar.progress-bar-info(style="width: 50%")
+              #assassin-value.li-number.ratio.color-info(data-group="games-played")
+            li.flex.flex-align-items-center.flex-justify-between
+              img(src="assets/roles/support-mini.png")
+              #support-text.li-text Support
+                .li-text-progress.progress
+                  #support-progress.progress-bar.progress-bar-info(style="width: 50%")
+              #support-value.li-number.ratio.color-info(data-group="games-played")
+            li.flex.flex-align-items-center.flex-justify-between
+              img(src="assets/roles/specialist-mini.png")
+              #specialist-text.li-text Specialist
+                .li-text-progress.progress
+                  #specialist-progress.progress-bar.progress-bar-info(style="width: 50%")
+              #specialist-value.li-number.ratio.color-info(data-group="games-played")
+          div.heading Highest Level Heroes
+          ul
+            li.flex.flex-align-items-center.flex-justify-between
+              #hero1-picture.divimage.divimage-transparent
+              .li-text
+                #hero1-text.li-text-name.linked-picture
+                .li-text-progress.progress
+                  #hero1-progress.progress-bar.progress-bar-info(style="width: 50%")
+              #hero1-level.li-number.value.color-info
+            li.flex.flex-align-items-center.flex-justify-between
+              #hero2-picture.divimage.divimage-transparent
+              .li-text
+                #hero2-text.li-text-name.linked-picture
+                .li-text-progress.progress
+                  #hero2-progress.progress-bar.progress-bar-info(style="width: 50%")
+              #hero2-level.li-number.value.color-info
+            li.flex.flex-align-items-center.flex-justify-between
+              #hero3-picture.divimage.divimage-transparent
+              .li-text
+                #hero3-text.li-text-name.linked-picture
+                .li-text-progress.progress
+                  #hero3-progress.progress-bar.progress-bar-info(style="width: 50%")
+              #hero3-level.li-number.value.color-info
+        #team_container.hidden(data-group="sidebar_body_containers",data-ignore='true')
+          div.heading Map
+          ul
+            li.tall-important
+              #team-map-picture.divimage(data-classes='divimagemed map-medium')
+          div.heading#blueteam Blue Team
+          ul
+            li.flex.flex-align-items-center.flex-justify-between
+              .divimage.divimage-transparent
+              #team-blue-text.li-text.text Team Name (Blue)
+              #team-blue-games.li-number.value.color-info
+          div.heading#redteam Red Team
+          ul
+            li.flex.flex-align-items-center.flex-justify-between
+              .divimage.divimage-transparent
+              #team-red-text.li-text.text Team Name (Red)
+              #team-red-games.li-number.value.color-info
+        #voice_container.hidden(data-group="sidebar_body_containers",data-ignore='true')
+          div.heading Voice Chat
+          ul
+            li.flex.flex-align-items-center.flex-justify-start
+              #voice1-picture.divimage.divimage-transparent
+              #voice1-text.li-text.text
+            li.flex.flex-align-items-center.flex-justify-start
+              #voice2-picture.divimage.divimage-transparent
+              #voice2-text.li-text.text
+            li.flex.flex-align-items-center.flex-justify-start
+              #voice3-picture.divimage.divimage-transparent
+              #voice3-text.li-text.text
+            li.flex.flex-align-items-center.flex-justify-start
+              #voice4-picture.divimage.divimage-transparent
+              #voice4-text.li-text.text
+            li.flex.flex-align-items-center.flex-justify-start
+              #voice5-picture.divimage.divimage-transparent
+              #voice5-text.li-text.text
+            li.flex.flex-align-items-center.flex-justify-start
+              #voice6-picture.divimage.divimage-transparent
+              #voice6-text.li-text.text
+      #sidebar_footer
+        #sidebar_footer_container
+          #sidebar_footer_text
+            | Fogey
+            | League
+          #sidebar_footer_description.hidden Hero League
+          #sidebar_footer_rank.hidden
+            #rank.value 16
+    #mainview
+      #mainview_header.flex.flex-align-items-center.flex-justify-between
+        #mainview_header_title
+          #title.text &#160;
+        #mainview_header_subtitle
+          #subtitle1.text &#160;
+          #subtitle2.text &#160;
+        #mainview_header_icon.icon(style='display: none;')
+          img(src="")
+      #mainview_body
+        ul#messages
+          li
+            span.tag &nbsp;
+            span.message
+              img(src="img/reddit-snoo.png")
+              | Join the Reddit at&#32;
+              span.link reddit.com/r/heroesofthestorm
+          li
+            span.tag April 22
+            span.message
+              strong Town Hall Heroes&#32;
+              | Episode 60 with Blizzard Engineer Matt Schembari is on demand at&#32;
+              span.link twitch.tv/solidjakegg
+          li
+            span.tag April 19
+            span.message
+              strong Heroes of the Dorm&#32;
+              | is down to the Heroic Four.  3 teams are still undefeated, will anyone upset the favorite, Cal Berkeley?  Watch on&#32;
+              span.link heroesofthedorm.com&#32;
+              | to see the new mini-map!
+          li
+            span.tag April 20
+            span.message
+              img(src="assets/hero-portraits/kaelthas.jpg")
+              strong Kael'thas&#32;
+              | has been confirmed as an upcoming Hero.  Current speculation is that he will be a hit-and-run mage-style assassin like Jaina.
+          li
+            span.tag April 22
+            span.message
+              strong Heroes of the Storm&#32;
+              | is open to the public on June 2nd! Hide your eggs, hide your nests, they killin' e'ryone out here!
+          li
+            span.tag &#160;
+            span.message
+              | The best way to get to get amped about playing a hero is to watch their cinematic video. Watch them on&#32;
+              span.link battle.net/heroes
+      #mainview_footer
+        marquee#mainview_footer_marquee.marquee.marquee-black(scrollanimation="15")
+          #crawl-text.crawl.html
+            img(src="img/heroes-of-the-dorm.png")
+            | Heroes of the Dorm returns in the Semi-Finals on April 26th at 2:30p PT.
+

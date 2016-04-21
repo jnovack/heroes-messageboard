@@ -1,0 +1,10 @@
+{
+  "name": "heroes-messageboard",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "font-awesome": "~4.5.0",
+    "animate.css": "animate-css#~3.4.0",
+    "moment": "~2.10.6"
+  }
+}
