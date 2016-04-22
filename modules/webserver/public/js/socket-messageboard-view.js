@@ -53,6 +53,10 @@ socket.on('value', function(data) {
 
         classes = $("#"+data.id).attr('data-classes');
 
+        if ($("#"+data.id).hasClass("background")) {
+            $("#"+data.id).css('background-image', "url('../img/"+data.text+".png')");
+        }
+
         if ($("#"+data.id).hasClass("value")) {
             $("#"+data.id).text(data.text).addClass("animated bounceIn");
         }

@@ -36,11 +36,6 @@ block content
     div.row
       div.col-md-8
         +hero-select('hero-video','Hero Video')
-      div.col-md-4
-        div.control-group
-          label(for='rank',class='control-label') Rank
-          div.controls
-            input(data-group='value',type='text',id='rank',name='rank',placeholder="25",class='form-control')
 
     div.row
 
@@ -48,6 +43,9 @@ block content
       div.col-lg-12
         div(role='tabpanel')
           ul(role='tablist').nav.nav-tabs
+            li(role='presentation')
+              a(href='#tab-footer',aria-expanded='false',role='tab',data-toggle='tab')
+                span(id='label-footer').label.label-primary Footer Info
             li(role='presentation').active
               a(href='#tab-map',aria-expanded='true',role='tab',data-toggle='tab')
                 span(id='label-map').label.label-primary Map Info
@@ -273,6 +271,20 @@ block content
                           div.controls
                             input(data-group='text',type='text',id='voice'+i+'-text',placeholder='Player '+i,class='form-control')
                   - }
+            div(role='tabpanel',id='tab-footer').tab-pane
+              div.row
+                div.col-lg-4
+                  label(for='sidebar_footer',class='control-label') Footer Background
+                  select(data-for='sidebar_footer',id='sidebar_footer').form-control
+                    +select-option("fogey-league")
+                    +select-option("hero-league")
+                div.col-lg-4
+                  div.control-group
+                    label(for='rank',class='control-label') Rank
+                    div.controls
+                      input(data-group='value',type='text',id='rank',name='rank',placeholder="25",class='form-control')
+
+
             div(role='tabpanel',id='tab-team').tab-pane
               div.row
                 div.col-lg-12
@@ -280,7 +292,6 @@ block content
                     div.btn-group
                       a(data-group="toggle-pills",data-set='team',data-partner='Show',data-value='true',id="teamHide",data-element="team_container",href='#').btn.btn-sm.btn-success Team Tab is VISIBLE
                       a(data-group="toggle-pills",data-set='team',data-partner='Hide',data-value='false',id="teamShow",data-element="team_container",href='#',style="display: none").btn.btn-sm.btn-danger Team Tab is HIDDEN
-
               div.row
                 div.col-lg-12
                   +map-select('team-map-picture','team-map-picture')
