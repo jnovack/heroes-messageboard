@@ -25,10 +25,8 @@ function fadeMessage(){
         var footer = mvbody_height + mvhead_height;
 
         if (Math.floor(element > footer)){
-            // Fade Out
             $(this).fadeTo(0,0);
         } else {
-            // Fade In
             $(this).fadeTo(500,1);
         }
     });
@@ -57,7 +55,7 @@ function paginateMessages(){
             },
             complete: function() {
                 clearTimeout(timer);
-                $('#mainview_body ul li:nth-child(1)').clone().appendTo('#mainview_body ul');
+                $('#mainview_body ul li:nth-child(1)').clone().appendTo('#mainview_body ul').fadeTo(0,0);
                 if ($('#mainview_body ul li:nth-last-child(2)').hasClass('dim')) {
                     $('#mainview_body ul li:last-child').removeClass('dim');
                 } else {
