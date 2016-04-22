@@ -16,7 +16,7 @@ paginateMessages();
 
 function fadeMessage(){
     $('#messages li').each(function(){
-        if ( $($(this).attr('id')+'_text').html() === "" ) {
+        if ( $('#'+$(this).attr('id')+'-text').html().length === 0 ) {
             $(this).hide();
         } else {
             $(this).show();
@@ -85,6 +85,7 @@ function paginateMessages(){
 // Hack to restart marquee if it breaks...
 $('#mainview_footer').bind('changeData', function(e){
     if ($('#mainview_footer').attr('data-visible') == "show") {
+        document.getElementById('mainview_footer_marquee').stop();
         document.getElementById('mainview_footer_marquee').start();
     }
 });
