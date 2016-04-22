@@ -23,6 +23,12 @@ block content
           video#hero-video.video.valla(autoplay="", loop="", muted="", src="assets/hero-videos/valla.webm", type="video/webm")
       #sidebar_body
         #timer_percent
+        #about_container.hidden(data-group="sidebar_body_containers",data-ignore='true')
+          div.heading About
+          ul
+            li.flex.flex-align-items-center.flex-justify-between
+              | Heroes Messageboard
+              | github.com/jnovack/heroes-messageboard
         #map_container.hidden(data-group="sidebar_body_containers",data-ignore='true')
           div.heading Maps
           ul
@@ -159,37 +165,37 @@ block content
           img(src="")
       #mainview_body
         ul#messages
-          li
+          li#message0
             span.tag &nbsp;
             span.message
               img(src="img/reddit-snoo.png")
               | Join the Reddit at&#32;
               span.link reddit.com/r/heroesofthestorm
-          li
+          li#message1
             span.tag April 22
             span.message
               strong Town Hall Heroes&#32;
               | Episode 60 with Blizzard Engineer Matt Schembari is on demand at&#32;
               span.link twitch.tv/solidjakegg
-          li
+          li#message2
             span.tag April 19
             span.message
               strong Heroes of the Dorm&#32;
               | is down to the Heroic Four.  3 teams are still undefeated, will anyone upset the favorite, Cal Berkeley?  Watch on&#32;
               span.link heroesofthedorm.com&#32;
               | to see the new mini-map!
-          li
+          li#message3
             span.tag April 20
             span.message
               img(src="assets/hero-portraits/kaelthas.jpg")
               strong Kael'thas&#32;
               | has been confirmed as an upcoming Hero.  Current speculation is that he will be a hit-and-run mage-style assassin like Jaina.
-          li
+          li#message4
             span.tag April 22
             span.message
               strong Heroes of the Storm&#32;
               | is open to the public on June 2nd! Hide your eggs, hide your nests, they killin' e'ryone out here!
-          li
+          li#message5
             span.tag &#160;
             span.message
               | The best way to get to get amped about playing a hero is to watch their cinematic video. Watch them on&#32;
