@@ -15,16 +15,16 @@ var classes_label = "label-primary label-default label-info label-success label-
  */
 
 $("#reloadButton").click(function() {
-    send({ event: 'reload' });
+    send({ event: 'command', data: { command: 'reload' }});
 });
 $("#hideMsgButton").click(function() {
-    message = { event: 'hide-messages' };
+    message = { event: 'command', data: { command: 'hide-messages' }};
     send(message);
     $("#showMsgButton").show();
     $("#hideMsgButton").hide();
 });
 $("#showMsgButton").click(function() {
-    message = { event: 'show-messages' };
+    message = { event: 'command', data: { command: 'show-messages' }};
     send(message);
     $("#hideMsgButton").show();
     $("#showMsgButton").hide();

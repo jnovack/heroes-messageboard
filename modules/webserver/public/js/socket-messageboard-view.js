@@ -3,18 +3,28 @@ socket.on('connect', function() {
     socket.emit('join', 'messageboard');
 });
 
-socket.on('hide-messages', function(data) {
-    $("#mainview_body").fadeOut();
-});
-
-socket.on('show-messages', function(data) {
-    $("#mainview_body").fadeIn();
-});
-
 var redgreen = "color-green color-greener color-greenest color-red color-redder color-reddest";
+
+
+socket.on('command', function(data) {
+    console.log(data);
+
+    if (data.command == 'hide-messages') {
+        $("#mainview_body").fadeOut();
+    }
+
+    if (data.command == 'show-messages') {
+        $("#mainview_body").fadeIn();
+    }
+
+    if (data.command == 'reload') {
+        location.reload();
+    }
+});
 
 socket.on('action', function(data) {
     console.log(data);
+
     if (data.action == 'ignore') {
         $("#"+data.id).attr('data-ignore', data.value);
     }
