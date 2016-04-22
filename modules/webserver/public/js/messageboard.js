@@ -16,19 +16,28 @@ paginateMessages();
 
 function fadeMessage(){
     $('#messages li').each(function(){
-        var mvbody = document.getElementById("mainview_body").getBoundingClientRect();
-        var mvhead = document.getElementById("mainview_header").getBoundingClientRect();
-        var mvbody_height = mvbody.bottom - mvbody.top;
-        var mvhead_height = mvhead.bottom - mvhead.top;
 
-        var element = $(this).position().top + $(this).height() + parseInt($(this).css('padding-top')) + parseInt($(this).css('padding-bottom'));
-        var footer = mvbody_height + mvhead_height;
-
-        if (Math.floor(element > footer)){
-            $(this).fadeTo(0,0);
+        if ( $(this).html() === "" ) {
+            $(this).hide();
         } else {
-            $(this).fadeTo(500,1);
+            $(this).show();
+
+            var mvbody = document.getElementById("mainview_body").getBoundingClientRect();
+            var mvhead = document.getElementById("mainview_header").getBoundingClientRect();
+            var mvbody_height = mvbody.bottom - mvbody.top;
+            var mvhead_height = mvhead.bottom - mvhead.top;
+
+            var element = $(this).position().top + $(this).height() + parseInt($(this).css('padding-top')) + parseInt($(this).css('padding-bottom'));
+            var footer = mvbody_height + mvhead_height;
+
+            if (Math.floor(element > footer)){
+                $(this).fadeTo(0,0);
+            } else {
+                $(this).fadeTo(500,1);
+            }
+
         }
+
     });
 };
 
