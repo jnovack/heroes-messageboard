@@ -91,3 +91,7 @@ function properName(hero) {
             return hero.charAt(0).toUpperCase()+hero.substr(1).toLowerCase();
     }
 }
+
+function detokenizer(string) {
+  return string.replace(/%(\w+)%/, "<img src='assets/hero-portraits/$1.jpg'>");
+}

@@ -63,6 +63,9 @@ socket.on('value', function(data) {
 
         classes = $("#"+data.id).attr('data-classes');
 
+        // Replace tokens
+        data.text = detokenizer(data.text);
+
         if ($("#"+data.id).hasClass("background")) {
             $("#"+data.id).css('background-image', "url('../img/"+data.text+".png')");
         }
