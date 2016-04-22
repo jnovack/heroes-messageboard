@@ -16,8 +16,7 @@ paginateMessages();
 
 function fadeMessage(){
     $('#messages li').each(function(){
-
-        if ( $(this).html() === "" ) {
+        if ( $($(this).attr('id')+'_text').html() === "" ) {
             $(this).hide();
         } else {
             $(this).show();
@@ -35,9 +34,7 @@ function fadeMessage(){
             } else {
                 $(this).fadeTo(500,1);
             }
-
         }
-
     });
 };
 
