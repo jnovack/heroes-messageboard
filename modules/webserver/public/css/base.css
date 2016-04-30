@@ -1,6 +1,9 @@
 * {margin: 0px; padding: 0px; font-weight: normal; list-style-type: none;}
 
-body { font-family: 'Exo 2'; }
+@font-face{font-family:Metronic;src:url(//us.battle.net/heroes/static/fonts/typography/metronic/MetronicforBlizzard-Bold.eot);src:url(//us.battle.net/heroes/static/fonts/typography/metronic/MetronicforBlizzard-Bold.eot?#iefix) format("embedded-opentype"),url(//us.battle.net/heroes/static/fonts/typography/metronic/MetronicforBlizzard-Bold.woff) format("woff"),url(//us.battle.net/heroes/static/fonts/typography/metronic/MetronicforBlizzard-Bold.ttf) format("truetype"),url(//us.battle.net/heroes/static/fonts/typography/metronic/MetronicforBlizzard-Bold.svg#exobold) format("svg");font-weight:700;color:#fff;font-style:normal}
+@font-face{font-family:Metronic;src:url(//us.battle.net/heroes/static/fonts/typography/metronic/MetronicforBlizzard.eot);src:url(//us.battle.net/heroes/static/fonts/typography/metronic/MetronicforBlizzard.eot?#iefix) format("embedded-opentype"),url(//us.battle.net/heroes/static/fonts/typography/metronic/MetronicforBlizzard.woff) format("woff"),url(//us.battle.net/heroes/static/fonts/typography/metronic/MetronicforBlizzard.ttf) format("truetype"),url(//us.battle.net/heroes/static/fonts/typography/metronic/MetronicforBlizzard.svg#exoregular) format("svg");font-weight:400;font-style:normal}
+
+body { font-family: 'Metronic'; }
 
 #wide-screen { width: 1920px; height: 1080px; overflow: hidden; float: left; background-color: rgb(0,0,0); }
 
