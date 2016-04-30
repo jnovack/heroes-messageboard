@@ -95,3 +95,7 @@ function properName(hero) {
 function detokenizer(string) {
   return string.replace(/%(\w+)%/, "<img src='assets/hero-portraits/$1.jpg'>");
 }
+
+function replaceLinks(string) {
+  return string.replace(/\{\{(.*)\}\}/g, '<span class="link">$1</span>');
+}

@@ -46,6 +46,13 @@ div.title {margin-top: 16px; font-weight: 700; text-shadow: 0 0 1em #009cff; tex
 i.fa { margin-right: 0.3em; }
 
 
+code {
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: .8em;
+    background-color: rgba(0,0,96,.25);
+    color: rgb(64, 64, 196);
+}
+
 /*
  ***** Bootstrap Overrides
  */

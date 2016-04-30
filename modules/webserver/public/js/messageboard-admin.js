@@ -177,7 +177,7 @@ $("input[data-group='value']").blur(function() {
 });
 
 
-$("input[data-group='text']").blur(function() {
+$("[data-group='text']").blur(function() {
     result = $(this).val();
     pattern = new RegExp(/[a-zA-Z0-9 \'\"\!\@\#\$\%\^\&\*\(\)\-\_\+\=\[\]]/);
     if (pattern.test(result) || result == "") {
@@ -216,6 +216,9 @@ socket.on('value', function(data) {
         switch ($('#'+data.id).prop('type')) {
             case "text":
                 $("#"+data.id).val(data.text);
+                break;
+            case "textarea":
+                $("#"+data.id).text(data.text);
                 break;
             case "select-one":
                     $('#'+data.id + ' option[value=' + data.text + ']').prop('selected', true);

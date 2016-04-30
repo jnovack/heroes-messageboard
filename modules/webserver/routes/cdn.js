@@ -11,5 +11,7 @@ module.exports = function(app, myApp, express){
 
     app.use('/cdn/moment/', express.static(myApp.root + '/bower_components/moment/min/'));
 
+    app.use('/cdn/markdown/', express.static(myApp.root + '/bower_components/markdown-js/dist/'));
+
     return;
 };

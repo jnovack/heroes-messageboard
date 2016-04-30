@@ -2,6 +2,7 @@ include mixins.jade
 doctype html
 html
   head
+    meta(charset="UTF-8")
     title= title
     link(href="//fonts.googleapis.com/css?family=Exo+2:400,500,700", rel="stylesheet", type="text/css")
     link(href="/cdn/bootstrap/css/bootstrap.min.css", rel="stylesheet", type="text/css")
@@ -21,6 +22,8 @@ html
     script(src='/cdn/bootstrap/js/bootstrap.min.js')
     // Socket.IO
     script(src="/socket.io/socket.io.js")
+    // Markdown
+    script(src="/cdn/markdown/markdown.min.js")
     // Common Functions
     script(src="/js/functions.js")
 
