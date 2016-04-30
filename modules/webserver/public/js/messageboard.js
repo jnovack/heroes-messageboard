@@ -8,79 +8,119 @@ function initContent(){
     resetTimer();
 };
 
-// Evaluate Messages //
-var messageTimer;
-var timer;
-var c = 0;
-paginateMessages();
+/***** BEGIN MessageBoard Animation Javascripts *****/
+var rotateTime = 12000;
+var loopTimer;
+loadMessages();
+loopTimer = setTimeout(paginateMessages, 1000); // HACK: wait a second to load from socket.io
 
-function fadeMessage(){
+function loadMessages(){
+    var i = 1;
+    var className = ['dim', ''];
+    $('#messages li').each(function(){
+        // Hide or show element on rotation
+        if ( $(this).attr('data-ignore') == "true" ) {
+            $(this).addClass('hide');
+        } else {
+            i = i % 2 + 1;
+            $(this).removeClass('hide');
+        }
+
+        $(this).addClass(className[i-1]);
+    });
+
+    fadeMessages();
+}
+
+function fadeMessages(){
     $('#messages li').each(function(){
         if ( $('#'+$(this).attr('id')+'-text').html().length === 0 ) {
-            $(this).hide();
-        } else {
-            $(this).show();
+            $(this).addClass('hide');
+        }
 
-            var mvbody = document.getElementById("mainview_body").getBoundingClientRect();
-            var mvhead = document.getElementById("mainview_header").getBoundingClientRect();
-            var mvbody_height = mvbody.bottom - mvbody.top;
-            var mvhead_height = mvhead.bottom - mvhead.top;
+        var mvbody = document.getElementById("mainview_body").getBoundingClientRect();
+        var mvhead = document.getElementById("mainview_header").getBoundingClientRect();
+        var mvbody_height = mvbody.bottom - mvbody.top;
+        var mvhead_height = mvhead.bottom - mvhead.top;
 
-            var element = $(this).position().top + $(this).height() + parseInt($(this).css('padding-top')) + parseInt($(this).css('padding-bottom'));
-            var footer = mvbody_height + mvhead_height;
+        var element = $(this).position().top + $(this).height() + parseInt($(this).css('padding-top')) + parseInt($(this).css('padding-bottom'));
+        var footer = mvbody_height + mvhead_height;
 
-            if (Math.floor(element > footer)){
+        if (Math.floor(element > footer)){
+            // Fade element out if required
+            if (($(this).css('opacity') !== "0")) {
                 $(this).fadeTo(0,0);
-            } else {
-                $(this).fadeTo(500,1);
+            }
+        } else {
+            // Fade element in if required
+            if (($(this).css('opacity') !== "1") && ($(this).attr('data-ignore') != "true")) {
+                $(this).fadeTo(600,1);
             }
         }
     });
 };
 
-function paginateMessages(){
-    fadeMessage();
+function rotateMessages() {
+    // Rotate the current element to the bottom and remove it from the top.
+    $('#messages li:nth-child(1)').clone().appendTo('#messages').fadeTo(0,0);
+    $('#messages li:nth-child(1)').remove();
 
-    clearTimeout(timer);
+    // Reset margin top after animation
+    $('#messages').css('margin-top', 0);
 
-    var rotateTimer = 10000;
-    var listAmount = $('#mainview_body ul li').size();
-    var listHeight = Math.ceil($('#mainview_body ul').height());
-    var itemHeight = $('#mainview_body ul li:nth-child(1)').height();
-    var height = itemHeight + 43;
-
-    if(c == 0){
-        timer = setTimeout(paginateMessages, rotateTimer);
-    }else if(c <= listAmount){
-        $('#mainview_body ul').animate({
-            marginTop: -height
-          }, {
-            duration: 1000,
-            specialEasing: {
-                marginTop: 'easeInOutBack'
-            },
-            complete: function() {
-                clearTimeout(timer);
-                $('#mainview_body ul li:nth-child(1)').clone().appendTo('#mainview_body ul').fadeTo(0,0);
-                if ($('#mainview_body ul li:nth-last-child(2)').hasClass('dim')) {
-                    $('#mainview_body ul li:last-child').removeClass('dim');
-                } else {
-                    $('#mainview_body ul li:last-child').addClass('dim');
-                }
-                $('#mainview_body ul li:nth-child(1)').remove();
-                $('#mainview_body ul').css('margin-top', 0);
-                timer = setTimeout(paginateMessages, rotateTimer);
-                fadeMessage();
-            }
-         });
-    }else if(c > listAmount){
-        clearTimeout(timer);
-        timer = setTimeout(paginateMessages, rotateTimer);
-        //console.log('refreshed');
-        c = 0;
+    // Hide or show element on rotation
+    if ( $('#messages li:last-child').attr('data-ignore') == "true" ) {
+        $('#messages li:last-child').addClass('hide');
+    } else {
+        $('#messages li:last-child').removeClass('hide');
     }
-    c++;
+
+    // Calculate last non-hidden message
+    var i;
+    for (i = 2; i < $('#messages li').size(); i++) {
+        if ($('#messages li:nth-last-child('+i+')').not('.hide').size() == 1) { break; }
+    }
+
+    // Set proper class
+    if ($('#messages li:nth-last-child('+i+')').hasClass('dim') == true) {
+        $('#messages li:last-child').removeClass('dim');
+    } else {
+        $('#messages li:last-child').addClass('dim');
+    }
+
+    // If the next message is hidden, cycle it anyway.
+    if ($('#messages li:nth-child(1)').hasClass('hide')) {
+        rotateMessages();
+    }
 }
+
+function paginateMessages(){
+
+    var listAmount = $('#messages li').size();
+    var listHeight = Math.ceil($('#messages').height());
+    var itemHeight = $('#messages li:nth-child(1)').height();
+    var height = itemHeight + 43; // to cover the easeInOutBack animation
+
+    clearTimeout(loopTimer);
+
+    $('#messages').animate({
+        marginTop: -height
+      }, {
+        duration: 1000,
+        specialEasing: {
+            marginTop: 'easeInOutBack'
+        },
+        complete: function() {
+            clearTimeout(loopTimer);
+
+            rotateMessages();
+
+            loopTimer = setTimeout(paginateMessages, rotateTime);
+            fadeMessages();
+        }
+    });
+}
+/***** END MessageBoard Animation Javascripts *****/
 
 // Hack to restart marquee if it breaks...
 $('#mainview_footer').bind('changeData', function(e){
