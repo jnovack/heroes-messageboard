@@ -21,7 +21,7 @@ mixin hero-select(id,name)
   label(for=id,class='control-label')= name
   select(data-for=id,id=id)&attributes(attributes).form-control
     +select-option("Please Select Hero")(value='transparent',selected,disabled)
-    +select-option("- chromakey -")(value='chromakey')
+    +select-option("green-screen")
     +select-option("abathur")
     +select-option("anubarak")
     +select-option("arthas")

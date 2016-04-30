@@ -79,7 +79,8 @@ socket.on('value', function(data) {
         }
 
         if ($("#"+data.id).hasClass("html")) {
-            $("#"+data.id).html(data.text).addClass("animated bounceIn");
+            theHTML = replaceLinks(markdown.toHTML(data.text)).replace(/<\/?p>/, '');
+            $("#"+data.id).html(theHTML).addClass("animated bounceIn");
         }
 
         if ($("#"+data.id).hasClass("divimage")) {
