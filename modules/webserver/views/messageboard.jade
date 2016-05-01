@@ -23,12 +23,6 @@ block content
           video#hero-video.video.valla(autoplay="", loop="", muted="", src="assets/hero-videos/valla.webm", type="video/webm")
       #sidebar_body
         #timer_percent
-        #about_container.hidden(data-group="sidebar_body_containers",data-ignore='true')
-          div.heading About
-          ul
-            li.flex.flex-align-items-center.flex-justify-between
-              | Heroes Messageboard
-              | github.com/jnovack/heroes-messageboard
         #map_container.hidden(data-group="sidebar_body_containers",data-ignore='true')
           div.heading Maps
           ul
@@ -118,13 +112,41 @@ block content
           div.heading#blueteam Blue Team
           ul
             li.flex.flex-align-items-center.flex-justify-between
-              #team-blue-text.li-text.text Team Name (Blue)
-              #team-blue-games.li-number.value.color-info
+              #team-blue-text.li-text-wide.text Team Name (Blue)
+              #team-blue-games.li-number-wide.value.color-info
           div.heading#redteam Red Team
           ul
             li.flex.flex-align-items-center.flex-justify-between
-              #team-red-text.li-text.text Team Name (Red)
-              #team-red-games.li-number.value.color-info
+              #team-red-text.li-text-wide.text Team Name (Red)
+              #team-red-games.li-number-wide.value.color-info
+        #schedule_container.hidden(data-group="sidebar_body_containers",data-ignore='false')
+          div.heading This Week's Schedule
+          div.heading#blueschedule
+          ul
+            li.li-short.flex.flex-align-items-center.flex-justify-between
+              | Wednesday, May 4th - 7:00pm PT
+            li.flex.flex-align-items-center.flex-justify-between
+              #schedule-home1-text.li-text-wide.text Fogey League
+              #schedule-home1-games.li-number-wide.value.color-info 2 - 2
+            li.flex.flex-align-items-center.flex-justify-between
+              #schedule-away1-text.li-text-wide.text.muted The Biggest Spenders
+              #schedule-away1-games.li-number-wide.value.color-info 2 - 1
+            li.li-short.flex.flex-align-items-center.flex-justify-between
+              | Thursday, May 5th - 6:30pm PT
+            li.flex.flex-align-items-center.flex-justify-between
+              #schedule-home2-text.li-text-wide.text.muted War Boys
+              #schedule-home2-games.li-number-wide.value.color-info 0 - 3
+            li.flex.flex-align-items-center.flex-justify-between
+              #schedule-away2-text.li-text-wide.text Early Bedtime Fogeys
+              #schedule-away2-games.li-number-wide.value.color-info 0 - 3
+            li.li-short.flex.flex-align-items-center.flex-justify-between
+              | Friday, May 6th - 7:30pm PT
+            li.flex.flex-align-items-center.flex-justify-between
+              #schedule-home3-text.li-text-wide.text.muted Pro Laps Danish
+              #schedule-home3-games.li-number-wide.value.color-info 1 - 2
+            li.flex.flex-align-items-center.flex-justify-between
+              #schedule-away3-text.li-text-wide.text Late Night Fogeys
+              #schedule-away3-games.li-number-wide.value.color-info 1 - 2
         #voice_container.hidden(data-group="sidebar_body_containers",data-ignore='true')
           div.heading Voice Chat
           ul
@@ -146,6 +168,17 @@ block content
             li.flex.flex-align-items-center.flex-justify-start
               #voice6-picture.divimage.divimage-transparent
               #voice6-text.li-text.text
+        #about_container.hidden(data-group="sidebar_body_containers",data-ignore='true',data-show='once')
+          div.heading About
+          ul
+            li.flex.flex-align-items-center.flex-justify-between
+                .wide-important.li-text.text
+                  strong Heroes Messageboard
+            li.flex.flex-align-items-center.flex-justify-start
+                i github
+                br
+                .wide-important.li-text.text
+                  code jnovack/heroes-messageboard
       #sidebar_footer.background
         #sidebar_footer_container
           #sidebar_footer_text

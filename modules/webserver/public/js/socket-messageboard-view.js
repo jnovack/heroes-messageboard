@@ -58,13 +58,10 @@ socket.on('value', function(data) {
 
     if ($("#"+data.id).text() != data.text) {
         $("#"+data.id).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-            $(this).removeClass("animated bounceIn");
+            $(this).removeClass("animated bounceIn fadeIn");
         });
 
         classes = $("#"+data.id).attr('data-classes');
-
-        // Replace tokens
-        data.text = detokenizer(data.text);
 
         if ($("#"+data.id).hasClass("background")) {
             $("#"+data.id).css('background-image', "url('../img/"+data.text+".png')");
@@ -75,12 +72,13 @@ socket.on('value', function(data) {
         }
 
         if ($("#"+data.id).hasClass("text")) {
-            $("#"+data.id).text(data.text).addClass("animated bounceIn");
+            $("#"+data.id).text(data.text).addClass("animated fadeIn");
         }
 
         if ($("#"+data.id).hasClass("html")) {
-            theHTML = replaceLinks(markdown.toHTML(data.text)).replace(/<\/?p>/, '');
-            $("#"+data.id).html(theHTML).addClass("animated bounceIn");
+            // Format for HTML from Markdown
+            data.text = detokenizer(markdown.toHTML(data.text).replace(/<\/?p>/, ''));
+            $("#"+data.id).html(replaceLinks(data.text)).addClass("animated fadeIn");
         }
 
         if ($("#"+data.id).hasClass("divimage")) {

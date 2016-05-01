@@ -95,7 +95,6 @@ function rotateMessages() {
 }
 
 function paginateMessages(){
-
     var listAmount = $('#messages li').size();
     var listHeight = Math.ceil($('#messages').height());
     var itemHeight = $('#messages li:nth-child(1)').height();
@@ -150,6 +149,9 @@ function rotateTabs() {
     $("#timer_percent").removeClass("countdown").addClass("countup");
     allTabs = $("[data-group|='sidebar_body_containers']").not("[data-ignore|='true']");
     current = $("[data-group|='sidebar_body_containers'].bounceInLeft");
+    if (current.attr('data-show') === 'once') {
+        current.attr('data-ignore', 'true');
+    }
     if (allTabs.last()[0] == current[0] || current.length == 0) {
         next = allTabs.first();
     } else {

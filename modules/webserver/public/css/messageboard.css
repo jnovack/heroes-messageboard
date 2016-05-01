@@ -54,13 +54,17 @@ strong { color: #FFFFFF; font-weight: 600; }
 #sidebar_body div div.heading { color: #969696; line-height: 1.1em; font-weight: 500; font-size: 2em; margin-bottom: 10px; margin-top: 12px; }
 #sidebar_body div ul { width: 340px; border-top: solid 1px rgba(0,0,0,0.50); /* border-bottom: solid 1px rgba(255,255,255,0.10); */ }
 #sidebar_body div ul li { width: 100%; padding: 8px 0px 8px 0px; border-top: solid 1px rgba(255,255,255,0.10); border-bottom: solid 1px rgba(0,0,0,0.50); height:64px; display: flex; align-items: center; align-content: center;}
+#sidebar_body div ul li.li-short { margin-left: 4px; margin-right: 8px; height:42px; font-size: 1.2em; color: rgb(36,144,255); }
 #sidebar_body div ul li:last-of-type { border-bottom: none;}
 #sidebar_body div ul li img { height: 50px; padding-right: 4px; }
-#sidebar_body div ul li div.li-text { margin-left: 4px; margin-right: 8px; font-size: 1.4em; width: 172px; line-height: 20px;}
+#sidebar_body div ul li div.li-text { margin-left: 4px; margin-right: 8px; font-size: 1.4em; width: 172px; line-height: 20px; }
+#sidebar_body div ul li div.li-text-wide { margin-left: 4px; margin-right: 8px; font-size: 1.4em; width: 244px; line-height: 20px; }
 #sidebar_body div ul li div.li-text-name { color: #FFFFFF; }
 #sidebar_body div ul li div.li-text-progress { height: 10px; }
 #sidebar_body div ul li div.li-text-desc { color: #999999; font-size: 0.6em; }
+#sidebar_body div ul li div.muted { color: #BBBBBB; }
 #sidebar_body div ul li div.li-number { font-size: 1.9em; width: 64px; text-align: center; text-shadow: 1px 1px #000000; }
+#sidebar_body div ul li div.li-number-wide { font-size: 1.9em; width: 96px; text-align: center; text-shadow: 1px 1px #000000; }
 
 /*
 #specials_container {width: 340px; margin: 30px 0px 0px 30px; float: left;}
