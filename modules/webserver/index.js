@@ -2,6 +2,14 @@ module.exports = function(myApp){
     var debug = require('debug')('module:webserver');
     var session = require('express-session');
     var sessionStore = require('connect-memcached')(session);
+
+    var applicationSessionStore = new sessionStore({
+                    retries: 2,
+                    retry:   3000,
+                    // hosts:   [ "127.0.0.1:12211" ]
+                    hosts:   myApp.config.MEMCACHED
+                });
+
     var webserver = {
             widgets: [],
             configurations: [],
@@ -14,6 +22,13 @@ module.exports = function(myApp){
         jade = require("jade");
 
     webserver.initialize = function(){
+        // Kill application if memcached servers are not available.
+        applicationSessionStore.client.version( (err, resp) => {
+            if (err !== undefined) {
+                console.error("*** memcached server unavailable...\n", err);
+                process.exit(-1);
+            }
+        });
 
         var app = express();
         app.use(express.static(__dirname + '/public'));         // set the static files location /public/js will be /js for users
@@ -29,9 +44,7 @@ module.exports = function(myApp){
                 secret: "keyboard-cat",
                 resave: true,
                 saveUninitialized: true,
-                store: new sessionStore({
-                    hosts: ['192.168.99.100:32768']
-                })
+                store: applicationSessionStore
         }));
         app.use(bodyParser.urlencoded({ extended: true }));     // parse application/x-www-form-urlencoded
         app.use(bodyParser.json());                             // parse application/json
