@@ -3,3 +3,4 @@ bower_components
 config.json
 nodemon.json
 npm-debug.log
+environment.list
