@@ -93,7 +93,10 @@ function properName(hero) {
 }
 
 function detokenizer(string) {
-  return string.replace(/%(\w+)%/, "<img src='assets/hero-portraits/$1.jpg'>");
+    string = string.replace('%color-end%', "</span>");
+    string = string.replace(RegExp(/%color-(\w+)%/, 'g'), "<span class='inline-$1'>");
+    string = string.replace(/%(\w+)%/, "<img src='assets/hero-portraits/$1.jpg'>");
+    return string;
 }
 
 function replaceLinks(string) {

@@ -104,49 +104,34 @@ block content
                 .li-text-progress.progress
                   #hero3-progress.progress-bar.progress-bar-info(style="width: 50%")
               #hero3-level.li-number.value.color-info
-        #team_container.hidden(data-group="sidebar_body_containers",data-ignore='true')
+        #versus_container.hidden(data-group="sidebar_body_containers",data-ignore='true')
           div.heading Map
           ul
             li.tall-important
-              #team-map-picture.divimage(data-classes='divimagemed map-medium')
+              #versus-map-picture.divimage(data-classes='divimagemed map-medium')
           div.heading#blueteam Blue Team
           ul
             li.flex.flex-align-items-center.flex-justify-between
-              #team-blue-text.li-text-wide.text Team Name (Blue)
-              #team-blue-games.li-number-wide.value.color-info
+              #versus-blue-text.li-text-wide.text Team Name (Blue)
+              #versus-blue-games.li-number-wide.value.color-info
           div.heading#redteam Red Team
           ul
             li.flex.flex-align-items-center.flex-justify-between
-              #team-red-text.li-text-wide.text Team Name (Red)
-              #team-red-games.li-number-wide.value.color-info
+              #versus-red-text.li-text-wide.text Team Name (Red)
+              #versus-red-games.li-number-wide.value.color-info
         #schedule_container.hidden(data-group="sidebar_body_containers",data-ignore='false')
-          div.heading This Week's Schedule
-          div.heading#blueschedule
+          div.heading#schedule-title.text This Week's Schedule
           ul
-            li.li-short.flex.flex-align-items-center.flex-justify-between
-              | Wednesday, May 4th - 7:00pm PT
-            li.flex.flex-align-items-center.flex-justify-between
-              #schedule-home1-text.li-text-wide.text Fogey League
-              #schedule-home1-games.li-number-wide.value.color-info 2 - 2
-            li.flex.flex-align-items-center.flex-justify-between
-              #schedule-away1-text.li-text-wide.text.muted The Biggest Spenders
-              #schedule-away1-games.li-number-wide.value.color-info 2 - 1
-            li.li-short.flex.flex-align-items-center.flex-justify-between
-              | Thursday, May 5th - 6:30pm PT
-            li.flex.flex-align-items-center.flex-justify-between
-              #schedule-home2-text.li-text-wide.text.muted War Boys
-              #schedule-home2-games.li-number-wide.value.color-info 0 - 3
-            li.flex.flex-align-items-center.flex-justify-between
-              #schedule-away2-text.li-text-wide.text Early Bedtime Fogeys
-              #schedule-away2-games.li-number-wide.value.color-info 0 - 3
-            li.li-short.flex.flex-align-items-center.flex-justify-between
-              | Friday, May 6th - 7:30pm PT
-            li.flex.flex-align-items-center.flex-justify-between
-              #schedule-home3-text.li-text-wide.text.muted Pro Laps Danish
-              #schedule-home3-games.li-number-wide.value.color-info 1 - 2
-            li.flex.flex-align-items-center.flex-justify-between
-              #schedule-away3-text.li-text-wide.text Late Night Fogeys
-              #schedule-away3-games.li-number-wide.value.color-info 1 - 2
+            - for (var i = 1; i < 4; ++i) {
+              li.li-short.flex.flex-align-items-center.flex-justify-between
+                div(id='schedule-header'+i+'-text').text To Be Determined
+              li.flex.flex-align-items-center.flex-justify-between
+                div(id='schedule-blue'+i+'-text').padding-left-2px.li-text-wide.html Rancho Carne Toros
+                div(id='schedule-blue'+i+'-detail').li-number-wide.value.color-info 3 - 1
+              li.flex.flex-align-items-center.flex-justify-between
+                div(id='schedule-red'+i+'-text').padding-left-2px.li-text-wide.html East Compton Clovers
+                div(id='schedule-red'+i+'-detail').li-number-wide.value.color-info 1 - 3
+            - }
         #voice_container.hidden(data-group="sidebar_body_containers",data-ignore='true')
           div.heading Voice Chat
           ul
