@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+    grunt.option('color', true);
 
     // Project configuration.
     grunt.initConfig({
@@ -7,7 +8,7 @@ module.exports = function(grunt) {
             dev: {
                 script: 'index.js',
                 options: {
-                    watch: ['index.js', 'modules/**'],
+                    watch: ['index.js', 'modules/**/*.js'],
                     ext: 'js',
                     ignore: ['node_modules/**', 'modules/webserver/public/**'],
                     env: {
@@ -30,7 +31,7 @@ module.exports = function(grunt) {
         jshint: {
             all: ['**/*.js', '**/*.json', '*.json', '!node_modules/**', '!modules/webserver/public/**', '!bower_components/**'],
             options: {
-                ignore: ['node_modules/**', 'modules/webserver/public/**', 'bower_components/**']
+                esversion: 6
             }
         },
         concurrent: {
