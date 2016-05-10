@@ -117,8 +117,11 @@ strong { font-weight: 600; }
  */
 
 .marquee { width: 1520px; height: 56px; overflow: hidden;  display: flex; align-content: center; align-items: center; }
-.marquee div { display: inline-flex;}
-.marquee img { float: left; padding-left: 4px; padding-right: 4px;}
+.marquee div { display: inline-flex; }
+.marquee div span { padding-left: 6px; padding-right: 6px;}
+.marquee div strong { padding-left: 6px; padding-right: 6px;}
+.marquee div em { padding-left: 6px; padding-right: 6px;}
+.marquee img { float: left; padding-left: 24px; padding-right: 4px;}
 .marquee-black {
     background: -moz-linear-gradient(top,  rgba(51,51,51,0.8) 0%, rgba(51,51,51,1) 2%, rgba(51,51,51,1) 3%, rgba(76,76,76,1) 7%, rgba(63,63,63,1) 50%, rgba(63,63,63,1) 97%, rgba(63,63,63,0.8) 99%, rgba(63,63,63,0) 100%); /* FF3.6+ */
     background: -webkit-linear-gradient(top,  rgba(51,51,51,0.8) 0%,rgba(51,51,51,1) 2%,rgba(51,51,51,1) 3%,rgba(76,76,76,1) 7%,rgba(63,63,63,1) 50%,rgba(63,63,63,1) 97%,rgba(63,63,63,0.8) 99%,rgba(63,63,63,0) 100%); /* Chrome10+,Safari5.1+ */
