@@ -6,7 +6,7 @@ body {background: #000; cursor: none; color: white;}
 
 #wrapper {width: 1920px; height: 1080px; overflow: hidden; float: left;}
 
-strong { color: #FFFFFF; font-weight: 600; }
+strong { font-weight: 600; }
 .link { color: rgb(36,144,255); text-decoration: underline; }
 .hidden { display: none !important; }
 .percent::after { font-size: 0.8em; content: "%"; }
@@ -24,11 +24,12 @@ strong { color: #FFFFFF; font-weight: 600; }
 .padding-left-2px { padding-left: 2px; }
 
 
-.inline-red { color: #e1443d; }
-.inline-orange { color: #e07e22; }
-.inline-green { color: #22bc9c; }
-.inline-blue { color: #3498db; }
-.inline-muted { color: #BBBBBB; }
+.inline-white { color: #ffffff !important; }
+.inline-red { color: #e1443d !important; }
+.inline-orange { color: #e07e22 !important; }
+.inline-green { color: #22bc9c !important; }
+.inline-blue { color: #3498db !important; }
+.inline-muted { color: #BBBBBB !important; }
 
 /*
  ***** Side Bar ******
